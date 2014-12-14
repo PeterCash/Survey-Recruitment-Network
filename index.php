@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-Survey Distribution Network
+<h1>Survey Distribution Network</h1>
 <br/>
 <br/>
 
