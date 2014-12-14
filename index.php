@@ -23,9 +23,8 @@ require_once 'core/settings.php';
     </form>
 </div>*/
 
-echo "Hi";
 database::getInstance();
-echo "Hi";
+
 
 ?>
 

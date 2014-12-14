@@ -15,11 +15,11 @@ class database
         $_results,
         $_count = 0;
 
-private function _construct()
+private function __construct()
 {
     try {
     $this->_pdo=new PDO('mysql:host=' . getsettings::get('mysql/host') . ';dbname=' . getsettings::get('mysql/db'), getsettings::get('mysql/username'), getsettings::get('mysql/password'));
-    echo _pdo;
+    echo "Connected";
     } catch (PDOException $e) {
         echo 'Nope';
         die($e->getMessage());
