@@ -1,7 +1,7 @@
 <?php
 require_once 'core/settings.php';
-?>
-<!DOCTYPE html>
+
+/*<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -21,12 +21,12 @@ require_once 'core/settings.php';
         <br/>
         <input name="submit" id="LoginSubmit" type="submit">
     </form>
-</div>
+</div>*/
 
-<?php
-$db = new database();
+echo "Hi";
+database::getInstance();
+echo "Hi";
+
 ?>
 
 
-</body>
-</html>

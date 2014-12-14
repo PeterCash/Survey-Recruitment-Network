@@ -15,11 +15,13 @@ class database
         $_results,
         $_count = 0;
 
-private function __construct()
+private function _construct()
 {
     try {
-    $this-> pdo=new PDO('mysql:host=' . config::get('mysql/host') . ';dbname=' . config::get('mysql/db'), config::get('mysql/username'), config::get('mysql/password'));
+    $this->_pdo=new PDO('mysql:host=' . getsettings::get('mysql/host') . ';dbname=' . getsettings::get('mysql/db'), getsettings::get('mysql/username'), getsettings::get('mysql/password'));
+    echo _pdo;
     } catch (PDOException $e) {
+        echo 'Nope';
         die($e->getMessage());
     }
 
@@ -27,6 +29,10 @@ private function __construct()
 }
 
     public static function getInstance(){
-        
+        if(!isset(self::$_instance))
+        {
+            self::$_instance=new database();
+        }
+        return self::$_instance;
     }
 }
