@@ -23,6 +23,9 @@ require_once 'core/init.php';
     </form>
 </div>
 
+<?php
+echo config::get('mysql/host');
+?>
 
 
 </body>

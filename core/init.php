@@ -9,10 +9,10 @@ session_start();
 
 $GLOBALS['config'] = array(
     'mysql' => array(
-        host => '127.0.0.1',
-        username => 'root',
-        password => '',
-        db => 'athena',
+        'host' => '127.0.0.1',
+        'username' => 'root',
+        'password' => '',
+        'db' => 'athena',
     ),
     'remember' => array(
         'cookie_name' => 'hash',
@@ -28,4 +28,5 @@ spl_autoload_register(function ($class) {
     require_once 'classes/' . $class . '.php.';
 });
 
-require_once 'functions/santitise.php';
+require_once '../functions/sanitise.php';
+
