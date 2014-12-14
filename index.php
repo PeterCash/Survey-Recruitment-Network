@@ -1,5 +1,5 @@
 <?php
-require_once 'core/init.php';
+require_once 'core/settings.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@ require_once 'core/init.php';
 </div>
 
 <?php
-echo config::get('mysql/host');
+$db = new database();
 ?>
 
 
