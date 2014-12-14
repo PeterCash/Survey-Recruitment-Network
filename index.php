@@ -13,15 +13,17 @@ require_once 'core/init.php';
 <br/>
 <br/>
 
-<div name="login" id="login" class="login" >
+<div id="login" class="login" >
     <form action="">
-        <div id="UsernameLabel">Username:</div>
-        <input name="username" id="username" type="text">
+        <input name="username" id="username" type="text"  title="Username">
         <br/>
-        <div id="PasswordLabel">Password:</div>
-        <input name="password" id="password" type="password">
+        <input name="password" id="password" type="password" title="Password">
+        <br/>
         <input name="submit" id="LoginSubmit" type="submit">
     </form>
 </div>
+
+
+
 </body>
 </html>
