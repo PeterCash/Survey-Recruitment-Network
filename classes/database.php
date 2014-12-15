@@ -52,7 +52,7 @@ class database
             }
 
             if ($this->_query->execute()) {
-                echo 'Success';
+                //echo 'Success';
                 $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
                 $this->_count = $this->_query->rowCount();
             } else {
@@ -63,40 +63,7 @@ class database
         }
         return $this;
     }
-
-    private function action($action, $table, $conditions = array())
-    {
-        if (count($conditions) === 3) {
-            $operators = array('=', '>', '<', '>=', '<=');
-            $field = $conditions[0];
-            $operator = $conditions[1];
-            $val = $conditions[2];
-
-            if (in_array($operator, $operators)) {
-                $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
-                if (!$this->query($sql, array($val))->error()) {
-                    return $this;
-                }
-            }
-        }
-        return false;
-    }
-
-    public function get($table, $where)
-    {
-        return $this->action('SELECT *', $table, $where);
-    }
-
-    public function set()
-    {
-
-    }
-
-    public function delete($table, $where)
-    {
-        return $this->action('DELETE *', $table, $where);
-    }
-
+	
     public function results()
     {
         return $this->_results;

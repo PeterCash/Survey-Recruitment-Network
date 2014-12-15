@@ -9,7 +9,7 @@
 class getsettings
 {
 
-    public static function get($path = null)
+    public static function getvalue($path = null)
     {
         if (isset($path)) {
 
