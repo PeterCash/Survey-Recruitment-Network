@@ -27,7 +27,10 @@ $user = database::getInstance()->get('users', array('username','=', 'peter'));
 if(!$user->count()) {
     echo 'No such user';
 }else {
-    echo 'OK';
+    foreach($user->results() as $user)
+    {
+        echo $user->username, "<br/>";
+    }
 }
 
 

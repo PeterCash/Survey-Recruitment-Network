@@ -62,11 +62,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5013774" vertical-offset="158" max-vertical-offset="731">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.36088154" vertical-offset="362" max-vertical-offset="782">
+              <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
-                <marker date="1418607485454" expanded="true" signature="643:651" placeholder="SELECT * FRO..Users..." />
-                <marker date="1418607485454" expanded="true" signature="643:676" placeholder="SELECT * FRO..Users..." />
+                <marker date="1418608161387" expanded="true" signature="643:651" placeholder="SELECT * FRO..Users..." />
+                <marker date="1418608161387" expanded="true" signature="643:676" placeholder="SELECT * FRO..Users..." />
               </folding>
             </state>
           </provider>
@@ -75,10 +75,10 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.1538463" vertical-offset="1558" max-vertical-offset="1921">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.8076925" vertical-offset="1592" max-vertical-offset="2006">
+              <caret line="101" column="23" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
               <folding>
-                <marker date="1418607424389" expanded="true" signature="2023:2065" placeholder="SELECT * FRO..users..." />
+                <marker date="1418607940348" expanded="true" signature="2023:2065" placeholder="SELECT * FRO..users..." />
               </folding>
             </state>
           </provider>
@@ -261,7 +261,13 @@
       <option name="project" value="LOCAL" />
       <updated>1418605136636</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Database set get delete">
+      <created>1418607526001</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1418607526001</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -334,7 +340,8 @@
     <MESSAGE value="Database connection" />
     <MESSAGE value="Database connection finalised" />
     <MESSAGE value="Database query test finalised" />
-    <option name="LAST_COMMIT_MESSAGE" value="Database query test finalised" />
+    <MESSAGE value="Database set get delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database set get delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -370,8 +377,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="646">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1418607485454" expanded="true" signature="643:651" placeholder="SELECT * FRO..Users..." />
-            <marker date="1418607485454" expanded="true" signature="643:676" placeholder="SELECT * FRO..Users..." />
+            <marker date="1418608161387" expanded="true" signature="643:651" placeholder="SELECT * FRO..Users..." />
+            <marker date="1418608161387" expanded="true" signature="643:676" placeholder="SELECT * FRO..Users..." />
           </folding>
         </state>
       </provider>
@@ -381,7 +388,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1418607424389" expanded="true" signature="2023:2065" placeholder="SELECT * FRO..users..." />
+            <marker date="1418607940348" expanded="true" signature="2023:2065" placeholder="SELECT * FRO..users..." />
           </folding>
         </state>
       </provider>
@@ -517,21 +524,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.1538463" vertical-offset="1558" max-vertical-offset="1921">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.8076925" vertical-offset="1592" max-vertical-offset="2006">
+          <caret line="101" column="23" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
           <folding>
-            <marker date="1418607424389" expanded="true" signature="2023:2065" placeholder="SELECT * FRO..users..." />
+            <marker date="1418607940348" expanded="true" signature="2023:2065" placeholder="SELECT * FRO..users..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5013774" vertical-offset="158" max-vertical-offset="731">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.36088154" vertical-offset="362" max-vertical-offset="782">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding>
-            <marker date="1418607485454" expanded="true" signature="643:651" placeholder="SELECT * FRO..Users..." />
-            <marker date="1418607485454" expanded="true" signature="643:676" placeholder="SELECT * FRO..Users..." />
+            <marker date="1418608161387" expanded="true" signature="643:651" placeholder="SELECT * FRO..Users..." />
+            <marker date="1418608161387" expanded="true" signature="643:676" placeholder="SELECT * FRO..Users..." />
           </folding>
         </state>
       </provider>

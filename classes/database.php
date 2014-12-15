@@ -97,6 +97,11 @@ class database
         return $this->action('DELETE *', $table, $where);
     }
 
+    public function results()
+    {
+        return $this->_results;
+    }
+
     public function count(){
         return $this->_count;
     }
