@@ -102,6 +102,12 @@ class database
         return $this->_results;
     }
 
+    public function first()
+    {
+        $output = $this->results();
+        return $output[0];
+    }
+
     public function count(){
         return $this->_count;
     }

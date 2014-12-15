@@ -22,15 +22,14 @@ require_once 'core/settings.php';
         <input name="submit" id="LoginSubmit" type="submit">
     </form>
 </div>*/
-$user = database::getInstance()->get('users', array('username','=', 'peter'));
+$user = database::getInstance()->query("SELECT * FROM users");
 
 if(!$user->count()) {
     echo 'No such user';
 }else {
-    foreach($user->results() as $user)
-    {
-        echo $user->username, "<br/>";
-    }
+
+        echo $user->first()->username;
+
 }
 
 
