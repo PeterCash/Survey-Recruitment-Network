@@ -9,9 +9,11 @@
 
 require_once 'core/settings.php';
 
-$plainpassword =
+$username = $_POST['username'];
+$plainpassword = $_POST['password'];
+$encryptedpassword = "";
 
-$user = database::getInstance()->query("SELECT * FROM users WHERE username='' and password=''");
+$user = database::getInstance()->query("SELECT * FROM users WHERE username=? and password=?", array($username ,$encryptedpassword));
 
 if(!$user->count()) {
     echo 'No such user';
