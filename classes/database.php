@@ -20,7 +20,7 @@ class database
     private function __construct()
     {
         try {
-            $this->_pdo = new PDO('mysql:host=' . getsettings::get('mysql/host') . ';dbname=' . getsettings::get('mysql/db'), getsettings::get('mysql/username'), getsettings::get('mysql/password'));
+            $this->_pdo = new PDO('mysql:host=' . getsettings::getvalue('mysql/host') . ';dbname=' . getsettings::getvalue('mysql/db'), getsettings::getvalue('mysql/username'), getsettings::getvalue('mysql/password'));
             //echo "Connected";
              //$this->_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {

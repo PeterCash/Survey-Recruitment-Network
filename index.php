@@ -1,7 +1,4 @@
-<?php
-require_once 'core/settings.php';
-
-/*<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -21,7 +18,12 @@ require_once 'core/settings.php';
         <br/>
         <input name="submit" id="LoginSubmit" type="submit">
     </form>
-</div>*/
+</div>
+
+<?php
+require_once 'core/settings.php';
+
+
 $user = database::getInstance()->query("SELECT * FROM users");
 
 if(!$user->count()) {
