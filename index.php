@@ -11,7 +11,7 @@
 <br/>
 
 <div id="login" class="login" >
-    <form action="">
+    <form action="loginauthenticator.php">
         <input name="username" id="username" type="text"  title="Username">
         <br/>
         <input name="password" id="password" type="password" title="Password">
@@ -20,22 +20,5 @@
     </form>
 </div>
 
-<?php
-require_once 'core/settings.php';
-
-
-$user = database::getInstance()->query("SELECT * FROM users");
-
-if(!$user->count()) {
-    echo 'No such user';
-}else {
-
-        echo $user->first()->username;
-
-}
-
-
-
-?>
 
 
