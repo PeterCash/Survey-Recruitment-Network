@@ -46,8 +46,8 @@ class database
         if ($this->_query = $this->_pdo->prepare($sql)) {
             $i = 1;
             if (count($parameters)) {
-                foreach ($parameters as $p) {
-                    $this->_query->bindValue($i, $p);
+                foreach ($parameters as $param) {
+                    $this->_query->bindValue($i, $param);
                     $i++;
                 }
             }
