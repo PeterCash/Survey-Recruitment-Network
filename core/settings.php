@@ -9,10 +9,10 @@ session_start();
 
 $GLOBALS['config'] = array(
     'mysql' => array(
-        'host' => '127.0.0.1',
-        'username' => 'root',
-        'password' => '',
-        'db' => 'athena',
+        'host' => 'mysql5.000webhost.com',
+        'username' => 'a7667035_user1',
+        'password' => '2icVUGqrWy',
+        'db' => 'a7667035_fyp',
     ),
     'remember' => array(
         'cookie_name' => 'hash',
@@ -25,7 +25,7 @@ $GLOBALS['config'] = array(
 );
 
 spl_autoload_register(function($class) {
-    require_once 'classes/' . $class . '.php.';
+    require_once '../classes/' . $class . '.php.';
 });
 
-require_once 'functions/sanitise.php';
+require_once '../functions/sanitise.php';

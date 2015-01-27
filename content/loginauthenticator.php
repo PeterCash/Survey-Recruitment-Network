@@ -7,13 +7,21 @@
 
 <?php
 
-require_once 'core/settings.php';
+require_once '../core/settings.php';
 
-$username = $_POST['username'];
-$plainpassword = $_POST['password'];
+//$username = $_POST['username'];
+$username = "test";
+$plainpassword = "pass";
 $encryptedpassword = "";
 
-$user = database::getInstance()->query("SELECT * FROM users WHERE username=? and password=?", array($username ,$encryptedpassword));
+echo $username;
+echo $plainpassword;
+
+echo "<br/>";
+echo 'mysql:host=' . getsettings::getvalue('mysql/host') . ';dbname=' . getsettings::getvalue('mysql/db'), getsettings::getvalue('mysql/username'), getsettings::getvalue('mysql/password');
+echo "<br/>";
+
+$user = database::getInstance()->query("SELECT * FROM users WHERE username=? and password=?", array($username ,$plainpassword));
 
 if(!$user->count()) {
     echo 'No such user';
@@ -25,6 +33,3 @@ if(!$user->count()) {
 
 
 
-class LoginAuthenticator {
-
-}
