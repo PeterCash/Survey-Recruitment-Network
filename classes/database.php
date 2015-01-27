@@ -21,11 +21,11 @@ class database
     {
         try {
             $this->_pdo = new PDO('mysql:host=' . getsettings::getvalue('mysql/host') . ';dbname=' . getsettings::getvalue('mysql/db'), getsettings::getvalue('mysql/username'), getsettings::getvalue('mysql/password'));
-            //echo "Connected";
+            echo "Connected";
              //$this->_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo $this->_pdo;
+
         } catch (PDOException $e) {
-            //echo 'Nope';
+            echo 'Nope';
             die($e->getMessage());
         }
 
