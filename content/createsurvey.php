@@ -16,7 +16,7 @@
         <br/>
         Select A Category:
         <br/>
-            <select multiple="multiple" name="topics">
+            <select multiple="multiple" name="topics" id="topics"  width="200px">
             <option value="Topic 1">Topic 1</option>
             <option value="Topic 2">Topic 2</option>
             <option value="Topic 3">Topic 3</option>
