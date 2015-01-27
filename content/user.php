@@ -15,7 +15,7 @@ private $likes=array('');
 private $dislikes=array('');
 private $previousTopics=array('');
 
-public function getLikes(){}
+public function getLikes(){
 
 }
 
