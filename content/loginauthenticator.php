@@ -8,25 +8,19 @@
 
 require_once '../core/settings.php';
 
-//$username = $_POST['username'];
-$username = "test";
-$plainpassword = "pass";
-//$encryptedpassword = "";
+$username = $_POST['username'];
+$password = $_POST['password'];
+$encryptedpassword = $password;
 
-echo $username;
-echo "<br/>";
-echo $plainpassword;
+//Password will be encrypted
 
-
-
-$user = database::getInstance()->query("SELECT * FROM users WHERE username=? and password=?", array($username ,$plainpassword));
+$user = database::getInstance()->query("SELECT * FROM users WHERE username=? and password=?", array($username ,$encryptedpassword));
 
 if(!$user->count()) {
-    echo 'No such user';
+    echo "User credentials are invalid";
 }else {
-
-    echo $user->first()->username;
-
+    $_SESSION['username'] = $user->first()->username;
+    header("Location: profile.php");
 }
 
 

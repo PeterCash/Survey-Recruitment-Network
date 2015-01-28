@@ -11,7 +11,7 @@
 <br/>
 
 <div id="login" class="login" >
-    <form action="content/loginauthenticator.php">
+    <form action="content/loginauthenticator.php" method="post">
         <input name="username" id="username" type="text"  title="Username">
         <br/>
         <input name="password" id="password" type="password" title="Password">
@@ -20,5 +20,5 @@
     </form>
 </div>
 
-
+</body>
 
