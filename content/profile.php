@@ -21,12 +21,26 @@ require_once '../core/settings.php';
 <?php
 $dbTopic = database::getInstance();
 
-$AllTopics = $dbTopic->query("SELECT * FROM topics");
+$ParentTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(0));
 
-echo '<form action="updateinterests.php" method="post">';
+$ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(49));
+
+
+foreach($ParentTopics->results() as $topic){
+    echo $topic->interest;
+    echo "<br/>";
+}
+
+echo "<br>";
+
+foreach($ChildTopics->results() as $topic){
+   // echo $topic->interest;
+}
+
+/*echo '<form action="updateinterests.php" method="post">';
 foreach($AllTopics->results() as $topic)
 {
-    $FindInterests = $dbTopic->query("SELECT * FROM interests WHERE topic=?", array($topic->id));
+    $FindInterests = $dbTopic->query("SELECT * FROM interests INNER JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE topic=?", array($topic->id));
 
     echo "<strong>$topic->topic</strong>";
     echo '<br/>';
@@ -48,7 +62,7 @@ foreach($AllTopics->results() as $topic)
     echo '<br/>';
 }
 echo '<input name="submit" id="Interests" type="submit">';
-echo '</form>';
+echo '</form>';*/
 
 ?>
 
