@@ -76,6 +76,13 @@ class database
         return $output[0];
     }
 
+    public function last()
+    {
+        $output = $this->results();
+        $lastrecord = $this->_count;
+        return $output[$lastrecord -1];
+    }
+
     public function count(){
         return $this->_count;
     }

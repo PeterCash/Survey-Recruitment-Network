@@ -19,9 +19,36 @@ require_once '../core/settings.php';
 <h1>Survey Distribution Network</h1>
 
 <?php
-$user = database::getInstance()->query("SELECT * FROM users WHERE username=?", array($_SESSION['username']));
+$dbTopic = database::getInstance();
 
-echo $user->first()->username;
+$AllTopics = $dbTopic->query("SELECT * FROM topics");
+
+echo '<form action="">';
+foreach($AllTopics->results() as $topic)
+{
+    $FindInterests = $dbTopic->query("SELECT * FROM interests WHERE topic=?", array($topic->id));
+
+    echo "<strong>$topic->topic</strong>";
+    echo '<br/>';
+
+
+    foreach($FindInterests->results() as $interest)
+    {
+        $currentInterest = $interest->interest;
+        $currentInterestID = $interest->interest_id;
+        echo "<input type=\"checkbox\" name=\"$currentInterest\" id=\"$currentInterestID\" value=\"$currentInterest\">$currentInterest";
+        echo '<br/>';
+
+        if($interest == $FindInterests->last()){
+            echo "END";
+            echo '<br/>';
+        }
+    }
+
+    echo '<br/>';
+}
+echo '</form>';
+
 ?>
 
 
