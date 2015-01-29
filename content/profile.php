@@ -23,18 +23,20 @@ $dbTopic = database::getInstance();
 
 $ParentTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(0));
 
-$ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(49));
-
 
 foreach($ParentTopics->results() as $topic){
     echo $topic->interest;
-    echo "<br/>";
+   echo "<br/>";
 }
 
 echo "<br>";
 
+$ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(49));
+
+
 foreach($ChildTopics->results() as $topic){
-   // echo $topic->interest;
+    echo $topic->interest;
+    echo "<br/>";
 }
 
 /*echo '<form action="updateinterests.php" method="post">';
