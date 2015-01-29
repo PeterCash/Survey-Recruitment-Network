@@ -23,7 +23,7 @@ $dbTopic = database::getInstance();
 
 $AllTopics = $dbTopic->query("SELECT * FROM topics");
 
-echo '<form action="">';
+echo '<form action="updateinterests.php" method="post">';
 foreach($AllTopics->results() as $topic)
 {
     $FindInterests = $dbTopic->query("SELECT * FROM interests WHERE topic=?", array($topic->id));
@@ -36,7 +36,7 @@ foreach($AllTopics->results() as $topic)
     {
         $currentInterest = $interest->interest;
         $currentInterestID = $interest->interest_id;
-        echo "<input type=\"checkbox\" name=\"$currentInterest\" id=\"$currentInterestID\" value=\"$currentInterest\">$currentInterest";
+        echo "<input type=\"checkbox\" name=\"interestboxes[]\" id=\"$currentInterestID\" value=\"$currentInterest\">$currentInterest";
         echo '<br/>';
 
         if($interest == $FindInterests->last()){
@@ -47,6 +47,7 @@ foreach($AllTopics->results() as $topic)
 
     echo '<br/>';
 }
+echo '<input name="submit" id="Interests" type="submit">';
 echo '</form>';
 
 ?>

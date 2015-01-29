@@ -20,6 +20,7 @@ if(!$user->count()) {
     echo "User credentials are invalid";
 }else {
     $_SESSION['username'] = $user->first()->username;
+    $_SESSION['uid'] = $user->first()->id;
     header("Location: profile.php");
 }
 
