@@ -38,7 +38,15 @@ function getChildren($root, $db)
 
     foreach($vChildTopics->results() as $topic) {
 
-        echo '<input type="checkbox" name="interests[]" id="' . $topic->interest_id . '" value="' . $topic->interest . '">';
+        if(isParent($topic->interest_id,$db)==false){
+            if(userInterest($topic->interest_id,$db)==true) {
+                echo '<input type="checkbox" name="interests[]" id="' . $topic->interest_id . '" value="' . $topic->interest . '" checked>';
+            }else{
+                echo '<input type="checkbox" name="interests[]" id="' . $topic->interest_id . '" value="' . $topic->interest . '">';
+            }
+
+        }
+
         echo $topic->interest;
         echo "</br>";
 
@@ -52,11 +60,25 @@ function getChildren($root, $db)
 }
 
 
+function userInterest($interestID, $db)
+{
+    $uid = $_SESSION['uid'];
+    $vUserInterests = $db->query("SELECT * FROM userinterests WHERE user_id=? AND interest_id=?", array($uid, $interestID));
+
+    if($vUserInterests->count() < 1) {
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
 echo '<form action="updateinterests.php" method="post">';
 
 getChildren(0,$database);
 echo '<input name="submit" id="Interests" type="submit">';
 echo '</form>';
+
 
 ?>
 
