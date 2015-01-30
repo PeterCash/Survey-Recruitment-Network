@@ -21,9 +21,9 @@ require_once '../core/settings.php';
 <?php
 $database = database::getInstance();
 
-function isParent($fTopicID, $db)
+function isParent($root, $db)
 {
-    $vIsParent = $db->query("SELECT * FROM interests WHERE interest_relationships.parent_id=?", array($fTopicID));
+    $vIsParent = $db->query("SELECT * FROM interests WHERE parent=?", array($root));
 
     if($vIsParent->count() > 0) {
         return true;
@@ -35,24 +35,24 @@ function isParent($fTopicID, $db)
 function getChildren($root, $db)
 {
     $vChildTopics = $db->query("SELECT * FROM interests WHERE parent=?", array($root));
-    return $vChildTopics;
+
+    foreach($vChildTopics->results() as $topic) {
+
+        echo '<li>' . $topic->interest . '</li>';
+
+        if(isParent($topic->interest_id,$db)){
+            echo '<ul>';
+            getChildren($topic->interest_id,$db);
+            echo '</ul>';
+        }
+
+    }
 }
 
+echo '<ul>';
+getChildren(0,$database);
+echo '</ul>';
 
-$roots = $database->query("SELECT * FROM interests WHERE parent=?", array(0));
-
-foreach($roots->results() as $topic) {
-echo $topic->interest;
-    echo "<br/>";
-}
-
-/*$ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(49));
-
-
-foreach($ChildTopics->results() as $topic){
-echo $topic->interest;
-echo "<br/>";
-}*/
 
 /*echo '<form action="updateinterests.php" method="post">';
 foreach($AllTopics->results() as $topic)
