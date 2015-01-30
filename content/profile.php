@@ -21,23 +21,35 @@ require_once '../core/settings.php';
 <?php
 $dbTopic = database::getInstance();
 
-$ParentTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(0));
+$ParentTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?", array(0));
 
 
-foreach($ParentTopics->results() as $topic){
+foreach ($ParentTopics->results() as $topic) {
     echo $topic->interest;
-   echo "<br/>";
+    echo "<br/>";
+    $ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?", array($topic->interest_id));
+    //var_dump($ChildTopics);
+    /*
+     * 1. Find all topics with no parent
+     * 2. Find all topics with the above as a parent
+     * 3. Find all topics with those as a parent
+     */
+    foreach ($ChildTopics->results() as $topic2) {
+        echo $topic2->interest;
+        echo "<br/>";
+    }
+    echo "<br/>";
 }
 
 echo "<br>";
 
-$ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(49));
+/*$ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(49));
 
 
 foreach($ChildTopics->results() as $topic){
-    echo $topic->interest;
-    echo "<br/>";
-}
+echo $topic->interest;
+echo "<br/>";
+}*/
 
 /*echo '<form action="updateinterests.php" method="post">';
 foreach($AllTopics->results() as $topic)
