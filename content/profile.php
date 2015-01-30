@@ -38,7 +38,9 @@ function getChildren($root, $db)
 
     foreach($vChildTopics->results() as $topic) {
 
-        echo '<li>' . $topic->interest . '</li>';
+        echo '<input type="checkbox" name="interests[]" id="' . $topic->interest_id . '" value="' . $topic->interest . '">';
+        echo $topic->interest;
+        echo "</br>";
 
         if(isParent($topic->interest_id,$db)){
             echo '<ul>';
@@ -49,37 +51,12 @@ function getChildren($root, $db)
     }
 }
 
-echo '<ul>';
+
+echo '<form action="updateinterests.php" method="post">';
+
 getChildren(0,$database);
-echo '</ul>';
-
-
-/*echo '<form action="updateinterests.php" method="post">';
-foreach($AllTopics->results() as $topic)
-{
-    $FindInterests = $dbTopic->query("SELECT * FROM interests INNER JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE topic=?", array($topic->id));
-
-    echo "<strong>$topic->topic</strong>";
-    echo '<br/>';
-
-
-    foreach($FindInterests->results() as $interest)
-    {
-        $currentInterest = $interest->interest;
-        $currentInterestID = $interest->interest_id;
-        echo "<input type=\"checkbox\" name=\"interestboxes[]\" id=\"$currentInterestID\" value=\"$currentInterest\">$currentInterest";
-        echo '<br/>';
-
-        if($interest == $FindInterests->last()){
-            echo "END";
-            echo '<br/>';
-        }
-    }
-
-    echo '<br/>';
-}
 echo '<input name="submit" id="Interests" type="submit">';
-echo '</form>';*/
+echo '</form>';
 
 ?>
 

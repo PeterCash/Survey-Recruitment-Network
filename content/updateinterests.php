@@ -7,19 +7,21 @@
  */
 require_once '../core/settings.php';
 
-$SelectedInterests=$_POST['interestboxes'];
+$SelectedInterests=$_POST['interests'];
 $db=database::getInstance();
+var_dump($SelectedInterests);
 
 foreach($SelectedInterests as $box){
-    $userid = $_SESSION['uid'];
+  $uid = $_SESSION['uid'];
     $FindInterestID = $db->query("SELECT * FROM interests WHERE interest=?", array($box));
 
-    foreach($FindInterestID->results() as $interestid)
-    {
+    $insertid = $FindInterestID->first();
 
-        $AddUserInterests = $db->query("INSERT INTO userinterests(user_id,interest_id) VALUES (?,?)", array($userid,$interestid->interest_id));
-        echo $interestid->interest_id;
-        echo $userid;
-        echo '<br/>';
-    }
+
+        $AddUserInterests = $db->query("INSERT INTO userinterests(user_id,interest_id) VALUES (?,?)", array($uid,$insertid->interest_id));
+        //echo $interestid->interest;
+        // echo '<br/>';
+
+
+
 }
