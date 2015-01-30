@@ -19,29 +19,32 @@ require_once '../core/settings.php';
 <h1>Survey Distribution Network</h1>
 
 <?php
-$dbTopic = database::getInstance();
+$database = database::getInstance();
 
-$ParentTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?", array(0));
+function isParent($fTopicID, $db)
+{
+    $vIsParent = $db->query("SELECT * FROM interests WHERE interest_relationships.parent_id=?", array($fTopicID));
 
-
-foreach ($ParentTopics->results() as $topic) {
-    echo $topic->interest;
-    echo "<br/>";
-    $ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?", array($topic->interest_id));
-    //var_dump($ChildTopics);
-    /*
-     * 1. Find all topics with no parent
-     * 2. Find all topics with the above as a parent
-     * 3. Find all topics with those as a parent
-     */
-    foreach ($ChildTopics->results() as $topic2) {
-        echo $topic2->interest;
-        echo "<br/>";
+    if($vIsParent->count() > 0) {
+        return true;
+    }else{
+        return false;
     }
-    echo "<br/>";
 }
 
-echo "<br>";
+function getChildren($root, $db)
+{
+    $vChildTopics = $db->query("SELECT * FROM interests WHERE parent=?", array($root));
+    return $vChildTopics;
+}
+
+
+$roots = $database->query("SELECT * FROM interests WHERE parent=?", array(0));
+
+foreach($roots->results() as $topic) {
+echo $topic->interest;
+    echo "<br/>";
+}
 
 /*$ChildTopics = $dbTopic->query("SELECT * FROM interests JOIN interest_relationships ON interests.interest_id = interest_relationships.id WHERE interest_relationships.parent_id=?",array(49));
 
