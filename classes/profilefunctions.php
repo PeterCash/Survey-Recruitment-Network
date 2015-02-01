@@ -19,11 +19,11 @@ class profilefunctions
 
     public function getDateOfBirth($id)
     {
-      $this->db->query("SELECT * FROM user_profiles WHERE user_id=?", array($id));
+        $this->db->query("SELECT * FROM user_profiles WHERE user_id=?", array($id));
 
         if (isset($this->db->first()->user_id)) {
             $date =  $this->db->first()->date_of_birth;
-            return date('jS F Y', strtotime($date));
+            return convertDate($date);
         }
 
     }
@@ -44,6 +44,18 @@ class profilefunctions
     public function convertDate($date)
     {
         return date('jS F Y', strtotime($date));
+    }
+
+    public function getAgeRange($id)
+    {
+        $age = $this->getAge($id);
+
+        if($age >= 65){
+            return "65 and over";
+        }else{
+            $this->db->query("SELECT * FROM age_range WHERE ? BETWEEN min AND max", array($age));
+            return $this->db->first()->label;
+        }
     }
 
 }

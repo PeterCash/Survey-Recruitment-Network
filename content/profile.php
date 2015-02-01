@@ -23,7 +23,7 @@ $database = database::getInstance();
 $db=$database;
 
 $profile = new profilefunctions($db);
-echo $profile->getAge(1);
+echo $profile->getAgeRange(1);
 
 function isParent($root, $db)
 {
