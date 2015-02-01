@@ -30,15 +30,20 @@ class profilefunctions
 
     public function getAge($id)
     {
-        $now = new DateTime(null, new DateTimeZone('Europe/London'));
+        $this->db->query("SELECT * FROM user_profiles WHERE user_id=?", array($id));
 
-        $dob = $this->getDateOfBirth($id);
+        if (isset($this->db->first()->user_id)) {
+            $date =  new DateTime($this->db->first()->date_of_birth);
+            $today = new DateTime('today');
+            echo $today->format('Y-m-d H:i:s');
+            echo '<br/>';
+            return $date->diff($today)->y;
+        }
+    }
 
-        $today = date("D M y");
-
-
-        return $today - $dob;
-
+    public function convertDate($date)
+    {
+        return date('jS F Y', strtotime($date));
     }
 
 }
