@@ -14,6 +14,12 @@ require_once '../core/settings.php';
     <meta charset="UTF-8">
     <title>Survey Recruitment Network</title>
     <link rel="stylesheet" type="text/css" href="content/main.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="../scripts/updateinterests.js"></script>
+
+
 </head>
 <body>
 <h1>Profile</h1>
@@ -93,14 +99,16 @@ function userInterest($interestID, $db)
 }
 
 
-echo '<form action="updateinterests.php" method="post">';
+echo '<form action="updateinterests.php" method="post" name = "interestsForm" id="interestsForm">';
 
 getChildren(0, $database);
-echo '<input name="submit" id="Interests" type="submit">';
+echo '<input name="submit" id="submitButton" type="submit">';
 echo '</form>';
 
 
 ?>
+
+<div id="ajaxStuff">Hello</div>
 
 
 </body>
