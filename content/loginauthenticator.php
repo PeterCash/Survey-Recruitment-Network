@@ -21,7 +21,8 @@ if(!$user->count()) {
 }else {
     $_SESSION['username'] = $user->first()->username;
     $_SESSION['uid'] = $user->first()->id;
-   //header("Location: profile.php");
+    header("Location: profile.php");
+   // echo "Those are valid credentials :)";
 }
 
 

@@ -17,15 +17,16 @@
 
 <div name="loginForm" id="loginForm" class="login" >
     <form action="content/loginauthenticator.php" method="post">
-        <input name="username" id="username" type="text"  title="Username">
+        Username: <input name="username" id="username" type="text"  title="Username">
         <br/>
-        <input name="password" id="password" type="password" title="Password">
+        Password: <input name="password" id="password" type="password" title="Password">
         <br/>
         <input name="submit" id="LoginSubmit" type="submit">
     </form>
 </div>
 
-<div id="ajaxStuff">-</div>
+
+<div id="ajaxStuff"></div>
 
 </body>
 

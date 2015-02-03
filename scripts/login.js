@@ -1,7 +1,11 @@
 $(document).ready(function() {
+    $("#LoginSubmit").click(function() {
+        //http://stackoverflow.com/questions/1237896/how-to-disable-submit-button-with-jquery
+    });
+
     var options = {
-        target:        '#ajaxStuff',   // target element(s) to be updated with server response
-        beforeSubmit:  showRequest,  // pre-submit callback 
+        //target:        '#ajaxStuff',   // target element(s) to be updated with server response
+        beforeSubmit:  showRequest,  // pre-submit callback
         success:       showResponse  // post-submit callback 
 
         // other available options: 
@@ -24,7 +28,7 @@ function showRequest(formData, jqForm, options) {
     // formData is an array; here we use $.param to convert it to a string to display it 
     // but the form plugin does this for you automatically when it submits the data 
     var queryString = $.param(formData);
-
+    $("#LoginSubmit").prop( "disabled", true );
     // jqForm is a jQuery object encapsulating the form element.  To access the 
     // DOM element for the form do this: 
     // var formElement = jqForm[0]; 
@@ -51,4 +55,20 @@ function showResponse(responseText, statusText, xhr, $form)  {
 
    // alert('status: ' + statusText + '\n\nresponseText: \n' + responseText +
     //'\n\nThe output div should have already been updated with the responseText.');
+
+
+
+    if(responseText != "User credentials are invalid")
+    {
+        document.getElementById("ajaxStuff").innerHTML = "---"
+        window.location.href = "content/profile.php";
+    }
+    else
+    {
+        document.getElementById("ajaxStuff").innerHTML = "Credentials Invalid"
+    }
+
+    $("#LoginSubmit").prop( "disabled", false );
+
+
 } 

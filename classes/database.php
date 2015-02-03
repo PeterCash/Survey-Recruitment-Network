@@ -22,7 +22,6 @@ class database
         try {
             $this->_pdo = new PDO('mysql:host=' . getsettings::getvalue('mysql/host') . ';dbname=' . getsettings::getvalue('mysql/db'), getsettings::getvalue('mysql/username'), getsettings::getvalue('mysql/password'));
             //echo "<script type='text/javascript'>alert('Connected');</script>";
-            echo "<h2>Connected</h2>";
              //$this->_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch (PDOException $e) {
