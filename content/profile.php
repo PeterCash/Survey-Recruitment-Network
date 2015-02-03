@@ -102,7 +102,7 @@ function userInterest($interestID, $db)
 echo '<form action="updateinterests.php" method="post" name = "interestsForm" id="interestsForm">';
 
 getChildren(0, $database);
-echo '<input name="submit" id="submitButton" type="submit">';
+echo '<input name="submit" id="submitButton" type="submit" value="Update Interests">';
 echo '</form>';
 
 
