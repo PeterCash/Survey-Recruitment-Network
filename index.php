@@ -15,7 +15,7 @@
 <br/>
 <br/>
 
-<div name="login" id="login" class="login" >
+<div name="loginForm" id="loginForm" class="login" >
     <form action="content/loginauthenticator.php" method="post">
         <input name="username" id="username" type="text"  title="Username">
         <br/>
@@ -25,7 +25,7 @@
     </form>
 </div>
 
-<div id="ajaxStuff"></div>
+<div id="ajaxStuff">-</div>
 
 </body>
 

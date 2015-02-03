@@ -5,7 +5,7 @@
 $(document).ready(function() {
     $("#submitButton").click(function() {
         //http://stackoverflow.com/questions/1237896/how-to-disable-submit-button-with-jquery
-        $('#submitButton').attr('disabled', 'disabled');
+        //$('#submitButton').attr('disabled', 'disabled');
     });
 
     // bind 'myForm' and provide a simple callback function
