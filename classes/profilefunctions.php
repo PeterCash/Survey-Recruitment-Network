@@ -35,8 +35,8 @@ class profilefunctions
         if (isset($this->db->first()->user_id)) {
             $date =  new DateTime($this->db->first()->date_of_birth);
             $today = new DateTime('today');
-            echo $today->format('Y-m-d H:i:s');
-            echo '<br/>';
+            // $today->format('Y-m-d H:i:s');
+            // '<br/>';
             return $date->diff($today)->y;
         }
     }
@@ -56,6 +56,16 @@ class profilefunctions
             $this->db->query("SELECT * FROM age_range WHERE ? BETWEEN min AND max", array($age));
             return $this->db->first()->label;
         }
+    }
+
+    public function getSurveysCreated()
+    {
+
+    }
+
+    public function getSurveysCompleted()
+    {
+
     }
 
 }

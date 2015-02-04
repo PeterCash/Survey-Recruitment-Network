@@ -13,7 +13,7 @@ require_once '../core/settings.php';
 <head lang="en">
     <meta charset="UTF-8">
     <title>Survey Recruitment Network</title>
-    <link rel="stylesheet" type="text/css" href="content/main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
@@ -26,10 +26,10 @@ require_once '../core/settings.php';
 
 <?php
 $database = database::getInstance();
-$db=$database;
+$db = $database;
 
 $profile = new profilefunctions($db);
-echo $profile->getAgeRange(1);
+echo $profile->getAge($_SESSION['uid']);
 
 function isParent($root, $db)
 {
@@ -44,7 +44,6 @@ function isParent($root, $db)
 
 function getChildren($root, $db)
 {
-    echo "<em> Function Called</em> </br>";
 
     $vChildTopics = $db->query("SELECT * FROM interests WHERE parent=?", array($root));
 
@@ -97,16 +96,21 @@ function userInterest($interestID, $db)
         return true;
     }
 }
-
-
-echo '<form action="updateinterests.php" method="post" name = "interestsForm" id="interestsForm">';
-
-getChildren(0, $database);
-echo '<input name="submit" id="submitButton" type="submit" value="Update Interests">';
-echo '</form>';
-
-
 ?>
+
+
+
+<div class="profileSection">
+<form action="updateinterests.php" method="post" name = "interestsForm" id="interestsForm">
+
+<?php
+getChildren(0, $database);
+?>
+
+<input name="submit" id="submitButton" type="submit" value="Update Interests">
+</form>
+
+
 
 <div id="ajaxStuff">Hello</div>
 
