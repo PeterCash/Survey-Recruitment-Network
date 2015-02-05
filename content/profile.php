@@ -42,11 +42,12 @@ echo $profile->getAge($_SESSION['uid']);
         <?php
 
 
-        $allInterests = $db->query("SELECT * FROM interests", array());
-        //$userTopics = $db->query("SELECT * FROM interests INNER JOIN userinterests ON interests.interest_id = userinterests.interest_id", array());
+        //$allInterests = $db->query("SELECT * FROM interests", array());
+        $userTopics = $db->query("SELECT * FROM interests LEFT JOIN userinterests ON interests.interest_id = userinterests.interest_id AND userinterests.user_id = ?", array(1));
 
+        var_dump($userTopics);
 
-        $profile->getChildren($allInterests->results(),0);
+        //$profile->getChildren($userTopics->results(),0);
 
 
 
