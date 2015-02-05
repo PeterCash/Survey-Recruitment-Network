@@ -67,43 +67,35 @@ class profilefunctions
     //Get Interests
 
 
-    function getChildren($root, $db)
-    {
+    function getChildren($inputArray, $root){
+        foreach($inputArray as $r)
+        {
+            if($r->parent == $root)
+            {
+                echo '<li>' . $r->interest . '</li>';
 
-        $vChildTopics = $db->query("SELECT * FROM interests WHERE parent=?", array($root));
-
-
-        $interestList = '';
-
-        foreach ($vChildTopics->results() as $topic) {
-
-
-            $interestList .= '<li>' . ($this->isParent($topic->interest_id, $db)) ? $this-> $topic->interest : getChildren($topic->interest_id,$db) . '</li>';
-
-      /*      if ($this->isParent($topic->interest_id, $db)) {
-                array_push($this->$interestList, $topic->interest);
-                array_push($this->$interestList, $this->getChildren($topic->interest_id, $db, $output));
-            }else{
-                array_push($this->$interestList, $topic->interest);
-            }*/
-
-
-        }//End For Loop
-
-        return '<ul>' . $interestList . '</ul>';
-
-
+                if($this->isParent($r->interest_id, $inputArray))
+                {
+                    echo '<ul>';
+                    $this->getChildren($inputArray, $r->interest_id);
+                    echo '</ul>';
+                }
+            }
+        }
     }
 
-    function isParent($root, $db)
+    function isParent($commentID, $commentArray)
     {
-        $vIsParent = $db->query("SELECT * FROM interests WHERE parent=?", array($root));
-
-        if ($vIsParent->count() > 0) {
-            return true;
-        } else {
-            return false;
+        foreach($commentArray as $r)
+        {
+            if($r->parent == $commentID)
+            {
+                return true;
+            }
         }
+
+        return false;
+
     }
 
     function userInterest($interestID, $db)

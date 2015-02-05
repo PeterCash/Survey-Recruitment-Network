@@ -41,46 +41,12 @@ echo $profile->getAge($_SESSION['uid']);
 
         <?php
 
-        $vChildTopics = $db->query("SELECT * FROM interests", array());
 
-        getChildren($vChildTopics->results(),0);
-
-        function getChildren($inputArray, $root){
-            foreach($inputArray as $r)
-            {
-                if($r->parent == $root)
-                {
-                    echo '<li>' . $r->interest . '</li>';
-
-                    if(isParent($r->interest_id, $inputArray))
-                    {
-                        echo '<ul>';
-                        getChildren($inputArray, $r->interest_id);
-                        echo '</ul>';
-                    }
-                }
-            }
-        }
-
-        function isParent($commentID, $commentArray)
-        {
-            foreach($commentArray as $r)
-            {
-                if($r->parent == $commentID)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-
-        }
+        $allInterests = $db->query("SELECT * FROM interests", array());
+        //$userTopics = $db->query("SELECT * FROM interests INNER JOIN userinterests ON interests.interest_id = userinterests.interest_id", array());
 
 
-
-        //$profile->getChildren(0, $database);
-
-
+        $profile->getChildren($allInterests->results(),0);
 
 
 
