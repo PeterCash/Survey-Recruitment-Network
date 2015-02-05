@@ -37,18 +37,61 @@ echo $profile->getAge($_SESSION['uid']);
 
 
 <div class="profileSection">
-<form action="updateinterests.php" method="post" name = "interestsForm" id="interestsForm">
+    <form action="updateinterests.php" method="post" name = "interestsForm" id="interestsForm">
 
-<?php
-$profile->getChildren(0, $database);
-?>
+        <?php
 
-<input name="submit" id="submitButton" type="submit" value="Update Interests">
-</form>
+        $vChildTopics = $db->query("SELECT * FROM interests", array());
+
+        getChildren($vChildTopics->results(),0);
+
+        function getChildren($inputArray, $root){
+            foreach($inputArray as $r)
+            {
+                if($r->parent == $root)
+                {
+                    echo '<li>' . $r->interest . '</li>';
+
+                    if(isParent($r->interest_id, $inputArray))
+                    {
+                        echo '<ul>';
+                        getChildren($inputArray, $r->interest_id);
+                        echo '</ul>';
+                    }
+                }
+            }
+        }
+
+        function isParent($commentID, $commentArray)
+        {
+            foreach($commentArray as $r)
+            {
+                if($r->parent == $commentID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+
+        }
 
 
 
-<div id="ajaxStuff">Hello</div>
+        //$profile->getChildren(0, $database);
+
+
+
+
+
+        ?>
+
+        <input name="submit" id="submitButton" type="submit" value="Update Interests">
+    </form>
+
+
+
+    <div id="ajaxStuff">Hello</div>
 
 
 </body>
