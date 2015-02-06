@@ -27,7 +27,7 @@ class profilefunctions
 
         if (isset($this->db->first()->user_id)) {
             $date =  $this->db->first()->date_of_birth;
-            return convertDate($date);
+            return $this->convertDate($date);
         }
 
     }
@@ -67,17 +67,20 @@ class profilefunctions
     //Get Interests
 
 
-    function getChildren($inputArray, $root){
+    function getChildren($inputArray, $root, $db){
         foreach($inputArray as $r)
         {
             if($r->parent == $root)
             {
-                echo '<li>' . $r->interest . '</li>';
+                echo '<li class="interestdeselected">';
+                //echo ($this->userInterest($r->interest_id, $db) ? '<li><strong>' . $r->interest . '</strong></li>'  : '<li>' . $r->interest . '</li>');
+                echo $r->interest;
+                echo '</li>';
 
                 if($this->isParent($r->interest_id, $inputArray))
                 {
                     echo '<ul>';
-                    $this->getChildren($inputArray, $r->interest_id);
+                    $this->getChildren($inputArray, $r->interest_id, $db);
                     echo '</ul>';
                 }
             }

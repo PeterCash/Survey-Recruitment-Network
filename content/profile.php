@@ -9,56 +9,91 @@ require_once '../core/settings.php';
 ?>
 
 <!DOCTYPE html>
-<html>
-<head lang="en">
+
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Survey Recruitment Network</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="../scripts/updateinterests.js"></script>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 </head>
 <body>
-<h1>Profile</h1>
-
-<?php
-$database = database::getInstance();
-$db = $database;
-
-$profile = new profilefunctions($db);
-echo $profile->getAge($_SESSION['uid']);
 
 
-?>
+<div class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Profile</a>
+
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</div>
 
 
 
-<div class="profileSection">
-    <form action="updateinterests.php" method="post" name = "interestsForm" id="interestsForm">
+<div class="panel panel-primary">
+    <div class="panel-heading">Personal Details</div>
+    <div class="panel-body">
 
         <?php
+        $database = database::getInstance();
+        $db = $database;
+        $profile = new profilefunctions($db);
 
-
-        //$allInterests = $db->query("SELECT * FROM interests", array());
-        $userTopics = $db->query("SELECT * FROM interests LEFT JOIN userinterests ON interests.interest_id = userinterests.interest_id AND userinterests.user_id = ?", array(1));
-
-        var_dump($userTopics);
-
-        //$profile->getChildren($userTopics->results(),0);
-
+        echo '<label class="label label-default">Age: ' . $profile->getAge($_SESSION['uid']) . '</label>';
+        echo '</br><br/>';
+        echo '<label class="label label-default">Date of Birth: ' . $profile->getDateOfBirth($_SESSION['uid']) . '</label>';
 
 
         ?>
+    </div>
+</div>
 
-        <input name="submit" id="submitButton" type="submit" value="Update Interests">
-    </form>
+<div class="panel panel-primary">
+    <div class="panel-heading">Interests</div>
+    <div class="panel-body">
+        <form action="updateinterests.php" method="post" name="interestsForm" id="interestsForm">
+
+            <?php
+
+
+            //$allInterests = $db->query("SELECT * FROM interests", array());
+            $userTopics = $db->query("SELECT * FROM interests", array());
+
+
+            $profile->getChildren($userTopics->results(), 0, $database);
 
 
 
-    <div id="ajaxStuff">Hello</div>
+            ?>
 
+            </br>
+            <input name="submit" id="submitButton" type="submit" value="Update Interests" class="btn btn-default">
+        </form>
+
+
+        <div id="ajaxStuff"> </div>
+    </div>
+</div>
 
 </body>

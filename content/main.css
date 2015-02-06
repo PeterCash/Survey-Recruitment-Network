@@ -1,8 +1,8 @@
 /**
 Main stylesheet
 **/
-#topics {
-    width: 250px;
-    'margin-left: 20px;
+.interestdeselected
+{
+font-weight: 900;
 }
 
