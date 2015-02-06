@@ -13,7 +13,7 @@ if(!is_null($_POST['interests'])){
     $SelectedInterests=$_POST['interests'];
 }
 
-var_dump($SelectedInterests);
+
 
 if(!is_null($SelectedInterests)){
     $ResetInterests = $db->query("DELETE FROM userinterests WHERE user_id=?", array($uid));
@@ -22,11 +22,12 @@ if(!is_null($SelectedInterests)){
     foreach($SelectedInterests as $box) {
     $uid = $_SESSION['uid'];
 
-    $FindInterestID = $db->query("SELECT * FROM interests WHERE interest_id=?", array($box + 1));
+    $FindInterestID = $db->query("SELECT * FROM interests WHERE interest_id=?", array($box));
 
     $insertid = $FindInterestID->first();
 
 
+        echo $box;
     $AddUserInterests = $db->query("INSERT INTO userinterests(user_id,interest_id) VALUES (?,?)", array($uid, $insertid->interest_id));
     //echo $interestid->interest;
     // echo '<br/>';

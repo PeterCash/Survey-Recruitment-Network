@@ -76,9 +76,9 @@ class profilefunctions
                 if($this->isParent($r->interest_id,$inputArray)==false) {
 
                     if ($this->userInterest($r->interest_id, $db)) {
-                        echo '<label><input id="' . $r->interest_id .'" type="checkbox" name="interests[]" checked>' . $r->interest . '</label>';
+                        echo '<label><input value="' . $r->interest_id .'" type="checkbox" name="interests[]" checked>' . $r->interest . '</label>';
                     } else {
-                        echo '<label><input id="' . $r->interest_id .'" type="checkbox" name="interests[]">' . $r->interest . '</label>';
+                        echo '<label><input value="' . $r->interest_id .'" type="checkbox" name="interests[]">' . $r->interest . '</label>';
                     }
                 }else{
                     echo '<label name="interests[]">' . $r->interest . '</label>';
