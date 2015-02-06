@@ -1,8 +1,7 @@
 /**
 Main stylesheet
 **/
-.interestdeselected
+.interestselected:checked
 {
-font-weight: 900;
-}
 
+}

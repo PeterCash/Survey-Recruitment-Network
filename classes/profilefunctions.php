@@ -72,14 +72,25 @@ class profilefunctions
         {
             if($r->parent == $root)
             {
-                echo '<li class="interestdeselected">';
-                //echo ($this->userInterest($r->interest_id, $db) ? '<li><strong>' . $r->interest . '</strong></li>'  : '<li>' . $r->interest . '</li>');
-                echo $r->interest;
-                echo '</li>';
+
+                if($this->isParent($r->interest_id,$inputArray)==false) {
+
+                    if ($this->userInterest($r->interest_id, $db)) {
+                        echo '<label><input id="' . $r->interest_id .'" type="checkbox" name="interests[]" checked>' . $r->interest . '</label>';
+                    } else {
+                        echo '<label><input id="' . $r->interest_id .'" type="checkbox" name="interests[]">' . $r->interest . '</label>';
+                    }
+                }else{
+                    echo '<label name="interests[]">' . $r->interest . '</label>';
+                }
+
+
+                echo '<br/>';
+
 
                 if($this->isParent($r->interest_id, $inputArray))
                 {
-                    echo '<ul>';
+                    echo '<ul class="interestGroup">';
                     $this->getChildren($inputArray, $r->interest_id, $db);
                     echo '</ul>';
                 }

@@ -4,9 +4,9 @@ $(document).ready(function() {
     var options = {
         //target:        '#ajaxStuff',   // target element(s) to be updated with server response
         beforeSubmit:  showRequest,  // pre-submit callback
-        success:       showResponse,  // post-submit callback
-        clearForm: true,        // clear all form fields after successful submit
-        resetForm: true        // reset the form after successful submit
+        success:       showResponse  // post-submit callback
+        //clearForm: true,        // clear all form fields after successful submit
+        //resetForm: true        // reset the form after successful submit
 
         // $.ajax options can be used here too, for example: 
         //timeout:   3000 
