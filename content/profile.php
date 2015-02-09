@@ -6,6 +6,11 @@
  * Time: 18:12
  */
 require_once '../core/settings.php';
+require_once 'Template1.php';
+
+if(!isset($_SESSION['uid'])){
+    header('location: index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,23 +20,9 @@ require_once '../core/settings.php';
     <meta charset="UTF-8">
     <title>Survey Recruitment Network</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="../scripts/updateinterests.js">
-//    <script src="../scripts/interestClick.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="main.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+echo Templ$HTMHHead;
+?>
 
 
 </head>
@@ -45,7 +36,7 @@ require_once '../core/settings.php';
 
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
     </div>
 </div>

@@ -7,6 +7,8 @@
  */
 require_once '../core/settings.php';
 
+
+
 class profilefunctions
 
 {
