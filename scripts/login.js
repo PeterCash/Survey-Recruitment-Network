@@ -1,6 +1,13 @@
 $(document).ready(function() {
+    document.getElementById("preloader").style.display = 'none';
+    document.getElementById("ajaxStuff").style.display = 'none';
+
     $("#LoginSubmit").click(function() {
-        //http://stackoverflow.com/questions/1237896/how-to-disable-submit-button-with-jquery
+        document.getElementById("preloader").style.display = 'inline';
+    });
+
+    $("#ajaxStuff").click(function() {
+        $("#ajaxStuff").hide(10);
     });
 
     var options = {
@@ -48,10 +55,12 @@ function showResponse(responseText, statusText, xhr, $form)  {
 
 
     if(responseText == 'false'){
-        document.getElementById("ajaxStuff").innerHTML = "Credentials Invalid";
+        document.getElementById("ajaxStuff").style.display = '';
     }else{
         window.location.href = "profile.php";
     }
+
+    document.getElementById("preloader").style.display = 'none';
 
 
 } 

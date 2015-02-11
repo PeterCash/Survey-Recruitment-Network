@@ -35,31 +35,49 @@ require_once '../core/settings.php';
 
 <div class="container-fluid">
 
-    <div class="col-md-6">
+    <div class="col-md-6 col-md-offset-3">
 
-
-        <form action="../functions/process.php" id="loginForm" method="post">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input name="username" id="username" type="text" class="form-control" title="Username">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input name="password" id="password" type="password" class="form-control" title="Password">
-            </div>
-            <input name="submit" id="LoginSubmit" class="btn btn-default" type="submit">
-            <div class="form-group">
+        <div class="form-group">
+            <form action="../functions/process.php" id="loginForm" method="post">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Username</span>
+                    <input name="username" id="username" type="text" class="form-control" title="username"
+                           aria-describedby="basic-addon1">
+                </div>
                 <br/>
-                <div id="ajaxStuff"></div>
-            </div>
 
-        </form>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Password </span>
+                    <input name="password" id="password" type="text" class="form-control" title="password"
+                           aria-describedby="basic-addon1">
+                </div>
+                <br/>
+
+                <div class="input-group">
+                    <button id="LoginSubmit" class="btn btn-default" type="submit">Login</button>
+                    <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">
+                    <br/>
+                </div>
+
+
+            </form>
+
+        </div>
+
+        <hr>
+
+
+        <label id="ajaxStuff" class="label label-danger">
+            <span id="ajaxStuff" class="glyphicon glyphicon-remove"></span>
+                Credentials Invalid
+        </label>
+
+
 
 
     </div>
 
-    <div class="col-md-4"
-
+    <div class="col-md-4">
 
 
     </div>
