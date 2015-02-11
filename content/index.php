@@ -38,7 +38,7 @@ require_once '../core/settings.php';
     <div class="col-md-6">
 
 
-        <form action="process.php" id="loginForm" method="post">
+        <form action="../functions/process.php" id="loginForm" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input name="username" id="username" type="text" class="form-control" title="Username">

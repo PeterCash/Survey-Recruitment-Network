@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Survey Recruitment Network</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="../content/main.css">
 </head>
 <body>
 <h1>Survey Distribution Network</h1>

@@ -22,6 +22,7 @@ if (!isset($_SESSION['uid'])) {
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="../scripts/updateinterests.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Latest compiled and minified JavaScript -->
@@ -45,10 +46,9 @@ if (!isset($_SESSION['uid'])) {
         </ul>
     </div>
 </div>
-
+<!--http://www.w3schools.com/bootstrap/bootstrap_grid_examples.asp-->
 <div class="container">
-    <div class="col-med-6">
-        <div class="row"></div>
+    <div class="col-md-9 col-md-offset-1">
         <div class="panel panel-primary">
             <div class="panel-heading">Personal Details</div>
             <div class="panel-body">
@@ -66,40 +66,36 @@ if (!isset($_SESSION['uid'])) {
                 ?>
             </div>
         </div>
+    </div>
 
 
-        <div class="row">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Interests</div>
-                <div class="panel-body">
-                    <form action="updateinterests.php" method="post" name="interestsForm" id="interestsForm">
+    <div class="col-md-9 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Interests</div>
+            <div class="panel-body">
+                <form action="../functions/updateinterests.php" method="post" name="interestsForm"
+                      id="interestsForm">
 
-                        <?php
-
-
-                        //$allInterests = $db->query("SELECT * FROM interests", array());
-                        $userTopics = $db->query("SELECT * FROM interests", array());
+                    <?php
 
 
-                        $profile->getChildren($userTopics->results(), 0, $database);
+                    //$allInterests = $db->query("SELECT * FROM interests", array());
+                    $userTopics = $db->query("SELECT * FROM interests", array());
+                    $profile->getChildren($userTopics->results(), 0, $database);
+
+                    ?>
+
+                    </br>
+                    <input name="submit" id="submitButton" type="submit" value="Update Interests"
+                           class="btn btn-default">
+                </form>
 
 
-
-
-
-                        ?>
-
-
-                        </br>
-                        <input name="submit" id="submitButton" type="submit" value="Update Interests"
-                               class="btn btn-default">
-                    </form>
-
-
-                    <div id="ajaxStuff"></div>
-                </div>
+                <div id="ajaxStuff"></div>
             </div>
         </div>
     </div>
+</div>
+
 
 </body>

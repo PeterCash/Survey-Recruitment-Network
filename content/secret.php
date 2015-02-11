@@ -6,14 +6,7 @@
  * Time: 12:39
  */
 
-$hash = "$2y$10$0rwFtOZelizUzbKOmdySdubSDRPNsHvCstdgTcgt995F.xSWHV4NG";
-
-if(password_verify("abc",$hash)) {
-    echo "Good";
-}else{
-    echo "Bad";
-}
-
+echo password_hash("abc",PASSWORD_BCRYPT);
 
 
 
