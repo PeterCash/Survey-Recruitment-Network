@@ -17,7 +17,6 @@ require_once '../core/settings.php';
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="../scripts/login.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Latest compiled and minified JavaScript -->
@@ -46,19 +45,27 @@ require_once '../core/settings.php';
             <div class="panel-heading">Who are you targeting?</div>
             <div class="panel-body">
 
-                <form action="" class="">
+                <form action="../functions/surveyCreatorFunction.php" id="surveyForm" method="post" class="">
 
                     <div class="form-group col-md-12">
-                        <label for="1">Title</label><br/>
-                        <input id="1" class="form-control" type="text">
+                        <label for="title">Title</label><br/>
+                        <input name="title" class="form-control" type="text">
                     </div>
 
                     <br/>
 
 
                     <div class="form-group col-md-2">
-                        <label for="2">Target Age</label><br/>
-                        <input id="2" class="form-control" type="number">
+                        <label for="title">Target Age</label><br/>
+                        <input name="age" class="form-control" type="number">
+                    </div>
+
+                    <br/>
+
+                    <div class="form-group col-md-12">
+                        <button id="surveySubmit" class="btn btn-default" type="submit">Create This Survey</button>
+<!--                        <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
+                        <br/>
                     </div>
 
                 </form>

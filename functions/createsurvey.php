@@ -1,3 +1,15 @@
+<!--/**
+* Created by PhpStorm.
+* User: cashp
+* Date: 27/01/2015
+* Time: 12:57
+* This is used to create a survey and pass the content to the database.
+*
+* It is different to the survey object which is used for retrieval.
+*
+* This will contain all the stages to create a set of questions and specify the distribution and demographic information.
+*/
+-->
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -28,14 +40,3 @@
     </form>
 </div>
 <?php
-/**
- * Created by PhpStorm.
- * User: cashp
- * Date: 27/01/2015
- * Time: 12:57
- * This is used to create a survey and pass the content to the database.
- *
- * It is different to the survey object which is used for retrieval.
- *
- * This will contain all the stages to create a set of questions and specify the distribution and demographic information.
- */
