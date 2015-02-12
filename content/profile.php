@@ -6,7 +6,6 @@
  * Time: 18:12
  */
 require_once '../core/settings.php';
-require_once 'Template1.php';
 
 if (!isset($_SESSION['uid'])) {
     header('location: index.php');

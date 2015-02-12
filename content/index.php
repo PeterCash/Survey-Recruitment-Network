@@ -11,7 +11,7 @@ require_once '../core/settings.php';
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="../scripts/login.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Latest compiled and minified JavaScript -->
@@ -38,17 +38,17 @@ require_once '../core/settings.php';
     <div class="col-md-6 col-md-offset-3">
 
         <div class="form-group">
-            <form action="../functions/process.php" id="loginForm" method="post">
+            <form action="../functions/loginauthenticator.php" id="loginForm" method="post">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">Username</span>
-                    <input name="username" id="username" type="text" class="form-control" title="username"
+                    <input name="username" type="text" class="form-control" title="username"
                            aria-describedby="basic-addon1">
                 </div>
                 <br/>
 
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">Password </span>
-                    <input name="password" id="password" type="text" class="form-control" title="password"
+                    <input name="password" type="text" class="form-control" title="password"
                            aria-describedby="basic-addon1">
                 </div>
                 <br/>

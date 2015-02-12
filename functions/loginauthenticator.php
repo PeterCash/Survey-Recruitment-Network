@@ -9,50 +9,37 @@
 
 require_once '../core/settings.php';
 
-class loginAuthenticator
-{
-    protected $username;
-    protected $password;
-    protected $db;
+$db = database::getInstance();
 
-    public function __construct($inputUsername,$inputPassword, $database)
-    {
-        $this->db = $database;
-        $this->username = $inputUsername;
-        $this->password = $inputPassword;
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$user = $db->query("SELECT * FROM users WHERE username=?", array($username));
+
+
+if ($user->count()) {
+    $hash = $user->first()->password;
+
+    if (checkPassword($password, $hash) == true) {
+        $_SESSION['username'] = $user->first()->username;
+        $_SESSION['uid'] = $user->first()->id;
+        header("Location: ../content/profile.php");
+        return true;
     }
+} else {
+    return false;
+}
 
-    function checkCredentials()
-    {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $user = database::getInstance()->query("SELECT * FROM users WHERE username=?", array($username));
-
-
-        if ($user->count()) {
-            $hash = $user->first()->password;
-
-            if ($this->checkPassword($password, $hash) == true) {
-                $_SESSION['username'] = $user->first()->username;
-                $_SESSION['uid'] = $user->first()->id;
-                return true;
-            }
-        }
-
+function checkPassword($password, $hash)
+{
+    if (password_verify($password, $hash)) {
+        return true;
+    } else {
         return false;
     }
-
-
-    private function checkPassword($password, $hash)
-    {
-        if (password_verify($password, $hash)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
+
+?>
 
 
 
