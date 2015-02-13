@@ -6,6 +6,7 @@
  * Time: 18:12
  */
 require_once '../core/settings.php';
+require_once '/profilefunctions.php';
 
 if (!isset($_SESSION['uid'])) {
     header('location: index.php');
@@ -55,11 +56,10 @@ if (!isset($_SESSION['uid'])) {
                 <?php
                 $database = database::getInstance();
                 $db = $database;
-                $profile = new profilefunctions($db);
 
-                echo '<label class="label label-default">Age: ' . $profile->getAge($_SESSION['uid']) . '</label>';
+                echo '<label class="label label-default">Age: ' . getAge($_SESSION['uid'] ,$db) . '</label>';
                 echo '</br><br/>';
-                echo '<label class="label label-default">Date of Birth: ' . $profile->getDateOfBirth($_SESSION['uid']) . '</label>';
+                echo '<label class="label label-default">Date of Birth: ' . getDateOfBirth($_SESSION['uid'],$db) . '</label>';
 
 
                 ?>
@@ -80,7 +80,7 @@ if (!isset($_SESSION['uid'])) {
 
                     //$allInterests = $db->query("SELECT * FROM interests", array());
                     $userTopics = $db->query("SELECT * FROM interests", array());
-                    $profile->getChildren($userTopics->results(), 0, $database);
+                    getChildren($userTopics->results(), 0, $database);
 
                     ?>
 

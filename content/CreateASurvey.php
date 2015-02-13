@@ -5,7 +5,13 @@
  * Date: 11/02/2015
  * Time: 15:21
  */
-require_once '../core/settings.php';
+include '../core/settings.php';
+include '../functions/surveyCreatorFunction.php';
+
+$db = Database::getInstance();
+$allCounties = getCounties($db);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -47,24 +53,41 @@ require_once '../core/settings.php';
 
                 <form action="../functions/surveyCreatorFunction.php" id="surveyForm" method="post" class="">
 
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-sm-12">
                         <label for="title">Title</label><br/>
                         <input name="title" class="form-control" type="text">
                     </div>
 
-                    <br/>
 
-
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-sm-2">
                         <label for="title">Target Age</label><br/>
                         <input name="age" class="form-control" type="number">
                     </div>
 
-                    <br/>
+                    <div class="col-sm-11"></div>
 
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-sm-2">
+                        <label for="county">County</label><br/>
+                        <select name="county" class="form-control" type="text">
+                            <option selected="selected" disabled="disabled"></option>
+                            <?php
+                            foreach($allCounties as $c){
+                               echo '<option value="' . $c->county . '">' . $c->county . '</option>';
+                            }
+                            ?>
+                        </select>
+
+
+
+                    </div>
+
+
+
+                    </br>
+
+                    <div class="form-group col-sm-12">
                         <button id="surveySubmit" class="btn btn-default" type="submit">Create This Survey</button>
-<!--                        <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
+                        <!--                        <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
                         <br/>
                     </div>
 

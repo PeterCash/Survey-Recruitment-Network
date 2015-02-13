@@ -16,7 +16,7 @@ if(!is_null($_POST['interests'])){
 
 
 if(!is_null($SelectedInterests)){
-    $ResetInterests = $db->query("DELETE FROM userinterests WHERE user_id=?", array($uid));
+    $ResetInterests = $db->query("DELETE FROM user_interests WHERE user_id=?", array($uid));
 
 
     foreach($SelectedInterests as $box) {
@@ -28,7 +28,7 @@ if(!is_null($SelectedInterests)){
 
 
         echo $box;
-    $AddUserInterests = $db->query("INSERT INTO userinterests(user_id,interest_id) VALUES (?,?)", array($uid, $insertid->interest_id));
+    $AddUserInterests = $db->query("INSERT INTO user_interests(user_id,interest_id) VALUES (?,?)", array($uid, $insertid->interest_id));
     //echo $interestid->interest;
     // echo '<br/>';
         //header("Location: profile.php");
