@@ -61,6 +61,7 @@ $user = getUser($_SESSION['uid'], Database::getInstance());
 
             </ul>
 
+
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="demo">
@@ -71,63 +72,58 @@ $user = getUser($_SESSION['uid'], Database::getInstance());
                         <div class="panel-body">
 
 
-                            <form action="../functions/surveyCreatorFunction.php" id="surveyForm" method="post"
-                                  class="">
+                            <div class="form-group col-sm-4">
+                                <label for="author">Author Name</label><br/>
+                                <input name="author" class="form-control" type="text" disabled="disabled"
+                                       value="<?php echo $user->firstName . " " . $user->lastName ?>">
+                            </div>
 
-                                <div class="form-group col-sm-4">
-                                    <label for="author">Author Name</label><br/>
-                                    <input name="author" class="form-control" type="text" disabled="disabled"
-                                           value="<?php echo $user->firstName . " " . $user->lastName ?>">
-                                </div>
+                            <div class="form-group col-sm-4">
+                                <label for="user">User Name</label><br/>
+                                <input name="user" class="form-control" type="text" disabled="disabled"
+                                       value="<?php echo $user->username ?>">
+                            </div>
 
-                                <div class="form-group col-sm-4">
-                                    <label for="user">User Name</label><br/>
-                                    <input name="user" class="form-control" type="text" disabled="disabled"
-                                           value="<?php echo $user->username ?>">
-                                </div>
+                            <div class="form-group col-sm-12">
+                                <hr>
+                            </div>
 
-                                <div class="form-group col-sm-12">
-                                    <hr>
-                                </div>
-
-                                <div class="form-group col-sm-12">
-                                    <label for="title">Title</label><br/>
-                                    <input name="title" class="form-control" type="text">
-                                </div>
+                            <div class="form-group col-sm-12">
+                                <label for="title">Title</label><br/>
+                                <input name="title" class="form-control" type="text">
+                            </div>
 
 
-                                <div class="form-group col-sm-2">
-                                    <label for="title">Target Age</label><br/>
-                                    <input name="age" class="form-control" type="number">
-                                </div>
+                            <div class="form-group col-sm-2">
+                                <label for="title">Target Age</label><br/>
+                                <input name="age" class="form-control" type="number">
+                            </div>
 
-                                <div class="col-sm-11"></div>
+                            <div class="col-sm-11"></div>
 
-                                <div class="form-group col-sm-4">
-                                    <label for="county">County</label><br/>
-                                    <select name="county" class="form-control" type="text">
-                                        <option selected="selected" disabled="disabled"></option>
-                                        <?php
-                                        foreach ($allCounties as $c) {
-                                            echo '<option value="' . $c->id . '">' . $c->county . '</option>';
-                                        }
-                                        ?>
-                                    </select>
-
-
-                                </div>
+                            <div class="form-group col-sm-4">
+                                <label for="county">County</label><br/>
+                                <select name="county" class="form-control" type="text">
+                                    <option selected="selected" disabled="disabled"></option>
+                                    <?php
+                                    foreach ($allCounties as $c) {
+                                        echo '<option value="' . $c->id . '">' . $c->county . '</option>';
+                                    }
+                                    ?>
+                                </select>
 
 
-                                </br>
+                            </div>
 
-                                <div class="form-group col-sm-12">
-                                    <button id="surveySubmit" class="btn btn-default" type="submit">Create This Survey
-                                    </button>
-                                    <!--                        <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
-                                    <br/>
-                                </div>
 
-                            </form>
+                            </br>
+
+                            <div class="form-group col-sm-12">
+                                <button id="surveySubmit" class="btn btn-default" type="submit">Create This Survey
+                                </button>
+                                <!--                        <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
+                                <br/>
+                            </div>
 
 
                         </div>
@@ -140,7 +136,7 @@ $user = getUser($_SESSION['uid'], Database::getInstance());
 
                 </div>
             </div>
-
+            </form>
         </div>
 
 
