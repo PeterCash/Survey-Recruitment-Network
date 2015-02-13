@@ -10,13 +10,21 @@ require_once '../core/settings.php';
 
 $db = database::getInstance();
 
+function getUser($id, $db)
+{
+    $db->query("SELECT * FROM user_profiles INNER JOIN users ON user_profiles.userId = users.userId WHERE user_profiles.userId=?", array($id));
+
+    return $db->first();
+
+
+}
 
 function getDateOfBirth($id, $db)
 {
-    $db->query("SELECT * FROM user_profiles WHERE user_id=?", array($id));
+    $db->query("SELECT * FROM user_profiles WHERE userId=?", array($id));
 
-    if (isset($db->first()->user_id)) {
-        $date = $db->first()->date_of_birth;
+    if (isset($db->first()->userId)) {
+        $date = $db->first()->dateOfBirth;
         return convertDate($date);
     }
 
@@ -41,10 +49,10 @@ function getAgeRange($id, $db)
 
 function getAge($id, $db)
 {
-    $db->query("SELECT * FROM user_profiles WHERE user_id=?", array($id));
+    $db->query("SELECT * FROM user_profiles WHERE userId=?", array($id));
 
-    if (isset($db->first()->user_id)) {
-        $date = new DateTime($db->first()->date_of_birth);
+    if (isset($db->first()->userId)) {
+        $date = new DateTime($db->first()->dateOfBirth);
         $today = new DateTime('today');
         // $today->format('Y-m-d H:i:s');
         // '<br/>';
@@ -60,12 +68,12 @@ function getChildren($inputArray, $root, $db){
     foreach ($inputArray as $r) {
         if ($r->parent == $root) {
 
-            if (isParent($r->interest_id, $inputArray) == false) {
+            if (isParent($r->interestId, $inputArray) == false) {
 
-                if (userInterest($r->interest_id, $db)) {
-                    echo '<label><input value="' . $r->interest_id . '" type="checkbox" name="interests[]" checked>' . $r->interest . '</label>';
+                if (userInterest($r->interestId, $db)) {
+                    echo '<label><input value="' . $r->interestId . '" type="checkbox" name="interests[]" checked>' . $r->interest . '</label>';
                 } else {
-                    echo '<label><input value="' . $r->interest_id . '" type="checkbox" name="interests[]">' . $r->interest . '</label>';
+                    echo '<label><input value="' . $r->interestId . '" type="checkbox" name="interests[]">' . $r->interest . '</label>';
                 }
                 } else {
                 echo '<label name="interests[]">' . $r->interest . '</label>';
@@ -75,9 +83,9 @@ function getChildren($inputArray, $root, $db){
             echo '<br/>';
 
 
-            if (isParent($r->interest_id, $inputArray)) {
+            if (isParent($r->interestId, $inputArray)) {
                 echo '<ul class="interestGroup">';
-                getChildren($inputArray, $r->interest_id, $db);
+                getChildren($inputArray, $r->interestId, $db);
                 echo '</ul>';
             }
         }
@@ -99,7 +107,7 @@ function getChildren($inputArray, $root, $db){
     function userInterest($interestID, $db)
     {
         $uid = $_SESSION['uid'];
-        $vUserInterests = $db->query("SELECT * FROM user_interests WHERE user_id=? AND interest_id=?", array($uid, $interestID));
+        $vUserInterests = $db->query("SELECT * FROM user_interests WHERE userId=? AND interestId=?", array($uid, $interestID));
 
         if ($vUserInterests->count() < 1) {
             return false;
