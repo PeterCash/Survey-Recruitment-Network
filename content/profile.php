@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Peter
- * Date: 14/12/2014
- * Time: 18:12
- */
+* Created by PhpStorm.
+* User: Peter
+* Date: 14/12/2014
+* Time: 18:12
+*/
 require_once '../core/settings.php';
 require_once '/profilefunctions.php';
 
@@ -15,52 +15,60 @@ if (!isset($_SESSION['uid'])) {
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html  class="no-js" lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Recruitment Network</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/foundation.css">
+
+
+
+    <script src="../js/vendor/modernizr.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="../scripts/updateinterests.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 
 </head>
 <body>
 
-
-<div class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Profile</a>
-
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">My Site</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
-    </div>
-</div>
-<!--http://www.w3schools.com/bootstrap/bootstrap_grid_examples.asp-->
-<div class="container">
-    <div class="col-md-9 col-md-offset-1">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Personal Details</div>
-            <div class="panel-body">
 
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="left">
+                <li><a href="#">Left Nav Button</a></li>
+            </ul>
+
+        </nav>
+
+
+    </br>
+    <!--http://www.w3schools.com/bootstrap/bootstrap_grid_examples.asp-->
+
+    <div class="row">
+        <div class="medium-8 columns">
+            <div class="panel radius" style="background-color:#b0c4de">
                 <?php
                 $database = database::getInstance();
                 $db = $database;
 
-                echo '<label class="label label-default">Age: ' . getAge($_SESSION['uid'] ,$db) . '</label>';
-                echo '</br><br/>';
-                echo '<label class="label label-default">Date of Birth: ' . getDateOfBirth($_SESSION['uid'],$db) . '</label>';
+                echo '<label class="">Age: ' . getAge($_SESSION['uid'] ,$db) . '</label>';
 
+                echo '<label class="">Date of Birth: ' . getDateOfBirth($_SESSION['uid'],$db) . '</label>';
 
                 ?>
             </div>
@@ -68,32 +76,38 @@ if (!isset($_SESSION['uid'])) {
     </div>
 
 
-    <div class="col-md-9 col-md-offset-1">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Interests</div>
-            <div class="panel-body">
-                <form action="../functions/updateinterests.php" method="post" name="interestsForm"
-                      id="interestsForm">
 
-                    <?php
+    <div class="row">
+        <div class="medium-8 columns">
 
+            <form action="../functions/updateinterests.php" method="post" name="interestsForm"
+            id="interestsForm">
 
-                    //$allInterests = $db->query("SELECT * FROM interests", array());
-                    $userTopics = $db->query("SELECT * FROM interests", array());
-                    getChildren($userTopics->results(), 0, $database);
-
-                    ?>
-
-                    </br>
-                    <input name="submit" id="submitButton" type="submit" value="Update Interests"
-                           class="btn btn-default">
-                </form>
+            <?php
 
 
-            </div>
-        </div>
+                //$allInterests = $db->query("SELECT * FROM interests", array());
+            $userTopics = $db->query("SELECT * FROM interests", array());
+            getChildren($userTopics->results(), 0, $database);
+
+            ?>
+        </form>
     </div>
 </div>
 
+<div class="medium-8 columns">
+    <input name="submit" id="submitButton" type="submit" value="Update Interests"
+    class="button">
+</div>
+</form>
 
+
+
+
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
 </body>
+</html>

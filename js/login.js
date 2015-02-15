@@ -55,7 +55,7 @@ function showResponse(responseText, statusText, xhr, $form)  {
 
 
     if(responseText == 'false'){
-        document.getElementById("ajaxStuff").style.display = '';
+        document.getElementById("#ajaxStuff").style.display = '';
     }else{
         window.location.href = "profile.php";
     }

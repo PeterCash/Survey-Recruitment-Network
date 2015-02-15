@@ -76,6 +76,7 @@ function getChildren($inputArray, $root, $db){
                     echo '<label><input value="' . $r->interestId . '" type="checkbox" name="interests[]">' . $r->interest . '</label>';
                 }
                 } else {
+                echo '<div class="panel radius" style="background-color: #FFFFCC">';
                 echo '<label name="interests[]">' . $r->interest . '</label>';
             }
 
@@ -84,9 +85,11 @@ function getChildren($inputArray, $root, $db){
 
 
             if (isParent($r->interestId, $inputArray)) {
+
                 echo '<ul class="interestGroup">';
                 getChildren($inputArray, $r->interestId, $db);
                 echo '</ul>';
+                echo '</div>';
             }
         }
     }

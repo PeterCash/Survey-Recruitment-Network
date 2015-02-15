@@ -3,86 +3,86 @@ require_once '../core/settings.php';
 ?>
 
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html  class="no-js" lang="en">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Recruitment Network</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/foundation.css">
+
+
+    <script src="../js/vendor/modernizr.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="../scripts/login.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
 
-<div class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Welcome</a>
-
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">My Site</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
-    </div>
-</div>
 
-<div class="container-fluid">
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="left">
+                <li><a href="#">Left Nav Button</a></li>
+            </ul>
 
-    <div class="col-md-6 col-md-offset-3">
-
-        <div class="form-group">
-            <form action="../functions/loginauthenticator.php" id="loginForm" method="post">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Username</span>
-                    <input name="username" type="text" class="form-control" title="username"
-                           aria-describedby="basic-addon1">
-                </div>
-                <br/>
-
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Password </span>
-                    <input name="password" type="password" class="form-control" title="password"
-                           aria-describedby="basic-addon1">
-                </div>
-                <br/>
-
-                <div class="input-group">
-                    <button id="LoginSubmit" class="btn btn-default" type="submit">Login</button>
-                    <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">
-                    <br/>
-                </div>
+        </nav>
 
 
-            </form>
+    </br>
 
+
+    <form action="../functions/loginauthenticator.php" id="loginForm" method="post">
+
+
+        <div class="row">
+            <div class="medium-8 columns">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" title="username">
+            </div>
         </div>
 
-        <hr>
+        <div class="row">
+            <div class="medium-8 columns">
+                <label for="username">Password</label>
+                <input id="password" name="password" type="password" title="password">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="medium-8 columns">
+                <button id="LoginSubmit" class="button medium-8" type="submit">Login</button>
+                <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">
+            </div>
+        </div>
 
 
-        <label id="ajaxStuff" class="label label-danger">
-            <span id="ajaxStuff" class="glyphicon glyphicon-remove"></span>
-                Credentials Invalid
-        </label>
+</form>
+
+
+<label id="ajaxStuff" class="">
+    <span id="ajaxStuff"></span>
+    Credentials Invalid
+</label>
 
 
 
-
-    </div>
-
-    <div class="col-md-4">
-
-
-    </div>
-
-</div>
-
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
 </body>
-
+</html>

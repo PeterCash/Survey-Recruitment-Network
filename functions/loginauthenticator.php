@@ -22,12 +22,12 @@ if ($user->count()) {
 
     if (checkPassword($password, $hash) == true) {
         $_SESSION['username'] = $user->first()->username;
-        $_SESSION['uid'] = $user->first()->id;
+        $_SESSION['uid'] = $user->first()->userId;
         header("Location: ../content/profile.php");
-        return true;
     }
 } else {
-    return false;
+    
+    header("Location: ../content/index.php");
 }
 
 function checkPassword($password, $hash)
@@ -35,7 +35,8 @@ function checkPassword($password, $hash)
     if (password_verify($password, $hash)) {
         return true;
     } else {
-        return false;
+        header("Location: ../content/index.php");
+
     }
 }
 
