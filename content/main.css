@@ -13,4 +13,18 @@ Main stylesheet
     width: 100%;
 }
 
+.full-width {
+  width: 100%;
+  max-width: 100%; 
+}
 
+.padded-checkbox{
+	margin-left: 15px;
+}
+
+.alternate:nth-child(odd) {
+   background-color:#FFFF80;
+}
+.alternate:nth-child(even) {
+   background-color:#FFFFB8;
+}

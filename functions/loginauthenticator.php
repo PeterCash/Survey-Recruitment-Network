@@ -27,7 +27,7 @@ if ($user->count()) {
     }
 } else {
     
-    header("Location: ../content/index.php");
+   header("Location: ../content/index.php");
 }
 
 function checkPassword($password, $hash)
@@ -35,7 +35,7 @@ function checkPassword($password, $hash)
     if (password_verify($password, $hash)) {
         return true;
     } else {
-        header("Location: ../content/index.php");
+     header("Location: ../content/index.php");
 
     }
 }

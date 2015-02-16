@@ -21,11 +21,12 @@ $user = getUser(1, Database::getInstance());
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Survey Recruitment Network</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" href="../css/icons/foundation-icons.css" />
 
 	<!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/foundation.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
 
 
 
@@ -50,6 +51,9 @@ $user = getUser(1, Database::getInstance());
 		<ul class="left">
 			<li><a href="#">Left Nav Button</a></li>
 		</ul>
+		<ul class="right">
+			<li><a href="logout.php"><i class="fi-unlock"></i></a></li>
+		</ul>
 
 	</nav>
 
@@ -60,14 +64,15 @@ $user = getUser(1, Database::getInstance());
 	<li class="tab-title"><a href="#interests">Interests</a></li>
 </ul>
 
-<div class="medium-12 columns">
+<form action="../functions/addsurvey.php" id="surveyDetails" method="post" >
+
 <div class="tabs-content">
 	<div class="content active" id="demo">
-		<div class="row">
+		<div class="medium-12 columns">
 			<form data-abide>
 
 
-				<div class="row">
+				<div class="left row">
 					<div class="medium-6 columns">
 						<label for="author">Author Name</label><br/>
 						<input name="author" type="text" disabled="disabled"
@@ -75,14 +80,14 @@ $user = getUser(1, Database::getInstance());
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="left row">
 					<div class="medium-6 columns">
 						<label for="user">User Name</label><br/>
 						<input name="user" type="text" disabled="disabled" value="<?php echo $user->username ?>">
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="left row">
 					<div class="medium-8 columns">
 						<label for="title">Title</label><br/>
 						<input name="title" type="text" required>
@@ -90,14 +95,28 @@ $user = getUser(1, Database::getInstance());
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="left row">
 					<div class="medium-4 columns">
 						<label for="title">Target Age</label><br/>
-						<input name="age" type="number">
+
+						<div class="row">
+							<div class="small-10 medium-11 columns">
+								<div id="sliderAge" class="range-slider round" data-slider data-options="display_selector: #age;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<span id="age" class="row"></span>
+									<input name="age" id="age" type="hidden">
+								</div>
+							</div>
+
+						</div>
+
+						<br/>
+						<br/>
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="left row">
 					<div class="medium-6 columns">
 						<label for="county">County</label><br/>
 						<select name="county" class="form-control" type="text">
@@ -113,25 +132,27 @@ $user = getUser(1, Database::getInstance());
 
 				<br/>
 				<br/>
+			</div>
+
+
 		</div>
 
+		<div class="content" id="interests">
+			<p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+		</div>
 
 	</div>
 
-	<div class="content" id="interests">
-    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
-  </div>
-
-</div>
-
-<div class="row footer">
-			<input id="surveySubmit" class="button medium-10" type="submit" value="Create This Survey"/>
-			<!-- <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
-</div>
+	<div class="row footer">
+		<input id="surveySubmit" class="button medium-10" type="submit" value="Create This Survey"/>
+		<!-- <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
+	</div>
 </form>
 </div>
 
 </div>
+
+</form>
 
 
 
@@ -142,7 +163,12 @@ $user = getUser(1, Database::getInstance());
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/foundation.min.js"></script>
 <script>
-$(document).foundation();
+	$(document).foundation();
+	$('#age').on('change.fndtn.slider', function(){
+		var sv = $('#age').attr('data-slider');
+		document.title = sv;
+	});
+
 </script>
 </body>
 </html>

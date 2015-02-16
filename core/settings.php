@@ -13,6 +13,10 @@ $GLOBALS['config'] = array(
         'username' => 'sql365602',
         'password' => 'uK3!wM6!',
         'db' => 'sql365602',
+/*        'host' => 'eas-fyphost-02.aston.ac.uk:1000',
+        'username' => 'cashp',
+        'password' => 'cashp992',
+        'db' => 'cashp',*/
     ),
     'remember' => array(
         'cookie_name' => 'hash',

@@ -52,7 +52,7 @@ function getAge($id, $db)
     $db->query("SELECT * FROM user_profiles WHERE userId=?", array($id));
 
     if (isset($db->first()->userId)) {
-        $date = new DateTime($db->first()->dateOfBirth);
+        $date = date("Y-m-d H:i:s");
         $today = new DateTime('today');
         // $today->format('Y-m-d H:i:s');
         // '<br/>';
@@ -76,8 +76,8 @@ function getChildren($inputArray, $root, $db){
                     echo '<label><input value="' . $r->interestId . '" type="checkbox" name="interests[]">' . $r->interest . '</label>';
                 }
                 } else {
-                echo '<div class="panel radius" style="background-color: #FFFFCC">';
-                echo '<label name="interests[]">' . $r->interest . '</label>';
+                echo '<div class="panel radius alternate" style="">';
+                echo '<label name="interests[]" class="padded-checkbox">' . $r->interest . '</label>';
             }
 
 
