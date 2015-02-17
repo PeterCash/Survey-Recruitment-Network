@@ -14,7 +14,9 @@ $db = database::getInstance();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$user = $db->query("SELECT * FROM users WHERE username=?", array($username));
+$user = $db->query("SELECT * FROM users
+                    WHERE username=?",
+                    array($username));
 
 
 if ($user->count()) {

@@ -66,10 +66,9 @@ $user = getUser(1, Database::getInstance());
 
 <form action="../functions/addsurvey.php" id="surveyDetails" method="post" >
 
-<div class="tabs-content">
-	<div class="content active" id="demo">
-		<div class="medium-12 columns">
-			<form data-abide>
+	<div class="tabs-content">
+		<div class="content active" id="demo">
+			<div class="medium-12 columns">
 
 
 				<div class="left row">
@@ -78,20 +77,21 @@ $user = getUser(1, Database::getInstance());
 						<input name="author" type="text" disabled="disabled"
 						value="<?php echo $user->firstName . " " . $user->lastName ?>">
 					</div>
-				</div>
+				<!-- 	</div>
 
-				<div class="left row">
+				<div class="left row"> -->
 					<div class="medium-6 columns">
 						<label for="user">User Name</label><br/>
 						<input name="user" type="text" disabled="disabled" value="<?php echo $user->username ?>">
 					</div>
 				</div>
 
+				<hr>
+
 				<div class="left row">
 					<div class="medium-8 columns">
 						<label for="title">Title</label><br/>
 						<input name="title" type="text" required>
-						<small class="error">A title is required</small>
 					</div>
 				</div>
 
@@ -138,15 +138,29 @@ $user = getUser(1, Database::getInstance());
 		</div>
 
 		<div class="content" id="interests">
-			<p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+
+			<div class="left row">
+				<div class="medium-10 columns">
+					<?php
+                //$allInterests = $db->query("SELECT * FROM interests", array());
+					$userTopics = $db->query("SELECT * FROM interests", array());
+					getChildren($userTopics->results(), 0, $db);
+
+					?>
+
+				</div>
+			</div>
+
 		</div>
 
 	</div>
 
-	<div class="row footer">
-		<input id="surveySubmit" class="button medium-10" type="submit" value="Create This Survey"/>
-		<!-- <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
-	</div>
+</div>
+
+<div class="row footer">
+	<input id="surveySubmit" class="button medium-10" type="submit" value="Create This Survey"/>
+	<!-- <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
+</div>
 </form>
 </div>
 

@@ -48,7 +48,7 @@ require_once '../core/settings.php';
     </br>
 
     <div class="medium-8 columns">
-    <form action="../functions/registerfunctions.php" id="registerForm" method="post" >
+    <form action="../functions/adduser.php" id="registerForm" method="post" >
 
 
         <div class="">

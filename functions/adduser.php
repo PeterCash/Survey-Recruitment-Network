@@ -18,7 +18,9 @@ $passConf  = $_POST['passwordConfirm'];
 
 $lower = strtolower($user);
 
-$db->query("SELECT * FROM users WHERE lower(username)=?", array($lower));
+$db->query("SELECT * FROM users
+			WHERE lower(username)=?",
+			array($lower));
 
 if($db->count() > 0){
 	echo "This user exists already. Go back and use a different username";
@@ -28,8 +30,15 @@ if($db->count() > 0){
 	}else{
 		$hash = password_hash($pass,PASSWORD_BCRYPT);
 		$today = date("Y-m-d H:i:s");
+		
+		date_default_timezone_set('Europe/London');
+		$date = date('Y-m-d h:i:s', time());
 		$group = 1;
-		$db->query("INSERT INTO users (username, password, joined, group) VALUES (?,?,?,?)", array($user,$hash,$today,$group));
+
+		$db->query("INSERT INTO users (username, password, joined, user_group)
+					VALUES (?,?,?,?)",
+					array($user,$hash,$date,$group));
+		
 		echo "This account has been created.";
 	}
 }

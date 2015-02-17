@@ -12,7 +12,11 @@ $db = database::getInstance();
 
 function getUser($id, $db)
 {
-    $db->query("SELECT * FROM user_profiles INNER JOIN users ON user_profiles.userId = users.userId WHERE user_profiles.userId=?", array($id));
+    $db->query("SELECT * FROM user_profiles
+                INNER JOIN users
+                ON user_profiles.userId = users.userId
+                WHERE user_profiles.userId=?",
+                array($id));
 
     return $db->first();
 
@@ -21,7 +25,9 @@ function getUser($id, $db)
 
 function getDateOfBirth($id, $db)
 {
-    $db->query("SELECT * FROM user_profiles WHERE userId=?", array($id));
+    $db->query("SELECT * FROM user_profiles
+                WHERE userId=?",
+                array($id));
 
     if (isset($db->first()->userId)) {
         $date = $db->first()->dateOfBirth;
@@ -42,14 +48,19 @@ function getAgeRange($id, $db)
     if ($age >= 65) {
         return "65 and over";
     } else {
-        $this->$db->query("SELECT * FROM age_range WHERE ? BETWEEN min AND max", array($age));
+        $this->$db->query("SELECT * FROM age_range
+                    WHERE ? BETWEEN min AND max",
+                    array($age));
+
         return $this->$db->first()->label;
     }
 }
 
 function getAge($id, $db)
 {
-    $db->query("SELECT * FROM user_profiles WHERE userId=?", array($id));
+    $db->query("SELECT * FROM user_profiles
+        WHERE userId=?",
+        array($id));
 
     if (isset($db->first()->userId)) {
         $date = date("Y-m-d H:i:s");
@@ -110,7 +121,10 @@ function getChildren($inputArray, $root, $db){
     function userInterest($interestID, $db)
     {
         $uid = $_SESSION['uid'];
-        $vUserInterests = $db->query("SELECT * FROM user_interests WHERE userId=? AND interestId=?", array($uid, $interestID));
+        $vUserInterests = $db->query("SELECT * FROM user_interests
+                                      WHERE userId=?
+                                      AND interestId=?",
+                                      array($uid, $interestID));
 
         if ($vUserInterests->count() < 1) {
             return false;
