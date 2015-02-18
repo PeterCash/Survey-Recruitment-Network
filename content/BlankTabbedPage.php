@@ -10,7 +10,8 @@ include '../functions/surveyCreatorFunction.php';
 include 'profilefunctions.php';
 
 $db = Database::getInstance();
-
+$allCounties = getCounties($db);
+$user = getUser(1, Database::getInstance());
 
 ?>
 
@@ -71,14 +72,7 @@ $db = Database::getInstance();
 	<div class="tabs-content">
 		<div class="content active" id="demo">
 			<div class="medium-12 columns">
-			
-			<?php
-			$db->query("SELECT * FROM created_surveys",
-						array());
-			var_dump($db->results());
-
-			?>
-
+			<a>Hello</a>
 			</div>
 
 

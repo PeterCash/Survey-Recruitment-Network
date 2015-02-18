@@ -91,4 +91,9 @@ class database
     {
         return $this->_error;
     }
+
+    public function lastID()
+    {
+        return $this->_pdo->lastInsertID();
+    }
 }
