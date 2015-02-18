@@ -17,24 +17,16 @@ if(!is_null($_POST['interests'])){
 
 if(!is_null($SelectedInterests)){
     $ResetInterests = $db->query("DELETE FROM user_interests
-                                  WHERE user_id=?",
+                                  WHERE userId=?",
                                   array($uid));
 
 
     foreach($SelectedInterests as $box) {
-    $uid = $_SESSION['uid'];
-
-    $FindInterestID = $db->query("SELECT * FROM interests
-                                  WHERE interest_id=?",
-                                  array($box));
-
-    $insertid = $FindInterestID->first();
 
 
-        echo $box;
-    $AddUserInterests = $db->query("INSERT INTO user_interests(user_id,interest_id)
-                        VALUES (?,?)",
-                        array($uid, $insertid->interest_id));
+$db->query("INSERT INTO user_interests(userId,interestId)
+            VALUES (?,?)",
+            array($uid, $box));
     
     //echo $interestid->interest;
     // echo '<br/>';

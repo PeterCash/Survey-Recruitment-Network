@@ -6,7 +6,7 @@
 * Time: 18:12
 */
 require_once '../core/settings.php';
-require_once '/profilefunctions.php';
+require_once 'profilefunctions.php';
 
 if (!isset($_SESSION['uid'])) {
     header('location: index.php');
@@ -33,7 +33,7 @@ if (!isset($_SESSION['uid'])) {
     <script src="../js/vendor/modernizr.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script>
+    
 
 
 
@@ -70,11 +70,11 @@ if (!isset($_SESSION['uid'])) {
     <div class="panel radius" style="background-color:#b0c4de">
         <?php
         $database = database::getInstance();
-        $db = $database;
+        $uid = $_SESSION['uid'];
 
-        echo '<label class="">Age: ' . getAge($_SESSION['uid'] ,$db) . '</label>';
+        echo '<label>Age: ' . getAge($uid ,$database) . '</label>';
 
-        echo '<label class="">Date of Birth: ' . getDateOfBirth($_SESSION['uid'],$db) . '</label>';
+        echo '<label>Date of Birth: ' . getDateOfBirth($uid,$database) . '</label>';
 
         ?>
     </div>
@@ -95,7 +95,7 @@ if (!isset($_SESSION['uid'])) {
     getChildren($userTopics->results(), 0, $database);
 
     ?>
-    </form>
+
 
 </div>
 
@@ -103,6 +103,8 @@ if (!isset($_SESSION['uid'])) {
     <input name="submit" id="submitButton" type="submit" value="Update Interests"
     class="button">
 </div>
+
+    </form>
 </form>
 
 

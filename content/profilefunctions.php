@@ -29,7 +29,7 @@ function getDateOfBirth($id, $db)
                 WHERE userId=?",
                 array($id));
 
-    if (isset($db->first()->userId)) {
+    if ($db->count() > 0) {
         $date = $db->first()->dateOfBirth;
         return convertDate($date);
     }
@@ -62,12 +62,13 @@ function getAge($id, $db)
         WHERE userId=?",
         array($id));
 
-    if (isset($db->first()->userId)) {
-        $date = date("Y-m-d H:i:s");
-        $today = new DateTime('today');
-        // $today->format('Y-m-d H:i:s');
+    if ($db->count() > 0) {
+        $bday = $db->first()->dateOfBirth;
+        $bday = new DateTime($bday);
+
         // '<br/>';
-        return $date->diff($today)->y;
+        return $bday->diff(new DateTime)->y;
+        //return $date;
     }
 }
 

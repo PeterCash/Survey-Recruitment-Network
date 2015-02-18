@@ -144,7 +144,7 @@ $user = getUser(1, Database::getInstance());
 					<?php
                 //$allInterests = $db->query("SELECT * FROM interests", array());
 					$userTopics = $db->query("SELECT * FROM interests", array());
-					getChildren($userTopics->results(), 0, $db);
+					getChildren2($userTopics->results(), 0, $db);
 
 					?>
 
