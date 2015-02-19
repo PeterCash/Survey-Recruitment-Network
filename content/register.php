@@ -51,30 +51,30 @@ require_once '../core/settings.php';
     <form action="../functions/adduser.php" id="registerForm" method="post" >
 
 
-        <div class="">
-            <div class="medium-10 columns medium-10-offset-1">
+        <div class="left row">
+            <div class="medium-6 columns medium-6-offset-1">
                 <label for="username">Username</label>
                 <input id="username" name="username" type="text" title="username" required>
             </div>
         </div>
 
-        <div class="">
-            <div class="medium-10 columns">
+        <div class="left row">
+            <div class="medium-6 columns">
                 <label for="password">Password</label>
                 <input id="password" name="password" type="password" required>
             </div>
         </div>
 
-        <div class="">
-            <div class="medium-10 columns">
+        <div class="left row">
+            <div class="medium-6 columns">
             <label for="passwordConfirm">Password Confirm</label>
                 <input id="passwordConfirm" name="passwordConfirm" type="password" required>
             </div>
         </div>
 
-        <div class="">
-            <div class="medium-10 columns">
-                <button id="LoginSubmit" class="button medium-8" type="submit">Login</button>
+        <div class="left row">
+            <div class="medium-6 columns">
+                <button id="LoginSubmit" type="submit">Login</button>
                 <!-- <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;"> -->
             </div>
         </div>
