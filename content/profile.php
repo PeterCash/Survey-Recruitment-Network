@@ -9,7 +9,7 @@ require_once '../core/settings.php';
 require_once 'profilefunctions.php';
 
 if (!isset($_SESSION['uid'])) {
-    header('location: index.php');
+    header('location: login.php');
 }
 ?>
 

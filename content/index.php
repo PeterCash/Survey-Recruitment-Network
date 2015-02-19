@@ -9,6 +9,10 @@ include '../core/settings.php';
 include '../functions/surveyCreatorFunction.php';
 include 'profilefunctions.php';
 
+if (!isset($_SESSION['uid'])) {
+    header('location: login.php');
+}
+
 $db = Database::getInstance();
 
 
@@ -61,21 +65,53 @@ $db = Database::getInstance();
 
 
 <ul class="tabs" data-tab>
-	<li class="tab-title active"><a href="#demo">Demographic</a></li>
-	<li class="tab-title"><a href="#interests">Interests</a></li>
+	<li class="tab-title"><a href="#interests">Interesting Surveys</a></li>
+	<li class="tab-title"><a href="#demo">For your demographic</a></li>
+	<li class="tab-title"><a href="#others">Try something new</a></li>
 </ul>
 
 
 
 
 	<div class="tabs-content">
-		<div class="content active" id="demo">
+		<div class="content active" id="interests">
 			<div class="medium-12 columns">
 			
 			<?php
-			$db->query("SELECT * FROM created_surveys",
-						array());
-			var_dump($db->results());
+			$db->query("SELECT * FROM created_surveys
+						INNER JOIN survey_interests
+						ON created_surveys.surveyId = survey_interests.surveyId
+						INNER JOIN user_interests
+						ON survey_interests.interestId = user_interests.interestId
+						WHERE user_interests.userId = ?
+						GROUP BY survey_interests.surveyId
+						ORDER BY COUNT(*) DESC",
+						array($_SESSION['uid']));
+			
+
+			if($db->count() != 0){
+
+				foreach($db->results() as $row){
+
+					echo '<div class="left row">';
+					echo '<div class="medium-10 columns">';
+					echo '<div class="panel raised nicepanel1">';
+					echo '<p>' . $row->title . '</p>';
+
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+				}
+			
+			}else{
+				echo '<div class="left row">';
+					echo '<div class="medium-10 columns">';
+					echo '<div class="panel raised nicepanel1">';
+					echo '<p>No surveys found</p>';
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+			}
 
 			?>
 
@@ -84,16 +120,68 @@ $db = Database::getInstance();
 
 		</div>
 
-		<div class="content" id="interests">
+		<div class="content" id="demo">
 
 			<div class="left row">
 				<div class="medium-10 columns">
-					<a>Bye</a>
+					<a>You may like</a>
+					<br/>
+
+
+					<?php
+			$demoQuery = $db->query("SELECT * FROM user_profiles
+						WHERE userId = ?",
+						array($_SESSION['uid']));
+
+			$county = $demoQuery->first()->county;
+
+
+			$db->query("SELECT * FROM created_surveys
+						WHERE county = ?",
+						array($county));
+			
+
+			if($db->count() != 0){
+
+				foreach($db->results() as $row){
+
+					echo '<div class="left row">';
+					echo '<div class="medium-12 columns">';
+					echo '<div class="panel raised nicepanel1">';
+					echo '<p>' . $row->title . '</p>';
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+				}
+			
+			}else{
+				echo '<div class="left row">';
+					echo '<div class="medium-10 columns">';
+					echo '<div class="panel raised nicepanel1">';
+					echo '<p>No surveys found</p>';
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+			}
+
+			?>
 
 				</div>
 			</div>
 
 		</div>
+
+		<div class="content" id="others">
+
+			<div class="left row">
+				<div class="medium-10 columns">
+					<a>Try something new</a>
+
+				</div>
+			</div>
+
+		</div>
+
 
 	</div>
 

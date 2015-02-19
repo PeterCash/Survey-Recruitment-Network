@@ -9,6 +9,10 @@ include '../core/settings.php';
 include '../functions/surveyCreatorFunction.php';
 include 'profilefunctions.php';
 
+if (!isset($_SESSION['uid'])) {
+    header('location: login.php');
+}
+
 $db = Database::getInstance();
 $allCounties = getCounties($db);
 $user = getUser(1, Database::getInstance());
@@ -96,12 +100,12 @@ $user = getUser(1, Database::getInstance());
 				</div>
 
 				<div class="left row">
-					<div class="medium-4 columns">
+					<div class="medium-8 columns">
 						<label for="title">Target Age</label><br/>
 
 						<div class="row">
 							<div class="small-10 medium-11 columns">
-								<div id="sliderAge" class="range-slider round" data-slider data-options="display_selector: #age;">
+								<div id="sliderAge" class="range-slider round" data-slider data-options="display_selector: #age; start: 18; end: 100;">
 									<span class="range-slider-handle" role="slider" tabindex="0"></span>
 									<span class="range-slider-active-segment"></span>
 									<span id="age" class="row"></span>
@@ -178,9 +182,13 @@ $user = getUser(1, Database::getInstance());
 <script src="../js/foundation.min.js"></script>
 <script>
 	$(document).foundation();
-	$('#age').on('change.fndtn.slider', function(){
+
+	var newVal = 18;
+	$('#sliderAge').foundation('slider', 'set_value', newVal);
+
+	$('#sliderAge').on('change.fndtn.slider', function(){
 		var sv = $('#age').attr('data-slider');
-		document.title = sv;
+		// document.title = sv;
 	});
 
 </script>
