@@ -36,3 +36,12 @@ Main stylesheet
 .alternate:nth-child(even) {
    background-color:#FFFFB8;
 }
+
+
+.question-type-1{
+  .width:100px;
+}
+
+.question-background{
+  .background-color:#FFFFB8;
+}
