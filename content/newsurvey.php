@@ -5,13 +5,13 @@
  * Date: 11/02/2015
  * Time: 15:21
  */
-include '../core/settings.php';
-include '../functions/surveyCreatorFunction.php';
-include 'profilefunctions.php';
+//include '../core/settings.php';
+//include '../functions/surveyCreatorFunction.php';
+//include 'profilefunctions.php';
 
-$db = Database::getInstance();
-$allCounties = getCounties($db);
-$user = getUser(1, Database::getInstance());
+//$db = Database::getInstance();
+//$allCounties = getCounties($db);
+//$user = getUser(1, Database::getInstance());
 
 ?>
 
@@ -71,8 +71,8 @@ $user = getUser(1, Database::getInstance());
 </ul>
 
 
-	<div class="tabs-content medium-11 columns">
-		<div class="content active" id="t1">
+<div class="tabs-content medium-11 columns">
+	<div class="content active" id="t1">
 		
 		<div id="questions" class="row">
 			<button class="button" id="createQuestion">Create a new question</button>
@@ -80,22 +80,32 @@ $user = getUser(1, Database::getInstance());
 
 
 
-		</div>
-
-		
-
-		<div class="content" id="t2">
-			<div class="">
-			<a>tab 2</a>
-			</div>
 
 
-		</div>
+
+
+
+			
 
 
 
 
 	</div>
+
+
+
+	<div class="content" id="t2">
+		<div class="">
+			<a>tab 2</a>
+		</div>
+
+
+	</div>
+
+
+
+
+</div>
 
 
 

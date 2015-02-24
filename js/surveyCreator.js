@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-
-    var options = {
+ var questionID = 1;
+ var options = {
         beforeSubmit:  showRequest,  // pre-submit callback
         success:       showResponse,  // post-submit callback
         clearForm: true,        // clear all form fields after successful submit
@@ -9,70 +9,84 @@ $(document).ready(function() {
 
         // $.ajax options can be used here too, for example: 
         //timeout:   3000 
-    };
+      };
 
     // bind form using 'ajaxForm' 
     // $('#loginForm').ajaxForm(options);
 
     $("#createQuestion").click(function() {
-       var questionID = $(".qTitle").length + 1;
+     alert(questionID);
+
+     $('#t1').append('<div class="panel medium-12 columns question" id="Q' + questionID + '">'+
+       '<div class="row" id="row' + questionID + '">'+
+       '<p class="qTitle">Question ' + questionID + '</p>'+
+       '<input name="question" type="text" title="question here">'+
 
 
-       $("#questions").append('<div class="panel medium-12 columns" id="' + questionID +'">');
-
-       $('#' + questionID).append('<p class="qTitle">Question ' + questionID + '</p>');
-       $('#' + questionID).append('<input name="question" type="text" title="question here">');
 
 
-       $('#' + questionID).append('<div class="row" id="row' + questionID + '">');
-       $('#' + questionID).append('<hr/>');
+       '<hr/>');
 
-       for(i = 1; i <= 4; i++){
-
-           $('#row' + questionID).append('<div class="medium-6 columns">\
-               <input name="answer" type="text">\
-               </div>');       
-
-       }
+     for(i = 1; i <= 4; i++){
+      $('#Q' + questionID).append('<div class="medium-6 columns">'+
+        '<input name="answer" type="text">'+
+        '</div>');
+    }
 
 
-       $('#' + questionID).append('<br/>');
-       $('#' + questionID).append('<button class="" id="add' + questionID + '">Add answer</button>');
-       $('#' + questionID).append('<button class="removeQuestion right" id="remove' + questionID + '">Remove</button>');
+    $('#Q' + questionID).append('</div>'+
 
-       $('#' + questionID).append('</div>');
+      '<br/>'+
 
-
-       $(".removeQuestion").click(function(e) {
-        var divID = ($(event.target).attr('id'));
-        tempID = 1;
-        var divID = divID.replace("remove","");
-
-        $('#' + divID).remove();
+      '<button class="" id="add">Add answer</button>'+
+      '<button class="removeQuestion right" id="remove' + questionID + '">Remove</button>'+
+      '</div>');
 
 
-        $('.qTitle').each(function(){
+
+    questionID=questionID+1;
+
+    refreshVisibleQuestionCount();
+
+
+
+    $(".removeQuestion").click(function(e) {
+      var divID = ($(event.target).attr('id'));
+      var divID = divID.replace("remove","");
+
+      $('#Q' + divID).remove();
+
+      refreshVisibleQuestionCount();
+    });
+
+    function refreshVisibleQuestionCount(){
+     var tempID=1;
+     $('.qTitle').each(function(){
     //if statement here 
     // use $(this) to reference the current div in the loop
     //you can try something like...
+        //this.find('.qTitle').attr("",tempID);
         this.innerHTML = '<p>Question ' + tempID +'</p>';
         tempID=tempID+1;
+      });
 
-    });
+     tempID=1;
+     $('.question').each(function(){
+    //if statement here 
+    // use $(this) to reference the current div in the loop
+    //you can try something like...
+        //this.find('.qTitle').attr("",tempID);
+        
+        attr('id','Q' + tempID);
+        tempID=tempID+1;
+      });
+   }
 
 
 
-    });
-
-       $("#questions").append('</div>');
-
-   });
-
-
+ });
 
 });
-
-
 
 
 // pre-submit callback 
@@ -89,7 +103,7 @@ function showRequest(formData, jqForm, options) {
     // here we could return false to prevent the form from being submitted; 
     // returning anything other than false will allow the form submit to continue 
     return true;
-}
+  }
 
 // post-submit callback 
 function showResponse(responseText, statusText, xhr, $form)  {
@@ -114,6 +128,6 @@ function showResponse(responseText, statusText, xhr, $form)  {
     document.getElementById("preloader").style.display = 'none';*/
 
 
-} 
+  } 
 
 
