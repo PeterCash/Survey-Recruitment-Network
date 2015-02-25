@@ -75,12 +75,11 @@ $db = Database::getInstance();
 
 	<div class="tabs-content">
 		<div class="content active" id="interests">
-			<div class="medium-12 columns">
 			
 			<?php
-			$db->query("SELECT * FROM created_surveys
+			$db->query("SELECT * FROM survey
 						INNER JOIN survey_interests
-						ON created_surveys.surveyId = survey_interests.surveyId
+						ON survey.surveyId = survey_interests.surveyId
 						INNER JOIN user_interests
 						ON survey_interests.interestId = user_interests.interestId
 						WHERE user_interests.userId = ?
@@ -93,8 +92,8 @@ $db = Database::getInstance();
 
 				foreach($db->results() as $row){
 
-					echo '<div class="left row">';
-					echo '<div class="medium-10 columns">';
+					echo '<div class="">';
+					echo '<div class="medium-12 columns">';
 					echo '<div class="panel raised nicepanel1">';
 					echo '<p>' . $row->title . '</p>';
 
@@ -105,7 +104,7 @@ $db = Database::getInstance();
 			
 			}else{
 				echo '<div class="left row">';
-					echo '<div class="medium-10 columns">';
+					echo '<div class="">';
 					echo '<div class="panel raised nicepanel1">';
 					echo '<p>No surveys found</p>';
 					echo '</div>';
@@ -115,7 +114,6 @@ $db = Database::getInstance();
 
 			?>
 
-			</div>
 
 
 		</div>

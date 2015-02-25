@@ -17,8 +17,7 @@ $(document).ready(function() {
     $("#createQuestion").click(function() {
      alert(questionID);
 
-     $('#t1').append('<div class="panel medium-12 columns question" id="Q' + questionID + '">'+
-       '<div class="row" id="row' + questionID + '">'+
+     $('#questionBlock').append('<div class="panel question" id="Q' + questionID + '">'+
        '<p class="qTitle">Question ' + questionID + '</p>'+
        '<input name="question" type="text" title="question here">'+
 
@@ -27,19 +26,25 @@ $(document).ready(function() {
 
        '<hr/>');
 
+     $('#Q' + questionID).append('<div id="answers' + questionID + '">');
+   
      for(i = 1; i <= 4; i++){
-      $('#Q' + questionID).append('<div class="medium-6 columns">'+
-        '<input name="answer" type="text">'+
-        '</div>');
+      $('#answers' + questionID).append('<div class="left medium-6 columns">'+
+        '<input name="answer" type="text">');
+
+           $('#Q' + questionID).append('</div>');
     }
 
 
     $('#Q' + questionID).append('</div>'+
 
-      '<br/>'+
-
-      '<button class="" id="add">Add answer</button>'+
+      '</div>'+
+     
+     '<div class="row">'+
+      '<div class="medium-12 columns">'+
+      '<button class="add" id="add' + questionID + '">Add answer</button>'+
       '<button class="removeQuestion right" id="remove' + questionID + '">Remove</button>'+
+      '</div>'+
       '</div>');
 
 
@@ -51,12 +56,22 @@ $(document).ready(function() {
 
 
     $(".removeQuestion").click(function(e) {
-      var divID = ($(event.target).attr('id'));
+      var divID = $(this).attr('id');
       var divID = divID.replace("remove","");
 
       $('#Q' + divID).remove();
 
-      refreshVisibleQuestionCount();
+     // refreshVisibleQuestionCount();
+      refreshQuestionIds();
+    });
+
+    $(".add").click(function(e) {
+      var divID = $(this).attr('id');
+      var divID = divID.replace("add","");
+
+       $('#answers' + divID).append('<div class="left medium-6 columns">'+
+        '<input name="answer" type="text">'+
+        '</div>');
     });
 
     function refreshVisibleQuestionCount(){
@@ -70,16 +85,11 @@ $(document).ready(function() {
         tempID=tempID+1;
       });
 
-     tempID=1;
-     $('.question').each(function(){
-    //if statement here 
-    // use $(this) to reference the current div in the loop
-    //you can try something like...
-        //this.find('.qTitle').attr("",tempID);
-        
-        attr('id','Q' + tempID);
-        tempID=tempID+1;
-      });
+   }
+
+   function refreshQuestionIds(){
+
+
    }
 
 

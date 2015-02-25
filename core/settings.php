@@ -9,10 +9,10 @@ session_start();
 
 $GLOBALS['config'] = array(
     'mysql' => array(
-        'host' => 'server28.frogcp.com',
-        'username' => 'u529383286_fyp',
-        'password' => 'h1#I%6V$FY#bAiHygZ',
-        'db' => 'u529383286_fyp',
+        'host' => 'sql3.freesqldatabase.com',
+        'username' => 'sql368720',
+        'password' => 'kU6*xT5*',
+        'db' => 'sql368720',
 /*        'host' => 'eas-fyphost-02.aston.ac.uk:1000',
         'username' => 'cashp',
         'password' => 'cashp992',

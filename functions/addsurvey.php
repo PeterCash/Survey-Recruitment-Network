@@ -12,7 +12,8 @@ $county = $_POST['county'];
 var_dump($_POST);
 
 
-$db->query("INSERT INTO created_surveys(title, userId, age, county)
+
+$db->query("INSERT INTO survey(title, userId, age, county)
 					VALUES (?,?,?,?)",
 					array($title,$userId,$age,$county));
 

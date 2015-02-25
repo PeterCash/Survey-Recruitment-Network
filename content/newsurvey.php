@@ -29,12 +29,11 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" language="JavaScript" type="text/javascript"></script>
+	<script src="../js/vendor/modernizr.js" language="JavaScript" type="text/javascript"></script>
 
-	<script src="../js/vendor/modernizr.js"></script>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="http://malsup.github.com/jquery.form.js"></script>
-	<script src="../js/surveyCreator.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js" language="JavaScript" type="text/javascript"></script>
+	<script src="../js/surveyCreator.js" language="JavaScript" type="text/javascript"></script>
 </head>
 
 <nav class="top-bar" data-topbar role="navigation">
@@ -71,11 +70,19 @@
 </ul>
 
 
-<div class="tabs-content medium-11 columns">
+<div class="tabs-content medium-12 columns">
 	<div class="content active" id="t1">
 		
-		<div id="questions" class="row">
+		<div class="left row">
+		<div class="medium-12 columns">
 			<button class="button" id="createQuestion">Create a new question</button>
+		</div>
+		</div>
+
+		<br/><br/><br/>
+
+		<div id="questionBlock" class="">
+		
 		</div>
 
 
