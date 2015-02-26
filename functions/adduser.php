@@ -35,7 +35,7 @@ if($db->count() > 0){
 		$date = date('Y-m-d h:i:s', time());
 		$group = 1;
 
-		$db->query("INSERT INTO users (username, password, joined, user_group)
+		$db->query("INSERT INTO users (username, password, joined, group)
 					VALUES (?,?,?,?)",
 					array($user,$hash,$date,$group));
 		

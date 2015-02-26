@@ -10,7 +10,7 @@ include '../functions/surveyCreatorFunction.php';
 include 'profilefunctions.php';
 
 if (!isset($_SESSION['uid'])) {
-    header('location: login.php');
+	header('location: login.php');
 }
 
 $db = Database::getInstance();
@@ -38,6 +38,7 @@ $user = getUser(1, Database::getInstance());
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script>
+	<script src="../js/surveyCreator.js" language="JavaScript" type="text/javascript"></script>
 
 </head>
 
@@ -64,23 +65,47 @@ $user = getUser(1, Database::getInstance());
 </br>
 
 <ul class="tabs" data-tab>
-	<li class="tab-title active"><a href="#demo">Demographic</a></li>
+	<li class="tab-title active"><a href="#survey">Survey</a></li>
+	<li class="tab-title"><a href="#demo">Demographic</a></li>
 	<li class="tab-title"><a href="#interests">Interests</a></li>
 </ul>
 
-<form action="../functions/addsurvey.php" id="surveyDetails" method="post" >
 
 	<div class="tabs-content">
-		<div class="content active" id="demo">
-			<div class="medium-12 columns">
+		<div class="content active" id="survey">
 
-
-				<div class="left row">
-					<div class="medium-6 columns">
-						<label for="author">Author Name</label><br/>
-						<input name="author" type="text" disabled="disabled"
-						value="<?php echo $user->firstName . " " . $user->lastName ?>">
+				<div class="medium-10 columns">
+					
+					<div class="left row">
+						<div class="medium-12 columns">
+							<button class="button" id="createQuestion">Create a new question</button>
+						</div>
 					</div>
+
+					<br/><br/><br/>
+
+					<form action="../functions/addsurvey.php" id="surveyDetails" method="post" novalidate>
+
+					<div id="questionBlock" class="">
+
+						
+
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="content" id="demo">
+				<div class="medium-12 columns">
+
+
+					<div class="left row">
+						<div class="medium-6 columns">
+							<label for="author">Author Name</label><br/>
+							<input name="author" type="text" disabled="disabled"
+							value="<?php echo $user->firstName . " " . $user->lastName ?>">
+						</div>
 				<!-- 	</div>
 
 				<div class="left row"> -->

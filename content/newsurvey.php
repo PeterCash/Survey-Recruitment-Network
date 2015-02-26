@@ -74,15 +74,27 @@
 	<div class="content active" id="t1">
 		
 		<div class="left row">
-		<div class="medium-12 columns">
-			<button class="button" id="createQuestion">Create a new question</button>
-		</div>
+			<div class="medium-12 columns">
+				<button class="button" id="createQuestion">Create a new question</button>
+			</div>
 		</div>
 
 		<br/><br/><br/>
 
-		<div id="questionBlock" class="">
-		
+		<form action="../functions/addsurvey2.php" id="questionSet" method="post" >
+
+			<div id="questionBlock" class="">
+
+				<div class="left row">
+					<div class="medium-6 columns">
+					<button id="create" type="submit">Add new survey</button>
+					</div>
+				</div>
+
+				<br/><br/><br/>
+
+			</form>
+
 		</div>
 
 
@@ -92,7 +104,7 @@
 
 
 
-			
+
 
 
 

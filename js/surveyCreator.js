@@ -19,7 +19,7 @@ $(document).ready(function() {
 
      $('#questionBlock').append('<div class="panel question" id="Q' + questionID + '">'+
        '<p class="qTitle">Question ' + questionID + '</p>'+
-       '<input name="question" type="text" title="question here">'+
+       '<input name="' + questionID + '" type="text" title="question here">'+
 
 
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
    
      for(i = 1; i <= 4; i++){
       $('#answers' + questionID).append('<div class="left medium-6 columns">'+
-        '<input name="answer" type="text">');
+        '<input name="' + questionID + '[]" type="text" class="' + questionID + '">');
 
            $('#Q' + questionID).append('</div>');
     }
@@ -61,8 +61,8 @@ $(document).ready(function() {
 
       $('#Q' + divID).remove();
 
-     // refreshVisibleQuestionCount();
-      refreshQuestionIds();
+      refreshVisibleQuestionCount();
+
     });
 
     $(".add").click(function(e) {
@@ -70,7 +70,7 @@ $(document).ready(function() {
       var divID = divID.replace("add","");
 
        $('#answers' + divID).append('<div class="left medium-6 columns">'+
-        '<input name="answer" type="text">'+
+        '<input name="answer[]" type="text">'+
         '</div>');
     });
 
