@@ -5,17 +5,20 @@
  * Date: 11/02/2015
  * Time: 15:21
  */
-include '../core/settings.php';
+include '../content/database.php';
 include '../functions/surveyCreatorFunction.php';
 include 'profilefunctions.php';
 
 if (!isset($_SESSION['uid'])) {
 	header('location: login.php');
+}else{
+	$db = new database();
+	$pf = new profileFunctions($db);
+	$scf = new surveyCreatorFunctions($db);
 }
 
-$db = Database::getInstance();
-$allCounties = getCounties($db);
-$user = getUser(1, Database::getInstance());
+$allCounties = $scf->getCounties();
+$user = $pf->getUser();
 
 ?>
 
@@ -104,14 +107,14 @@ $user = getUser(1, Database::getInstance());
 						<div class="medium-6 columns">
 							<label for="author">Author Name</label><br/>
 							<input name="author" type="text" disabled="disabled"
-							value="<?php echo $user->firstName . " " . $user->lastName ?>">
+							value="<?php echo $user['firstName'] . " " . $user['lastName']; ?>">
 						</div>
 				<!-- 	</div>
 
 				<div class="left row"> -->
 					<div class="medium-6 columns">
 						<label for="user">User Name</label><br/>
-						<input name="user" type="text" disabled="disabled" value="<?php echo $user->username ?>">
+						<input name="user" type="text" disabled="disabled" value="<?php echo $user['username'] ?>">
 					</div>
 				</div>
 
@@ -152,7 +155,7 @@ $user = getUser(1, Database::getInstance());
 							<option selected="selected" disabled="disabled"></option>
 							<?php
 							foreach ($allCounties as $c) {
-								echo '<option value="' . $c->id . '">' . $c->county . '</option>';
+								echo "<option value=" . $c['id'] . '">' . $c['county'] . "</option>";
 							}
 							?>
 						</select>
@@ -172,8 +175,8 @@ $user = getUser(1, Database::getInstance());
 				<div class="medium-10 columns">
 					<?php
                 //$allInterests = $db->query("SELECT * FROM interests", array());
-					$userTopics = $db->query("SELECT * FROM interests", array());
-					getChildren2($userTopics->results(), 0, $db);
+					//$userTopics = $db->query("SELECT * FROM interests", array());
+					//getChildren2($userTopics->results(), 0, $db);
 
 					?>
 

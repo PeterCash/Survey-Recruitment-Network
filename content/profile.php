@@ -5,11 +5,15 @@
 * Date: 14/12/2014
 * Time: 18:12
 */
-require_once '../core/settings.php';
-require_once 'profilefunctions.php';
+include 'database.php';
+include 'profilefunctions.php';
+
 
 if (!isset($_SESSION['uid'])) {
-    header('location: login.php');
+  header('location: login.php');
+}else{
+    $db =  new Database();
+    $pf = new profileFunctions($db);
 }
 ?>
 
@@ -68,15 +72,13 @@ if (!isset($_SESSION['uid'])) {
 
 <div class="left row medium-12 columns">
     <div class="panel radius" style="background-color:#b0c4de">
-        <?php
-        $database = database::getInstance();
-        $uid = $_SESSION['uid'];
 
-        echo '<label>Age: ' . getAge($uid ,$database) . '</label>';
 
-        echo '<label>Date of Birth: ' . getDateOfBirth($uid,$database) . '</label>';
+        <label>Age: <?php echo $pf->getAge(); ?></label>
 
-        ?>
+        <label>Date of Birth: <?php echo $pf->getDateOfBirth(); ?></label>
+
+        
     </div>
 </div>
 
@@ -90,9 +92,9 @@ if (!isset($_SESSION['uid'])) {
 
     <?php
 
+    $pf->getUserInterests();
                 //$allInterests = $db->query("SELECT * FROM interests", array());
-    $userTopics = $db->query("SELECT * FROM interests", array());
-    getChildren($userTopics->results(), 0, $database);
+
 
     ?>
 

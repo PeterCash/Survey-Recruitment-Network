@@ -7,12 +7,28 @@
  */
 //http://stackoverflow.com/questions/12556805/how-to-grab-data-from-post-to-a-class
 
+session_start();
 
-function getCounties($db)
+class surveyCreatorFunctions{
+
+private $db;
+
+
+public function __construct($database)
 {
-    $db->query("SELECT * FROM counties", array());
+$this->db = $database;
+}
 
-    return $db->results();
+function getCounties()
+{
+    $this->db->beginTransaction();
+    $this->db->query("SELECT * FROM counties");
+    $this->db->execute();
+    $counties = $this->db->resultSet();
+    $this->db->endTransaction();
+
+
+    return $counties;
 }
 
 function checkEmptyPost($PostArray)
@@ -72,4 +88,4 @@ function getChildren2($inputArray, $root, $db){
 
     }
 
-
+}

@@ -1,5 +1,5 @@
 <?php
-require_once '../core/settings.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,6 @@ require_once '../core/settings.php';
 
     <div class="medium-12 columns">
         <form action="../functions/loginauthenticator.php" id="loginForm" method="post" >
-        <?php var_dump($_SESSION); ?>
 
             <div class="left row">
                 <div class="medium-6 columns medium-10-offset-1">
