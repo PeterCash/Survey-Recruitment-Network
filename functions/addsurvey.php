@@ -9,49 +9,68 @@ $userId = $_SESSION['uid'];
 $title = $_POST['title'];
 $age  = $_POST['age'];
 $county = $_POST['county'];
-
-
-////////////////////////////////////////////////////////////////////////////////////
-
-//addSurvey
-
-$db->beginTransaction();
-$db->query("INSERT INTO survey(userId, title, age, county)
-					VALUES (?,?,?,?)");
-$db->addParameter($userId);
-$db->addParameter($title);
-$db->addParameter($age);
-$db->addParameter($county);
-
-$SurveyID = $db->lastId();
-$db->endTransaction();
-
-////////////////////////////////////////////////////////////////////////////////////
-
-//addInterests
-
 $SelectedInterests = $_POST['interests'];
 
 
-foreach($SelectedInterests as $box) {
-    $uid = $_SESSION['uid'];
+$cs = new createSurvey($db);
 
-    $db->beginTransaction();
+$cs->addSurvey($userId, $title, $age, $county);
+$cs->addInterests($SurveyID, $SelectedInterests);
 
-    $AddSurveyInterests = $db->query("INSERT INTO survey_interests(surveyId,interestId)
-                        VALUES (?,?)");
-    $db->addParameter($SurveyID);
-    $db->addParameter($box);
+class createSurvey{
 
-    $db->endTransaction();
-}
+	private $db;
+	private $SurveyID;
+
+	public function __construct($database)
+	{
+		$this->db = $database;
+	}
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-//addQuestions
+	public function addSurvey($userId, $title, $age, $county){
+
+
+		$this->db->beginTransaction();
+		$this->db->query("INSERT INTO survey(userId, title, age, county)
+			VALUES (?,?,?,?)");
+		$this->db->addParameter($userId);
+		$this->db->addParameter($title);
+		$this->db->addParameter($age);
+		$this->db->addParameter($county);
+
+		$this->$SurveyID = $this->db->lastId();
+		$this->db->endTransaction();
+	}
+////////////////////////////////////////////////////////////////////////////////////
+
+	public function addInterests($SurveyID, $SelectedInterests){
+
+		
+
+
+		foreach($SelectedInterests as $InterestID) {
+			$uid = $_SESSION['uid'];
+
+			$this->db->beginTransaction();
+
+			$AddSurveyInterests = $this->db->query("INSERT INTO survey_interests(surveyId,interestId)
+				VALUES (?,?)");
+			$this->db->addParameter($SurveyID);
+			$this->db->addParameter($InterestID);
+
+			$this->db->endTransaction();
+		}
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+	public function addQuestions($QuestionAnswerArray, $SurveyID){
 
 // foreach($_POST as $question => $answers) {
-	
+
 // 	echo $question;
 
 // 	echo '<br/>';
@@ -65,5 +84,6 @@ foreach($SelectedInterests as $box) {
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-
-?>
+	}
+}
+	?>

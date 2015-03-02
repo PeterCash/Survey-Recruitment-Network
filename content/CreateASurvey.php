@@ -174,10 +174,7 @@ $user = $pf->getUser();
 			<div class="left row">
 				<div class="medium-10 columns">
 					<?php
-                //$allInterests = $db->query("SELECT * FROM interests", array());
-					//$userTopics = $db->query("SELECT * FROM interests", array());
-					//getChildren2($userTopics->results(), 0, $db);
-
+					$scf->getChildren2(0));
 					?>
 
 				</div>

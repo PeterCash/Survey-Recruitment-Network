@@ -11,81 +11,65 @@ session_start();
 
 class surveyCreatorFunctions{
 
-private $db;
+    private $db;
 
 
-public function __construct($database)
-{
-$this->db = $database;
-}
-
-function getCounties()
-{
-    $this->db->beginTransaction();
-    $this->db->query("SELECT * FROM counties");
-    $this->db->execute();
-    $counties = $this->db->resultSet();
-    $this->db->endTransaction();
-
-
-    return $counties;
-}
-
-function checkEmptyPost($PostArray)
-{
-    foreach ($PostArray as $post) {
-        if (is_null($post)) {
-            return false;
-        }
-    }
-    return true;
-}
-
-function echoDetails()
-{
-    echo $_POST['age'];
-}
-
-
-
-
-function getChildren2($inputArray, $root, $db){
-    foreach ($inputArray as $r) {
-        if ($r->parent == $root) {
-
-            if (isParent2($r->interestId, $inputArray) == false) {
-                    echo '<label><input value="' . $r->interestId . '" type="checkbox" name="interests[]">' . $r->interest . '</label>';
-             
-                } else {
-                echo '<div class="panel radius alternate" style="">';
-                echo '<label name="interests[]" class="padded-checkbox">' . $r->interest . '</label>';
-            }
-
-
-            echo '<br/>';
-
-
-            if (isParent2($r->interestId, $inputArray)) {
-
-                echo '<ul class="interestGroup">';
-                getChildren2($inputArray, $r->interestId, $db);
-                echo '</ul>';
-                echo '</div>';
-            }
-        }
-    }
-}
-
-    function isParent2($commentID, $commentArray)
+    public function __construct($database)
     {
-        foreach ($commentArray as $r) {
-            if ($r->parent == $commentID) {
-                return true;
+        $this->db = $database;
+    }
+
+    function getCounties()
+    {
+        $this->db->beginTransaction();
+        $this->db->query("SELECT * FROM counties");
+        $this->db->execute();
+        $counties = $this->db->resultSet();
+        $this->db->endTransaction();
+
+
+        return $counties;
+    }
+
+    function checkEmptyPost($PostArray)
+    {
+        foreach ($PostArray as $post) {
+            if (is_null($post)) {
+                return false;
             }
         }
+        return true;
+    }
 
-        return false;
 
+    function getChildren2($root){
+        $this->db->query("SELECT * FROM interests");
+        $this->db->addParameter($root);
+        $this->db->execute();
+
+
+        if($this->db->hasResults()){
+            $rs = $this->db->resultset();
+            $this->buildTree($rs,$root);
+        }
+    }
+
+    function buildTree($arr, $par)
+    {
+        foreach($arr as $interest)
+        {
+            if($interest['parent'] == $par)
+            {
+                echo "<li>" . $interest['interest'] . "</li>";
+                echo "<br/>";
+
+                echo "<ol>";
+                $this->buildTree($arr,$interest['interestId']);
+                echo "</ol>";
+            }
+        }
     }
 
 }
+
+?>
