@@ -174,7 +174,7 @@ $user = $pf->getUser();
 			<div class="left row">
 				<div class="medium-10 columns">
 					<?php
-					$scf->getChildren2(0));
+					$scf->getChildren2(0);
 					?>
 
 				</div>

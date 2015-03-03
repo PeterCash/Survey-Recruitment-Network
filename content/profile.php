@@ -5,6 +5,7 @@
 * Date: 14/12/2014
 * Time: 18:12
 */
+session_start();
 include 'database.php';
 include 'profilefunctions.php';
 
@@ -93,8 +94,7 @@ if (!isset($_SESSION['uid'])) {
     <?php
 
     $pf->getUserInterests();
-                //$allInterests = $db->query("SELECT * FROM interests", array());
-
+               
 
     ?>
 
@@ -106,8 +106,8 @@ if (!isset($_SESSION['uid'])) {
     class="button">
 </div>
 
-    </form>
-</form>
+ </form>
+<!-- </form> -->
 
 
 
