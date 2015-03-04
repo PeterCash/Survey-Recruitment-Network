@@ -97,33 +97,74 @@ class profileFunctions{
     function getUserInterests()
     {
 
-        $this->db->query("SELECT * FROM interests
-          LEFT JOIN user_interests
-          ON interests.interestId=user_interests.interestId
-          AND user_interests.userId = ?");
+        // $this->db->query("SELECT * FROM interests
+        //   LEFT JOIN user_interests
+        //   ON interests.interestId=user_interests.interestId
+        //   AND user_interests.userId = ?");
+
+        $this->db->query("SELECT interests.interest AS iUid, interests.interestId AS iId, interests.parent AS iP,
+            user_interests.interestId AS uiIid, user_interests.userId AS uiUid 
+            FROM interests 
+            LEFT JOIN user_interests
+            ON interests.interestId = user_interests.interestId
+            AND user_interests.userId = ? 
+
+            ");
+
         $this->db->addParameter($_SESSION['uid']);
         $this->db->execute();
         $rs = $this->db->resultSet();
 
-        var_dump($rs);
-        //$this->buildTree($rs,0);
+        //var_dump($rs);
+        $this->buildTree($rs,0);
     }
 
 
     function buildTree($arr, $par){
+        echo "<ol>";
         foreach($arr as $i)
         {
-            if($i['parent'] == $par)
+            if($i['iP'] == $par)
             {
-                echo "<li>" . $i['interest'] . "</li>";
-                echo "<br/>";
+                echo '<li>';
+                if(!$this->isParent($arr,$i)){
+                    echo '<input type="checkbox" name="interests[]" value="' . $i['iId'] . '"';
+                    echo $this->isUserInterest($i) ? ' checked > ' : '> ';
+                    echo $i['iUid'];
+                    echo '</input>';
+                }else{
+                   echo $i['iUid']; 
+               }
 
-                echo "<ol>";
-                echo $i['interestId'];
-                echo "</ol>";
-            }
-        }
+               echo '</li>';
+               echo '<br/>';
+
+
+
+               $this->buildTree($arr, $i['iId']);
+           }
+       }
+       echo "</ol>";
+   }
+
+   function isUserInterest($interest)
+   {
+    if($interest['uiUid'] != NULL){
+        return true;
     }
+    return false;
+}
+
+function isParent($arr, $interest)
+{
+ foreach($arr as $i){
+    if($i['iP'] == $interest['iId']){
+        return true;
+    }
+}
+
+return false;
+}
 
 
 
@@ -132,15 +173,15 @@ class profileFunctions{
 
 
 
-    function getSurveysCreated()
-    {
+function getSurveysCreated()
+{
 
-    }
+}
 
-    function getSurveysCompleted()
-    {
+function getSurveysCompleted()
+{
 
-    }
+}
 }
 
 ?>

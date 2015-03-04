@@ -43,5 +43,4 @@ if(!is_null($SelectedInterests)){
 
     header("Location: ../content/profile.php");
 
-
 }

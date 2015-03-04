@@ -54,22 +54,42 @@ class surveyCreatorFunctions{
         }
     }
 
-    function buildTree($arr, $par)
-    {
-        foreach($arr as $interest)
+    function buildTree($arr, $par){
+        echo "<ol>";
+        foreach($arr as $i)
         {
-            if($interest['parent'] == $par)
+            if($i['parent'] == $par)
             {
-                echo "<li>" . $interest['interest'] . "</li>";
-                echo "<br/>";
+                echo '<li>';
+                if(!$this->isParent($arr,$i)){
+                    echo '<input type="checkbox" name="interests[]" value="' . $i['interestId'] . '"';
+                    echo '> ';
+                    echo $i['interest'];
+                    echo '</input>';
+                }else{
+                 echo $i['interest']; 
+             }
 
-                echo "<ol>";
-                $this->buildTree($arr,$interest['interestId']);
-                echo "</ol>";
-            }
-        }
+             echo '</li>';
+             echo '<br/>';
+
+
+
+             $this->buildTree($arr, $i['interestId']);
+         }
+     }
+     echo "</ol>";
+ }
+
+ function isParent($arr, $interest)
+ {
+   foreach($arr as $i){
+    if($i['parent'] == $interest['interestId']){
+        return true;
     }
+}
 
+}
 }
 
 ?>

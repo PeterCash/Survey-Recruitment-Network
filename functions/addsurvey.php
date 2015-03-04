@@ -2,25 +2,33 @@
 include '../content/database.php';
 session_start();
 
-$db = new database();
-
+$db = new Database();
 
 $userId = $_SESSION['uid'];
 $title = $_POST['title'];
 $age  = $_POST['age'];
 $county = $_POST['county'];
-$SelectedInterests = $_POST['interests'];
 
+if(isset($_POST['interests'])){
+	$SelectedInterests = $_POST['interests'];
+}
+
+foreach ($_POST as $key) {
+	if(is_array($key)){
+		var_dump($key);
+	}
+}
 
 $cs = new createSurvey($db);
 
 $cs->addSurvey($userId, $title, $age, $county);
-$cs->addInterests($SurveyID, $SelectedInterests);
+$cs->addInterests($SelectedInterests);
+//$cs->addQuestions();
 
 class createSurvey{
 
 	private $db;
-	private $SurveyID;
+	private $surveyId;
 
 	public function __construct($database)
 	{
@@ -40,29 +48,31 @@ class createSurvey{
 		$this->db->addParameter($title);
 		$this->db->addParameter($age);
 		$this->db->addParameter($county);
+		$this->db->execute();
 
-		$this->$SurveyID = $this->db->lastId();
+
+		$this->surveyId = $this->db->lastInsertId();
+
 		$this->db->endTransaction();
+
 	}
 ////////////////////////////////////////////////////////////////////////////////////
 
-	public function addInterests($SurveyID, $SelectedInterests){
+	public function addInterests($SelectedInterests){
+		$this->db->beginTransaction();
+		foreach($SelectedInterests as $interest) {
 
-		
-
-
-		foreach($SelectedInterests as $InterestID) {
-			$uid = $_SESSION['uid'];
-
-			$this->db->beginTransaction();
+			
 
 			$AddSurveyInterests = $this->db->query("INSERT INTO survey_interests(surveyId,interestId)
 				VALUES (?,?)");
-			$this->db->addParameter($SurveyID);
-			$this->db->addParameter($InterestID);
+			$this->db->addParameter($this->surveyId);
+			$this->db->addParameter($interest);
+			$this->db->execute();
 
-			$this->db->endTransaction();
+			
 		}
+		$this->db->endTransaction();
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -86,4 +96,4 @@ class createSurvey{
 
 	}
 }
-	?>
+?>
