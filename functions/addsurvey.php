@@ -3,6 +3,8 @@ include '../content/database.php';
 session_start();
 
 $db = new Database();
+$QuestionsArray = [];
+$AnswersArray = [];
 
 $userId = $_SESSION['uid'];
 $title = $_POST['title'];
@@ -13,17 +15,33 @@ if(isset($_POST['interests'])){
 	$SelectedInterests = $_POST['interests'];
 }
 
-foreach ($_POST as $key) {
-	if(is_array($key)){
-		var_dump($key);
+$questionID = 1;
+$answerID = 1;
+
+
+while (isset($_POST['answers' . $answerID])) {
+	$answers = $_POST['answers' . $answerID];
+	foreach($answers as $answers => answer){
+		$AnswersArray[] = $answer;
 	}
+	$answerID+=1;
 }
+
+	$questions = $_POST['questions'];
+	foreach($questions as $question){
+		$QuestionsArray[] = $question;
+	}
+	$questionID+=1;
+}
+
+
+
 
 $cs = new createSurvey($db);
 
 $cs->addSurvey($userId, $title, $age, $county);
 $cs->addInterests($SelectedInterests);
-//$cs->addQuestions();
+$cs->addQuestionsAndAnswers(NULL, $AnswersArray);
 
 class createSurvey{
 
@@ -77,20 +95,16 @@ class createSurvey{
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-	public function addQuestions($QuestionAnswerArray, $SurveyID){
+	public function addQuestionsAndAnswers($QuestionArray, $AnswerArray){
 
-// foreach($_POST as $question => $answers) {
+		$currentQuestion;
+		$currentAnswer;
 
-// 	echo $question;
-
-// 	echo '<br/>';
-
-// 	foreach($answers as $ans)
-// 	{
-// 		echo $ans;
-// 		echo '<br/>';
-// 	}
-// }
+		foreach ($AnswerArray as $key) {
+			if(is_array($key)){
+				var_dump($key);
+			}
+		}
 
 ////////////////////////////////////////////////////////////////////////////////////
 

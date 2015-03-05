@@ -114,7 +114,7 @@ $user = $pf->getUser();
 				<div class="left row"> -->
 					<div class="medium-6 columns">
 						<label for="user">User Name</label><br/>
-						<input name="user" type="text" disabled="disabled" value="<?php echo $user['username'] ?>">
+						<input name="user" type="text" disabled="disabled" value="<?php echo $user['email'] ?>">
 					</div>
 				</div>
 
