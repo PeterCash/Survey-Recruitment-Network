@@ -19,7 +19,7 @@ $(document).ready(function() {
 
      $('#questionBlock').append('<div class="panel question" id="Q' + questionID + '">'+
        '<p class="qTitle">Question ' + questionID + '</p>'+
-       '<input name="questions' + questionID + '[]" type="text" title="question here">'+
+       '<input name="questions[]" type="text" title="question here">'+
 
 
 

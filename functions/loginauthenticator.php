@@ -15,7 +15,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 $db->query("SELECT * FROM users
-                    WHERE username=?");
+                    WHERE email=?");
 $db->addParameter($username);
 
 var_dump($db->resultSet());
@@ -26,7 +26,7 @@ if ($db->hasResults()) {
     $hash = $db->single()['password'];
 
     if (checkPassword($password, $hash) == true) {
-        $_SESSION['username'] = $db->single()['username'];
+        $_SESSION['email'] = $db->single()['email'];
         $_SESSION['uid'] = $db->single()['userId'];
         //header("Location: ../content/profile.php");
     }

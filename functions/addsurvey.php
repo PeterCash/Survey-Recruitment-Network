@@ -21,16 +21,20 @@ $answerID = 1;
 
 while (isset($_POST['answers' . $answerID])) {
 	$answers = $_POST['answers' . $answerID];
-	foreach($answers as $answers => answer){
-		$AnswersArray[] = $answer;
-	}
+	$AnswersArray[] = $answers;
+	
+	// echo $answerID;
+	// foreach ($answers as $key => $value) {
+	// 	$AnswersArray[$answerID][] = $value;
+	// }
+
 	$answerID+=1;
 }
 
-	$questions = $_POST['questions'];
-	foreach($questions as $question){
-		$QuestionsArray[] = $question;
-	}
+
+$questions = $_POST['questions'];
+foreach($questions as $question){
+	$QuestionsArray[] = $question;
 	$questionID+=1;
 }
 
@@ -41,7 +45,8 @@ $cs = new createSurvey($db);
 
 $cs->addSurvey($userId, $title, $age, $county);
 $cs->addInterests($SelectedInterests);
-$cs->addQuestionsAndAnswers(NULL, $AnswersArray);
+$cs->addQuestionsAndAnswers($QuestionsArray, $AnswersArray);
+
 
 class createSurvey{
 
@@ -82,7 +87,7 @@ class createSurvey{
 
 			
 
-			$AddSurveyInterests = $this->db->query("INSERT INTO survey_interests(surveyId,interestId)
+			$this->db->query("INSERT INTO survey_interests(surveyId,interestId)
 				VALUES (?,?)");
 			$this->db->addParameter($this->surveyId);
 			$this->db->addParameter($interest);
@@ -100,11 +105,43 @@ class createSurvey{
 		$currentQuestion;
 		$currentAnswer;
 
-		foreach ($AnswerArray as $key) {
-			if(is_array($key)){
-				var_dump($key);
-			}
+		foreach ($QuestionArray as $key) {
+			//var_dump($key);
 		}
+
+		foreach ($AnswerArray as $key) {
+			//var_dump($key);
+		}
+
+		$this->db->beginTransaction();
+		$questionPos = 1;
+		foreach($QuestionArray as $q){
+			$this->db->query("INSERT INTO survey_questions(surveyId, questionPosition, questionText)
+				VALUES(?,?,?)");
+			$this->db->addParameter($this->surveyId);
+			$this->db->addParameter($questionPos);
+			$this->db->addParameter($q);
+			$this->db->execute();
+
+			$answer = $this->db->lastInsertId();	
+			$answerPos = 1;
+			foreach($AnswerArray[$questionPos-1] as $a){
+				$this->db->query("INSERT INTO survey_answers(surveyId, questionID, answerPosition, answerText)
+					VALUES(?,?,?,?)");
+				$this->db->addParameter($this->surveyId);
+				$this->db->addParameter($answer);
+				$this->db->addParameter($answerPos);
+				$this->db->addParameter($a);
+				$this->db->execute();
+				$answerPos+=1;
+			}
+
+			$questionPos+=1;
+		}
+		$this->db->endTransaction();
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 
