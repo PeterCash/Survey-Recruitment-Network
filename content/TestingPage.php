@@ -16,9 +16,8 @@ $db->query("SELECT * FROM user_interests WHERE userId=?");
 $db->addParameter(1);
 $db->execute();
 
-foreach($db->resultset() as $row)
-{
-	echo $row['userId'];
+foreach ($db->resultset() as $row) {
+    echo $row['userId'];
 }
 
 

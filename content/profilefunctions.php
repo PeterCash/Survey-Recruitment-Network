@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Peter
  * Date: 01/02/2015
  * Time: 18:01
  */
-
-class profileFunctions{
+class profileFunctions
+{
 
     private $db;
 
@@ -57,7 +58,7 @@ class profileFunctions{
 
     function getAgeRange()
     {
-        $age = getAge($id,$this->db);
+        $age = getAge($id, $this->db);
 
         if ($age >= 65) {
             return "65 and over";
@@ -81,9 +82,9 @@ class profileFunctions{
             $bday = $this->db->single()['dateOfBirth'];
             $bday = new DateTime($bday);
 
-        // '<br/>';
+            // '<br/>';
             $userAge = $bday->diff(new DateTime)->y;
-            $age =  $userAge;
+            $age = $userAge;
         }
 
         $this->db->endTransaction();
@@ -116,72 +117,67 @@ class profileFunctions{
         $rs = $this->db->resultSet();
 
         //var_dump($rs);
-        $this->buildTree($rs,0);
+        $this->buildTree($rs, 0);
     }
 
 
-    function buildTree($arr, $par){
+    function buildTree($arr, $par)
+    {
         echo "<ol>";
-        foreach($arr as $i)
-        {
-            if($i['iP'] == $par)
-            {
+        foreach ($arr as $i) {
+            if ($i['iP'] == $par) {
                 echo '<li>';
-                if(!$this->isParent($arr,$i)){
+                if (!$this->isParent($arr, $i)) {
                     echo '<input type="checkbox" name="interests[]" value="' . $i['iId'] . '"';
                     echo $this->isUserInterest($i) ? ' checked > ' : '> ';
                     echo $i['iUid'];
                     echo '</input>';
-                }else{
-                   echo $i['iUid']; 
-               }
+                } else {
+                    echo $i['iUid'];
+                }
 
-               echo '</li>';
-               echo '<br/>';
+                echo '</li>';
+                echo '<br/>';
 
 
-
-               $this->buildTree($arr, $i['iId']);
-           }
-       }
-       echo "</ol>";
-   }
-
-   function isUserInterest($interest)
-   {
-    if($interest['uiUid'] != NULL){
-        return true;
+                $this->buildTree($arr, $i['iId']);
+            }
+        }
+        echo "</ol>";
     }
-    return false;
-}
 
-function isParent($arr, $interest)
-{
- foreach($arr as $i){
-    if($i['iP'] == $interest['iId']){
-        return true;
+    function isUserInterest($interest)
+    {
+        if ($interest['uiUid'] != NULL) {
+            return true;
+        }
+        return false;
     }
-}
 
-return false;
-}
+    function isParent($arr, $interest)
+    {
+        foreach ($arr as $i) {
+            if ($i['iP'] == $interest['iId']) {
+                return true;
+            }
+        }
 
+        return false;
+    }
 
 
     //End get interests
 
 
+    function getSurveysCreated()
+    {
 
+    }
 
-function getSurveysCreated()
-{
+    function getSurveysCompleted()
+    {
 
-}
-
-function getSurveysCompleted()
-{
-
-}
+    }
 }
 
 ?>

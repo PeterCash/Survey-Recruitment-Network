@@ -1,47 +1,45 @@
 /**
 Main stylesheet
 **/
-.interestselected:checked
-{
+.interestselected:checked {
 
 }
 
-.footer
-{
+.footer {
     position: fixed;
     bottom: 0px;
     width: 100%;
 }
 
 .full-width {
-  width: 100%;
-  max-width: 100%; 
+    width: 100%;
+    max-width: 100%;
 }
 
-.padded-checkbox{
-	margin-left: 15px;
+.padded-checkbox {
+    margin-left: 15px;
 }
 
-.nicepanel1{
-	background-color:#FFFF80;
+.nicepanel1 {
+    background-color: #FFFF80;
 }
 
-.nicepanel1:hover{
-	background-color:#FFFFB8;
+.nicepanel1:hover {
+    background-color: #FFFFB8;
 }
 
 .alternate:nth-child(odd) {
-   background-color:#FFFF80;
+    background-color: #FFFF80;
 }
+
 .alternate:nth-child(even) {
-   background-color:#FFFFB8;
+    background-color: #FFFFB8;
 }
 
-
-.question-type-1{
-  .width:100px;
+.question-type-1 {
+. width : 100 px;
 }
 
-.question-background{
-  .background-color:#FFFFB8;
+.question-background {
+. background-color : #FFFFB8;
 }

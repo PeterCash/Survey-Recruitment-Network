@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: cashp
@@ -7,25 +8,29 @@
  *
  * This object will contain demographic and targeting information relating to a user.
  */
-class user{
-private $user_id='';
-private $user_name='';
+class user
+{
+    private $user_id = '';
+    private $user_name = '';
 
-private $likes=array('');
-private $dislikes=array('');
-private $previousTopics=array('');
+    private $likes = array('');
+    private $dislikes = array('');
+    private $previousTopics = array('');
 
-public function getLikes(){
+    public function getLikes()
+    {
 
-}
+    }
 
 
-public function getDislikes(){
+    public function getDislikes()
+    {
 
-}
+    }
 
-public function getPreviousTopics(){
+    public function getPreviousTopics()
+    {
 
-}
+    }
 
 }

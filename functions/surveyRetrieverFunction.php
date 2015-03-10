@@ -47,13 +47,17 @@ class surveyRetrieverFunctions
        foreach($resultSet as $question) {
            echo '<div class="panel">';
            echo $question['questionText'];
-           echo '<br/>';
+           echo '<br/><br/>';
 
            $answers = $this->getSurveyAnswers($question['questionId']);
 
            foreach ($answers as $answer)
            {
-               echo $answer['answerText'];
+               echo "<input type=\"radio\"
+               name=\"question[{$answer['questionId']}]\"
+               value=\"{$answer['answerId']}\">";
+               echo " " . $answer['answerText'];
+
                echo '<br/>';
            }
 

@@ -3,13 +3,13 @@ require_once '../core/settings.php';
 ?>
 
 <!DOCTYPE html>
-<html  class="no-js" lang="en">
+<html class="no-js" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Recruitment Network</title>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" href="../css/icons/foundation-icons.css" />
+    <link rel="stylesheet" href="../css/icons/foundation-icons.css"/>
 
     <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
     <link rel="stylesheet" href="../css/normalize.css">
@@ -24,31 +24,31 @@ require_once '../core/settings.php';
 </head>
 <body>
 
-    <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="#">My Site</a></h1>
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">My Site</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="left">
+            <li><a href="#">Left Nav Button</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="logout.php"><i class="fi-unlock"></i></a></li>
         </ul>
 
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="left">
-                <li><a href="#">Left Nav Button</a></li>
-            </ul>
-            <ul class="right">
-                <li><a href="logout.php"><i class="fi-unlock"></i></a></li>
-            </ul>
-
-        </nav>
+</nav>
 
 
-    </br>
+</br>
 
-    <div class="medium-8 columns">
-    <form action="../functions/adduser.php" id="registerForm" method="post" >
+<div class="medium-8 columns">
+    <form action="../functions/adduser.php" id="registerForm" method="post">
 
 
         <div class="left row">
@@ -67,7 +67,7 @@ require_once '../core/settings.php';
 
         <div class="left row">
             <div class="medium-6 columns">
-            <label for="passwordConfirm">Password Confirm</label>
+                <label for="passwordConfirm">Password Confirm</label>
                 <input id="passwordConfirm" name="passwordConfirm" type="password" required>
             </div>
         </div>
@@ -78,22 +78,20 @@ require_once '../core/settings.php';
                 <!-- <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;"> -->
             </div>
         </div>
-        </form>
-    </div>
+    </form>
+</div>
 
 
-
- <!--    <label id="ajaxStuff" class="">
-        <span id="ajaxStuff"></span>
-        Credentials Invalid
-    </label> -->
-
+<!--    <label id="ajaxStuff" class="">
+       <span id="ajaxStuff"></span>
+       Credentials Invalid
+   </label> -->
 
 
-    <script src="../js/vendor/jquery.js"></script>
-    <script src="../js/foundation.min.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
 </body>
 </html>

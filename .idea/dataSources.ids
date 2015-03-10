@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - sql368720@sql3.freesqldatabase.com" uuid="1cda3c5e-5129-4fc7-9105-b73794a02169">
+    <database-info product="MySQL" version="5.5.40-0ubuntu0.12.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="sql368720"/>
+    <table name="age_range" schema="" catalog="sql368720" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="label" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="min" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="max" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="counties" schema="" catalog="sql368720" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="county" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12" def="JzAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="interests" schema="" catalog="sql368720" type="TABLE">
+      <column name="interestId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="interest" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="parent" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="interestId"/>
+    </table>
+    <table name="session" schema="" catalog="sql368720" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="userid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="hash" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="survey" schema="" catalog="sql368720" type="TABLE">
+      <column name="surveyId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" precision="80" scale="0" nullable="false" jdbcType="12"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="county" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="createdDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="surveyId"/>
+      <exported-key name="survey_answers_ibfk_1" table="survey_answers" schema="" catalog="sql368720" columns="surveyId"/>
+      <exported-key name="survey_interests_ibfk_1" table="survey_interests" schema="" catalog="sql368720" columns="surveyId"/>
+    </table>
+    <table name="survey_answers" schema="" catalog="sql368720" type="TABLE">
+      <column name="answerId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="surveyId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="questionId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="answerPosition" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="answerText" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="answerId"/>
+      <foreign-key name="survey_answers_ibfk_1" columns="surveyId" ref-table="survey" ref-schema="" ref-catalog="sql368720" ref-columns="surveyId" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="questionId" unique="false" columns="questionId"/>
+    </table>
+    <table name="survey_interests" schema="" catalog="sql368720" type="TABLE">
+      <column name="surveyId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="interestId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="survey_interests_ibfk_1" columns="surveyId" ref-table="survey" ref-schema="" ref-catalog="sql368720" ref-columns="surveyId" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="survey_questions" schema="" catalog="sql368720" type="TABLE">
+      <column name="questionId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="surveyId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="questionPosition" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="Tm90IHVuaXF1ZSAtIHRoaXMgaXMgdGhlIHF1ZXN0aW9uJ3MgcG9zaXRpb24gZnJvbSB0aGUgc3VydmV5IGNyZWF0b3JzIHBlcnNwZWN0aXZl"/>
+      <column name="questionText" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
+      <primary-key name="PRIMARY" columns="questionId"/>
+    </table>
+    <table name="survey_responses" schema="" catalog="sql368720" type="TABLE">
+      <column name="responseId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="surveyId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="questionId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="answerId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="responseId"/>
+    </table>
+    <table name="user_groups" schema="" catalog="sql368720" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="groupname" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="permissions" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user_interests" schema="" catalog="sql368720" type="TABLE">
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="interestId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="user_interests_ibfk_1" columns="userId" ref-table="users" ref-schema="" ref-catalog="sql368720" ref-columns="userId" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="userId_2" unique="false" columns="userId"/>
+    </table>
+    <table name="user_profiles" schema="" catalog="sql368720" type="TABLE">
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="firstName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dateOfBirth" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="userId"/>
+      <index name="userId" unique="false" columns="userId"/>
+    </table>
+    <table name="users" schema="" catalog="sql368720" type="TABLE">
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="salt" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="joined" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="group" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="userId"/>
+      <exported-key name="user_interests_ibfk_1" table="user_interests" schema="" catalog="sql368720" columns="userId"/>
+    </table>
+  </data-source>
+</component>

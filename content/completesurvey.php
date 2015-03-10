@@ -57,13 +57,18 @@ $srf = new surveyRetrieverFunctions($db);
     <?php
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         var_dump($srf->checkSurveyExists($_GET['id']));
-
-        $srf->getSurveyQuestions($_GET['id']);
-
+        $id = $_GET['id'];
     }
-
-
     ?>
+
+    <form action="../functions/addSurveyAnswers.php" method="post">
+        <input type="hidden" name="survey" value="<?php echo $id ?>">
+        <input type="hidden" name="user" value="<?php echo $_SESSION['uid'] ?>">
+
+        <?php $srf->getSurveyQuestions($_GET['id']); ?>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
 </div>
 
 
