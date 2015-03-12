@@ -5,28 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="405c1c7d-3720-4d79-9cc4-facb49c7197b" name="Default" comment="">
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\PDO.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\debug.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\params.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\settings.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\survey.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\user.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\functions\changecredentials.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\functions\process.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\functions\sanitise.php" afterPath="" />
-      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\sql\athena.sql" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.htaccess1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functions/results.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/viewresults.php" />
+      <change type="DELETED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\CreateASurvey.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/index.php" afterPath="$PROJECT_DIR$/content/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/login.php" afterPath="$PROJECT_DIR$/content/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/profile.php" afterPath="$PROJECT_DIR$/content/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/register.php" afterPath="$PROJECT_DIR$/content/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/main.css" afterPath="$PROJECT_DIR$/content/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/newsurvey.php" afterPath="$PROJECT_DIR$/content/newsurvey.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/surveyCreator.js" afterPath="$PROJECT_DIR$/js/surveyCreator.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\BlankTabbedPage.php" afterPath="$PROJECT_DIR$/randomexperimentation/BlankTabbedPage.php" />
-      <change type="MOVED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\CreateASurvey.php" afterPath="$PROJECT_DIR$/content/newsurvey.php" />
-      <change type="MOVED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\TestingPage.php" afterPath="$PROJECT_DIR$/randomexperimentation/TestingPage.php" />
-      <change type="MOVED" beforePath="H:\www\checkout\Survey-Recruitment-Network\content\profilefunctions.php" afterPath="$PROJECT_DIR$/functions/profileFunctions.php" />
       <change type="MOVED" beforePath="H:\www\checkout\Survey-Recruitment-Network\functions\addsurvey.php" afterPath="$PROJECT_DIR$/functions/addSurvey.php" />
-      <change type="MOVED" beforePath="H:\www\checkout\Survey-Recruitment-Network\functions\loginauthenticator.php" afterPath="$PROJECT_DIR$/functions/loginAuthenticator.php" />
     </list>
     <ignored path="Survey-Recruitment-Network.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,6 +52,24 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - sql368720@sql3.freesqldatabase.com" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="sql368720" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="survey" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -71,37 +77,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="newsurvey.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/newsurvey.php">
+      <file leaf-file-name="surveyCreator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/surveyCreator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3321" max-vertical-offset="5994">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3726">
+              <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addSurvey.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="185" max-vertical-offset="1701">
+              <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addSurvey.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/addSurvey.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48734176" vertical-offset="2955" max-vertical-offset="3915">
-              <caret line="118" column="57" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="57" />
+            <state vertical-scroll-proportion="-13.0" vertical-offset="2691" max-vertical-offset="3969">
+              <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
               <folding>
-                <marker date="1426087536000" expanded="true" signature="935:1001" placeholder="INSERT INTO ..." />
-                <marker date="1426087536000" expanded="true" signature="1496:1562" placeholder="INSERT INTO ..." />
-                <marker date="1426087536000" expanded="true" signature="2147:2235" placeholder="INSERT INTO ..." />
-                <marker date="1426087536000" expanded="true" signature="2552:2649" placeholder="INSERT INTO ..." />
+                <marker date="1426169329000" expanded="true" signature="1028:1094" placeholder="INSERT INTO ..." />
+                <marker date="1426169329000" expanded="true" signature="1589:1655" placeholder="INSERT INTO ..." />
+                <marker date="1426169329000" expanded="true" signature="2268:2356" placeholder="INSERT INTO ..." />
+                <marker date="1426169329000" expanded="true" signature="2682:2779" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="surveyCreator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/surveyCreator.js">
+      <file leaf-file-name="viewresults.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/viewresults.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2015" max-vertical-offset="2619">
-              <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
-              <folding />
+            <state vertical-scroll-proportion="-10.0" vertical-offset="1503" max-vertical-offset="2673">
+              <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1426178216000" expanded="true" signature="2393:2433" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/functions/results.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6004728" vertical-offset="302" max-vertical-offset="1323">
+              <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+              <folding>
+                <marker date="1426178298000" expanded="true" signature="343:393" placeholder="SELECT title..survey..." />
+                <marker date="1426178298000" expanded="true" signature="713:1083" placeholder="SELECT *FROM..survey..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,12 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classes/Database.php" />
-        <option value="$PROJECT_DIR$/functions/sanitise.php" />
-        <option value="$PROJECT_DIR$/classes/config.php" />
-        <option value="$PROJECT_DIR$/core/init.php" />
-        <option value="$PROJECT_DIR$/core/config.php" />
-        <option value="$PROJECT_DIR$/classes/getconfig.php" />
         <option value="$PROJECT_DIR$/classes/settingparser.php" />
         <option value="$PROJECT_DIR$/classes/getsettings.php" />
         <option value="$PROJECT_DIR$/survey.php" />
@@ -148,7 +174,6 @@
         <option value="$PROJECT_DIR$/content/params.php" />
         <option value="$PROJECT_DIR$/content/Template1.php" />
         <option value="$PROJECT_DIR$/content/secret.php" />
-        <option value="$PROJECT_DIR$/content/main.css" />
         <option value="$PROJECT_DIR$/functions/createsurvey.php" />
         <option value="$PROJECT_DIR$/scripts/login.js" />
         <option value="$PROJECT_DIR$/functions/CreateASurvey.php" />
@@ -164,12 +189,19 @@
         <option value="$PROJECT_DIR$/functions/addSurveyAnswers.php" />
         <option value="$PROJECT_DIR$/content/createasurvey.php" />
         <option value="$PROJECT_DIR$/content/settings.php" />
-        <option value="$PROJECT_DIR$/content/index.php" />
         <option value="$PROJECT_DIR$/functions/loginauthenticator.php" />
         <option value="$PROJECT_DIR$/functions/loginAuthenticator.php" />
+        <option value="$PROJECT_DIR$/content/index.php" />
+        <option value="$PROJECT_DIR$/content/.htaccess" />
+        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/content/newsurvey.php" />
+        <option value="$PROJECT_DIR$/content/main.css" />
         <option value="$PROJECT_DIR$/js/surveyCreator.js" />
         <option value="$PROJECT_DIR$/functions/addSurvey.php" />
+        <option value="$PROJECT_DIR$/content/results.php" />
+        <option value="$PROJECT_DIR$/functions/getSurveyResults.php" />
+        <option value="$PROJECT_DIR$/content/viewresults.php" />
+        <option value="$PROJECT_DIR$/functions/results.php" />
       </list>
     </option>
   </component>
@@ -222,6 +254,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,6 +270,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Survey-Recruitment-Network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Survey-Recruitment-Network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Survey-Recruitment-Network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="randomexperimentation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,13 +325,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Survey-Recruitment-Network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Survey-Recruitment-Network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,14 +363,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\www\checkout\Survey-Recruitment-Network\content" />
       <recent name="H:\www\checkout\Survey-Recruitment-Network\scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\www\checkout\Survey-Recruitment-Network" />
       <recent name="H:\www\checkout\Survey-Recruitment-Network\randomexperimentation" />
       <recent name="H:\www\checkout\Survey-Recruitment-Network\functions" />
       <recent name="H:\www\checkout\Survey-Recruitment-Network\content" />
       <recent name="H:\www\checkout\Survey-Recruitment-Network\classes" />
-      <recent name="H:\www\project\Survey-Recruitment-Network\Tests" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.php">
@@ -326,20 +387,17 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -349,6 +407,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -438,7 +499,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20487265" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32832617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -448,41 +509,19 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.159375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39914164" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39806867" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914164" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2056962" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13958333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2056962" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20364584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -517,6 +556,97 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/surveyCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1724" max-vertical-offset="2619">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/addSurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3861">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1426169329000" expanded="true" signature="1028:1094" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="1589:1655" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2268:2356" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2682:2779" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="5481">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <marker date="1426155984000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..survey..." />
+            <marker date="1426155984000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_profiles..." />
+            <marker date="1426155984000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..survey..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/newsurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="5994">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/addSurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3915">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1426169329000" expanded="true" signature="1028:1094" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="1589:1655" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2268:2356" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2682:2779" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/surveyCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1674" max-vertical-offset="2619">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/newsurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3774">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/addSurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2465">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1426169329000" expanded="true" signature="1028:1094" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="1589:1655" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2268:2356" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2682:2779" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/surveyCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1649">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/content/newsurvey.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3321" max-vertical-offset="5994">
@@ -530,10 +660,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3915">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1426087536000" expanded="true" signature="935:1001" placeholder="INSERT INTO ..." />
-            <marker date="1426087536000" expanded="true" signature="1496:1562" placeholder="INSERT INTO ..." />
-            <marker date="1426087536000" expanded="true" signature="2147:2235" placeholder="INSERT INTO ..." />
-            <marker date="1426087536000" expanded="true" signature="2552:2649" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="1028:1094" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="1589:1655" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2268:2356" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2682:2779" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -605,20 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/completesurvey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26595744" vertical-offset="1557" max-vertical-offset="2565">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6643233" vertical-offset="79" max-vertical-offset="1377">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.3" vertical-offset="1431" max-vertical-offset="2862">
@@ -661,24 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/profileFunctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9113924" vertical-offset="3888" max-vertical-offset="5076">
-          <caret line="128" column="18" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/loginAuthenticator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38809034" vertical-offset="0" max-vertical-offset="1485">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6835443" vertical-offset="0" max-vertical-offset="5481">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -704,31 +806,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/newsurvey.php">
+    <entry file="file://$PROJECT_DIR$/.htaccess1">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3321" max-vertical-offset="5994">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="0.12067039" vertical-offset="0" max-vertical-offset="895">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/surveyCreator.js">
+    <entry file="file://$PROJECT_DIR$/content/newsurvey.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2015" max-vertical-offset="2619">
-          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+        <state vertical-scroll-proportion="21.0" vertical-offset="3186" max-vertical-offset="5940">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/addSurvey.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48734176" vertical-offset="2955" max-vertical-offset="3915">
-          <caret line="118" column="57" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="57" />
+        <state vertical-scroll-proportion="-13.0" vertical-offset="2691" max-vertical-offset="3969">
+          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
           <folding>
-            <marker date="1426087536000" expanded="true" signature="935:1001" placeholder="INSERT INTO ..." />
-            <marker date="1426087536000" expanded="true" signature="1496:1562" placeholder="INSERT INTO ..." />
-            <marker date="1426087536000" expanded="true" signature="2147:2235" placeholder="INSERT INTO ..." />
-            <marker date="1426087536000" expanded="true" signature="2552:2649" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="1028:1094" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="1589:1655" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2268:2356" placeholder="INSERT INTO ..." />
+            <marker date="1426169329000" expanded="true" signature="2682:2779" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/profileFunctions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28723404" vertical-offset="0" max-vertical-offset="5076">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1426076306000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_profiles..." />
+            <marker date="1426076306000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_profiles..." />
+            <marker date="1426076306000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..age_range..." />
+            <marker date="1426076306000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_profiles..." />
+            <marker date="1426076306000" expanded="true" signature="-1:-1" placeholder="SELECT inter..interests..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2978723" vertical-offset="2187" max-vertical-offset="5481">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <marker date="1426155984000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..survey..." />
+            <marker date="1426155984000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_profiles..." />
+            <marker date="1426155984000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..survey..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="752" max-vertical-offset="1701">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/surveyCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2763" max-vertical-offset="3726">
+          <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/completesurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26595744" vertical-offset="1314" max-vertical-offset="2565">
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/viewresults.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="1503" max-vertical-offset="2673">
+          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1426178216000" expanded="true" signature="2393:2433" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/results.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6004728" vertical-offset="302" max-vertical-offset="1323">
+          <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+          <folding>
+            <marker date="1426178298000" expanded="true" signature="343:393" placeholder="SELECT title..survey..." />
+            <marker date="1426178298000" expanded="true" signature="713:1083" placeholder="SELECT *FROM..survey..." />
           </folding>
         </state>
       </provider>

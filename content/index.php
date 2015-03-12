@@ -7,7 +7,7 @@
  */
 include 'database.php';
 include '../functions/surveyCreatorFunction.php';
-include 'profileFunctions.php';
+include '../functions/profileFunctions.php';
 
 if (!isset($_SESSION['uid'])) {
     header('location: login.php');

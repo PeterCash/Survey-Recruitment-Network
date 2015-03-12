@@ -87,9 +87,7 @@ $user = $pf->getUser();
             <br/><br/><br/>
 
             <form action="../functions/addSurvey.php" id="surveyDetails" method="post" novalidate>
-
                 <div id="questionBlock" class="">
-
 
                 </div>
         </div>

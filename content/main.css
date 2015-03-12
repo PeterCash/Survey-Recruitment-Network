@@ -43,3 +43,15 @@ Main stylesheet
 .question-background {
 . background-color : #FFFFB8;
 }
+
+.addAnswer {
+    font-size: x-large;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.removeQuestion {
+    font-size: x-large;
+    padding-left: 6px;
+    padding-right: 6px;
+}
