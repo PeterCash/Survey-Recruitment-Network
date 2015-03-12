@@ -28,7 +28,7 @@ if ($db->hasResults()) {
     if (checkPassword($password, $hash) == true) {
         $_SESSION['email'] = $db->single()['email'];
         $_SESSION['uid'] = $db->single()['userId'];
-        //header("Location: ../content/profile.php");
+        ader("Location: ../content/profile.php");
     }
 } else {
     

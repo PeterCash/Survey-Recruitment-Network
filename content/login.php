@@ -48,7 +48,7 @@
 </br>
 
 <div class="medium-12 columns">
-    <form action="../functions/loginauthenticator.php" id="loginForm" method="post">
+    <form action="../functions/loginAuthenticator.php" id="loginForm" method="post">
 
         <div class="left row">
             <div class="medium-6 columns medium-10-offset-1">

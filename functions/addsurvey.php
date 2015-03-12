@@ -19,24 +19,11 @@ $questionID = 1;
 $answerID = 1;
 
 
-while (isset($_POST['answers' . $answerID])) {
-	$answers = $_POST['answers' . $answerID];
-	$AnswersArray[] = $answers;
-	
-	// echo $answerID;
-	// foreach ($answers as $key => $value) {
-	// 	$AnswersArray[$answerID][] = $value;
-	// }
-
-	$answerID+=1;
-}
+$AnswersArray[] = $_POST['answers'];
 
 
-$questions = $_POST['questions'];
-foreach($questions as $question){
-	$QuestionsArray[] = $question;
-	$questionID+=1;
-}
+
+$QuestionsArray = $_POST['questions'];
 
 
 
@@ -125,15 +112,18 @@ class createSurvey{
 
 			$answer = $this->db->lastInsertId();	
 			$answerPos = 1;
-			foreach($AnswerArray[$questionPos-1] as $a){
+			foreach($AnswerArray[$questionPos-1] as $a => $ans){
+                var_dump($a);
 				$this->db->query("INSERT INTO survey_answers(surveyId, questionID, answerPosition, answerText)
 					VALUES(?,?,?,?)");
 				$this->db->addParameter($this->surveyId);
 				$this->db->addParameter($answer);
 				$this->db->addParameter($answerPos);
-				$this->db->addParameter($a);
+				$this->db->addParameter($a[$answerPos]);
 				$this->db->execute();
+                var_dump($a[$answerPos]);
 				$answerPos+=1;
+
 			}
 
 			$questionPos+=1;

@@ -5,13 +5,20 @@
  * Date: 11/02/2015
  * Time: 15:21
  */
-//include '../core/settings.php';
-//include '../functions/surveyCreatorFunction.php';
-//include 'profilefunctions.php';
+include '../content/database.php';
+include '../functions/surveyCreatorFunction.php';
+include '../functions/profileFunctions.php';
 
-//$db = Database::getInstance();
-//$allCounties = getCounties($db);
-//$user = getUser(1, Database::getInstance());
+if (!isset($_SESSION['uid'])) {
+    header('location: login.php');
+} else {
+    $db = new database();
+    $pf = new profileFunctions($db);
+    $scf = new surveyCreatorFunctions($db);
+}
+
+$allCounties = $scf->getCounties();
+$user = $pf->getUser();
 
 ?>
 
@@ -29,12 +36,12 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" language="JavaScript"
-            type="text/javascript"></script>
-    <script src="../js/vendor/modernizr.js" language="JavaScript" type="text/javascript"></script>
+    <script src="../js/vendor/modernizr.js"></script>
 
-    <script src="http://malsup.github.com/jquery.form.js" language="JavaScript" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="../js/surveyCreator.js" language="JavaScript" type="text/javascript"></script>
+
 </head>
 
 <nav class="top-bar" data-topbar role="navigation">
@@ -46,11 +53,10 @@
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
-
     <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="left">
-            <li><a href="#">Home</a></li>
+            <li><a href="#">Left Nav Button</a></li>
         </ul>
         <ul class="right">
             <li><a href="logout.php"><i class="fi-unlock"></i></a></li>
@@ -60,65 +66,152 @@
 
 </br>
 
-
 <ul class="tabs" data-tab>
-    <li class="tab-title active"><a href="#t1">Tab1</a></li>
-    <li class="tab-title"><a href="#t2">Tab2</a></li>
+    <li class="tab-title active"><a href="#survey">Survey</a></li>
+    <li class="tab-title"><a href="#demo">Demographic</a></li>
+    <li class="tab-title"><a href="#interests">Interests</a></li>
 </ul>
 
 
-<div class="tabs-content medium-12 columns">
-    <div class="content active" id="t1">
+<div class="tabs-content">
+    <div class="content active" id="survey">
+
+        <div class="medium-10 columns">
+
+            <div class="left row">
+                <div class="medium-12 columns">
+                    <button class="button" id="createQuestion">Create a new question</button>
+                </div>
+            </div>
+
+            <br/><br/><br/>
+
+            <form action="../functions/addSurvey.php" id="surveyDetails" method="post" novalidate>
+
+                <div id="questionBlock" class="">
+
+
+                </div>
+        </div>
+
+
+    </div>
+
+    <div class="content" id="demo">
+        <div class="medium-12 columns">
+
+
+            <div class="left row">
+                <div class="medium-6 columns">
+                    <label for="author">Author Name</label><br/>
+                    <input name="author" type="text" disabled="disabled"
+                           value="<?php echo $user['firstName'] . " " . $user['lastName']; ?>">
+                </div>
+                <!-- 	</div>
+
+                <div class="left row"> -->
+                <div class="medium-6 columns">
+                    <label for="user">User Name</label><br/>
+                    <input name="user" type="text" disabled="disabled" value="<?php echo $user['email'] ?>">
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="left row">
+                <div class="medium-8 columns">
+                    <label for="title">Title</label><br/>
+                    <input name="title" type="text" required>
+                </div>
+            </div>
+
+            <div class="left row">
+                <div class="medium-8 columns">
+                    <label for="title">Target Age</label><br/>
+
+                    <div class="row">
+                        <div class="small-10 medium-11 columns">
+                            <div id="sliderAge" class="range-slider round" data-slider
+                                 data-options="display_selector: #age; start: 18; end: 100;">
+                                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                                <span class="range-slider-active-segment"></span>
+                                <span id="age" class="row"></span>
+                                <input name="age" id="age" type="hidden">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="left row">
+                <div class="medium-6 columns">
+                    <label for="county">County</label><br/>
+                    <select name="county" class="form-control" type="text">
+                        <option selected="selected" disabled="disabled"></option>
+                        <?php
+                        foreach ($allCounties as $c) {
+                            echo "<option value=" . $c['id'] . '">' . $c['county'] . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+        </div>
+
+
+    </div>
+
+    <div class="content" id="interests">
 
         <div class="left row">
-            <div class="medium-12 columns">
-                <button class="button" id="createQuestion">Create a new question</button>
+            <div class="medium-10 columns">
+                <?php
+                $scf->getChildren2(0);
+                ?>
+
             </div>
         </div>
 
-        <br/><br/><br/>
-
-        <form action="../functions/addsurvey2.php" id="questionSet" method="post">
-
-            <div id="questionBlock" class="">
-
-                <div class="left row">
-                    <div class="medium-6 columns">
-                        <button id="create" type="submit">Add new survey</button>
-                    </div>
-                </div>
-
-                <br/><br/><br/>
-
-        </form>
-
     </div>
 
+</div>
 
 </div>
 
 
-<div class="content" id="t2">
-    <div class="">
-        <a>tab 2</a>
-    </div>
-
 
 </div>
 
-
 </div>
-
 
 <div class="row footer">
-
+    <input id="surveySubmit" class="button full-width" type="submit" value="Create This Survey"/>
+    <!-- <img id="preloader" src="../images/loading.gif" style="padding-left: 10px;">-->
 </div>
+
+</form>
 
 
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/foundation.min.js"></script>
 <script>
     $(document).foundation();
+
+    var newVal = 18;
+    $('#sliderAge').foundation('slider', 'set_value', newVal);
+
+    $('#sliderAge').on('change.fndtn.slider', function () {
+        var sv = $('#age').attr('data-slider');
+        // document.title = sv;
+    });
+
 </script>
 </body>
 </html>

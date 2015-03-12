@@ -7,7 +7,7 @@
  */
 include '../core/settings.php';
 include '../functions/surveyCreatorFunction.php';
-include 'profilefunctions.php';
+include 'profileFunctions.php';
 
 $db = Database::getInstance();
 $allCounties = getCounties($db);
@@ -26,7 +26,7 @@ $user = getUser(1, Database::getInstance());
     <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/foundation.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="../content/main.css">
 
 
     <script src="../js/vendor/modernizr.js"></script>
@@ -51,7 +51,7 @@ $user = getUser(1, Database::getInstance());
             <li><a href="#">Home</a></li>
         </ul>
         <ul class="right">
-            <li><a href="logout.php"><i class="fi-unlock"></i></a></li>
+            <li><a href="../content/logout.php"><i class="fi-unlock"></i></a></li>
         </ul>
 
 </nav>

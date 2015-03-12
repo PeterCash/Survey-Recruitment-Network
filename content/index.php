@@ -5,17 +5,18 @@
  * Date: 11/02/2015
  * Time: 15:21
  */
-include '../core/settings.php';
+include 'database.php';
 include '../functions/surveyCreatorFunction.php';
-include 'profilefunctions.php';
+include 'profileFunctions.php';
 
 if (!isset($_SESSION['uid'])) {
     header('location: login.php');
 }
 
-$db = Database::getInstance();
+$db = new Database();
 
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +74,7 @@ $db = Database::getInstance();
 <div class="tabs-content">
     <div class="content active" id="interests">
 
-        <?php
+       <?php
         $db->query("SELECT * FROM survey
 						INNER JOIN survey_interests
 						ON survey.surveyId = survey_interests.surveyId
@@ -81,18 +82,19 @@ $db = Database::getInstance();
 						ON survey_interests.interestId = user_interests.interestId
 						WHERE user_interests.userId = ?
 						GROUP BY survey_interests.surveyId
-						ORDER BY COUNT(*) DESC",
-            array($_SESSION['uid']));
+						ORDER BY COUNT(*) DESC");
+        $db->addParameter($_SESSION['uid']);
+        $db->execute();
 
 
-        if ($db->count() != 0) {
+        if ($db->hasResults()) {
 
-            foreach ($db->results() as $row) {
+            foreach ($db->resultset() as $row) {
 
                 echo '<div class="">';
                 echo '<div class="medium-12 columns">';
                 echo '<div class="panel raised nicepanel1">';
-                echo '<p>' . $row->title . '</p>';
+                echo '<p>' . $row['title'] . '</p>';
 
                 echo '</div>';
                 echo '</div>';
@@ -101,7 +103,7 @@ $db = Database::getInstance();
 
         } else {
             echo '<div class="left row">';
-            echo '<div class="">';
+            echo '<div class="medium-12 columns">';
             echo '<div class="panel raised nicepanel1">';
             echo '<p>No surveys found</p>';
             echo '</div>';
@@ -116,41 +118,44 @@ $db = Database::getInstance();
 
     <div class="content" id="demo">
 
-        <div class="left row">
-            <div class="medium-10 columns">
-                <a>You may like</a>
-                <br/>
-
 
                 <?php
-                $demoQuery = $db->query("SELECT * FROM user_profiles
-						WHERE userId = ?",
-                    array($_SESSION['uid']));
+                $county = '';
+                $db->beginTransaction();
+                $db->query("SELECT * FROM user_profiles
+						WHERE userId = ?");
+                $db->addParameter($_SESSION['uid']);
 
-                $county = $demoQuery->first()->county;
+                $county = $db->single()['county'];
+
+                $db->endTransaction();
 
 
-                $db->query("SELECT * FROM created_surveys
-						WHERE county = ?",
-                    array($county));
 
+                $db->beginTransaction();
+                $db->query("SELECT * FROM survey
+						WHERE county = ?");
+                $db->addParameter($county);
+                $db->execute();
 
-                if ($db->count() != 0) {
+                $county = 1;
 
-                    foreach ($db->results() as $row) {
+                if ($db->hasResults()) {
+
+                    foreach ($db->resultset() as $row) {
 
                         echo '<div class="left row">';
                         echo '<div class="medium-12 columns">';
                         echo '<div class="panel raised nicepanel1">';
-                        echo '<p>' . $row->title . '</p>';
+                        echo '<p>' . $row['title'] . '</p>';
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
                     }
 
                 } else {
-                    echo '<div class="left row">';
-                    echo '<div class="medium-10 columns">';
+                    echo '<div class="">';
+                    echo '<div class="medium-12 columns">';
                     echo '<div class="panel raised nicepanel1">';
                     echo '<p>No surveys found</p>';
                     echo '</div>';
@@ -158,10 +163,10 @@ $db = Database::getInstance();
                     echo '</div>';
                 }
 
+                $db->endTransaction();
+
                 ?>
 
-            </div>
-        </div>
 
     </div>
 
@@ -169,8 +174,7 @@ $db = Database::getInstance();
 
         <div class="left row">
             <div class="medium-10 columns">
-                <a>Try something new</a>
-
+                <p>Try something new</p>
             </div>
         </div>
 

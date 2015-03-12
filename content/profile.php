@@ -7,7 +7,7 @@
  */
 session_start();
 include 'database.php';
-include 'profilefunctions.php';
+include 'profileFunctions.php';
 
 
 if (!isset($_SESSION['uid'])) {
@@ -84,7 +84,7 @@ if (!isset($_SESSION['uid'])) {
 <div class="left row medium-12 columns">
 
 
-    <form action="../functions/updateinterests.php" method="post" name="interestsForm"
+    <form action="../functions/updateInterests.php" method="post" name="interestsForm"
           id="interestsForm">
 
         <?php
