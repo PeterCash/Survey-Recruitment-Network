@@ -1,47 +1,39 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Peter
- * Date: 14/12/2014
- * Time: 18:12
+ * User: cashp
+ * Date: 11/02/2015
+ * Time: 15:21
  */
-session_start();
 include 'database.php';
-include 'user.php';
+include '../functions/surveyCreatorFunction.php';
+include '../functions/user.php';
+include '../functions/interests.php';
 
-
-if (!isset($_SESSION['uid'])) {
-    header('location: login.php');
-} else {
-    $db = new Database();
-    $pf = new profileFunctions($db);
-}
+$db = new Database;
 ?>
 
 <!DOCTYPE html>
-
 <html class="no-js" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Recruitment Network</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="../css/icons/foundation-icons.css"/>
-
 
     <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="../content/main.css">
 
 
     <script src="../js/vendor/modernizr.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
+    <script src="http://malsup.github.com/jquery.form.js"></script>
 
 </head>
 <body>
-
 <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
         <li class="name">
@@ -54,56 +46,52 @@ if (!isset($_SESSION['uid'])) {
     <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="left">
-            <li><a href="#">Left Nav Button</a></li>
+            <li><a href="#">Home</a></li>
         </ul>
         <ul class="right">
-            <li><a href="logout.php"><i class="fi-unlock"></i></a></li>
+            <li><a href="../content/logout.php"><i class="fi-unlock"></i></a></li>
         </ul>
-    </section>
 
 </nav>
 
-
 </br>
-<!--http://www.w3schools.com/bootstrap/bootstrap_grid_examples.asp-->
+
+<h1>Interests Test Page</h1>
 
 
-<div class="left row medium-12 columns">
-    <div class="panel radius" style="background-color:#b0c4de">
+<?php
+echo sprintf("%'09d\n", 123);
+
+$ints = new interests($db);
+$list = $ints->getFullTree();
+$oldDepth = 0;
 
 
-        <label>Age: <?php echo $pf->getAge(); ?></label>
+for ($i = 0; $i < sizeof($list); $i++) {
 
-        <label>Date of Birth: <?php echo $pf->getDateOfBirth(); ?></label>
-
-
-    </div>
-</div>
-
-
-<div class="left row medium-12 columns">
-
-
-    <form action="../functions/updateInterests.php" method="post" name="interestsForm"
-          id="interestsForm">
-
-        <?php
-
-        $pf->getUserInterests();
+    if ($i < sizeof($list) - 1 && $list[$i]['depth'] < $list[$i + 1]['depth']) {
+        echo "</ul>";
+        echo "<strong>" . $list[$i]['interest'] . "</strong>";
+        echo "<ul>";
+    }elseif($list[$i]['depth'] = $list[$i + 1]['depth']){
+        echo "<ul>";
+        echo $list[$i]['interest'];
+    } else {
+        echo $list[$i]['interest'];
+    }
 
 
-        ?>
+    echo "<br/>";
+
+}
+
+?>
 
 
-</div>
 
-<div class="left row medium-12 columns">
-    <input name="submit" id="submitButton" type="submit" value="Update Interests"
-           class="button">
-</div>
 
-</form>
-<!-- </form> -->
+
+
 
 
 <script src="../js/vendor/jquery.js"></script>

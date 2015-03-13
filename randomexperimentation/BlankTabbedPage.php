@@ -7,7 +7,7 @@
  */
 include '../core/settings.php';
 include '../functions/surveyCreatorFunction.php';
-include 'profileFunctions.php';
+include 'user.php';
 
 $db = Database::getInstance();
 $allCounties = getCounties($db);

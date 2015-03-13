@@ -7,7 +7,7 @@
  */
 include 'database.php';
 include '../functions/surveyCreatorFunction.php';
-include '../functions/profileFunctions.php';
+include '../functions/user.php';
 include '../functions/results.php';
 
 $db = new Database;
