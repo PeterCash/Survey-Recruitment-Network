@@ -60,31 +60,40 @@ $db = new Database;
 
 
 <?php
-echo sprintf("%'09d\n", 123);
+
 
 $ints = new interests($db);
 $list = $ints->getFullTree();
-$oldDepth = 0;
+$depth = 0;
 
 
-for ($i = 0; $i < sizeof($list); $i++) {
+$result        = '';
+$currDepth     = 0;
+$end = count($list) - 1;
+// Start the loop
+foreach ($list as $index => $currNode) {
 
-    if ($i < sizeof($list) - 1 && $list[$i]['depth'] < $list[$i + 1]['depth']) {
-        echo "</ul>";
-        echo "<strong>" . $list[$i]['interest'] . "</strong>";
-        echo "<ul>";
-    }elseif($list[$i]['depth'] = $list[$i + 1]['depth']){
-        echo "<ul>";
-        echo $list[$i]['interest'];
-    } else {
-        echo $list[$i]['interest'];
+    if ($currNode['depth'] > $currDepth || $index == 0) {
+        echo '<ul>';
+    }elseif ($currNode['depth'] < $currDepth) {
+        echo '</ul>';
     }
 
+    echo '<li>' . $currNode['interest'] . '</li>';
 
-    echo "<br/>";
+    $currDepth = $currNode['depth'];
 
+    if ($index == $end) {
+        echo '</ul>';
+    }
 }
 
+$sibs = $ints->getAncestors(23);
+
+var_dump($sibs);
+
+
+//var_dump($list);
 ?>
 
 
