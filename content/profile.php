@@ -7,7 +7,8 @@
  */
 session_start();
 include 'database.php';
-include 'user.php';
+include '../functions/user.php';
+include '../functions/interests.php';
 
 
 if (!isset($_SESSION['uid'])) {
@@ -15,6 +16,8 @@ if (!isset($_SESSION['uid'])) {
 } else {
     $db = new Database();
     $pf = new profileFunctions($db);
+
+    $interests = new interests($db);
 }
 ?>
 
@@ -88,8 +91,35 @@ if (!isset($_SESSION['uid'])) {
           id="interestsForm">
 
         <?php
+        $result        = '';
+        $currDepth     = 0;
+        $end = count($list) - 1;
 
-        $pf->getUserInterests();
+        $interestList = $interests->getInterestsWithFlags(1);
+
+        foreach ($interestList as $index => $currNode) {
+
+            if ($currNode['depth'] > $currDepth || $index == 0) {
+                echo '<ul>';
+            }elseif ($currNode['depth'] < $currDepth) {
+                echo '</ul>';
+            }
+
+            if($currNode['isUserInterest'])
+            {
+                echo '<input type="checkbox" checked>';
+            }elseif($interestList[$index + 1]['depth'] > $currNode['depth']){
+                echo '<input type="checkbox">';
+            }
+
+            echo $currNode['interest'] . '</br>';
+
+            $currDepth = $currNode['depth'];
+
+            if ($index == $end) {
+                echo '</ul>';
+            }
+        }
 
 
         ?>

@@ -88,7 +88,7 @@ foreach ($list as $index => $currNode) {
     }
 }
 
-$sibs = $ints->getAncestors(23);
+$sibs = $ints->getInterestsWithFlags(2);
 
 var_dump($sibs);
 
