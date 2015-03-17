@@ -1,0 +1,53 @@
+[17-Mar-2015 16:19:09 UTC] PHP Fatal error:  Call to undefined function password_verify() in /home/crunchie/public_html/functions/loginauthenticator.php on line 40
+[17-Mar-2015 16:24:21 UTC] PHP Fatal error:  Call to undefined function password_verify() in /home/crunchie/public_html/functions/loginauthenticator.php on line 40
+[17-Mar-2015 16:25:44 UTC] PHP Notice:  Undefined index: username in /home/crunchie/public_html/functions/loginauthenticator.php on line 14
+[17-Mar-2015 16:25:44 UTC] PHP Notice:  Undefined index: password in /home/crunchie/public_html/functions/loginauthenticator.php on line 15
+[17-Mar-2015 16:25:51 UTC] PHP Fatal error:  Call to undefined function ader() in /home/crunchie/public_html/functions/loginauthenticator.php on line 31
+[17-Mar-2015 16:54:51 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 14
+[17-Mar-2015 16:54:51 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 20
+[17-Mar-2015 16:55:00 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 14
+[17-Mar-2015 16:55:00 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 20
+[17-Mar-2015 16:56:24 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 14
+[17-Mar-2015 16:56:24 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 20
+[17-Mar-2015 16:56:30 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 14
+[17-Mar-2015 16:56:30 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 20
+[17-Mar-2015 17:00:07 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 14
+[17-Mar-2015 17:00:07 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 20
+[17-Mar-2015 17:00:26 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 15
+[17-Mar-2015 17:00:26 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 21
+[17-Mar-2015 17:03:10 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 13
+[17-Mar-2015 17:03:10 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 15
+[17-Mar-2015 17:03:10 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 21
+[17-Mar-2015 17:04:27 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 13
+[17-Mar-2015 17:04:27 UTC] PHP Notice:  Undefined index: interests in /home/crunchie/public_html/functions/updateinterests.php on line 15
+[17-Mar-2015 17:04:27 UTC] PHP Notice:  Undefined variable: SelectedInterests in /home/crunchie/public_html/functions/updateinterests.php on line 21
+[17-Mar-2015 17:04:34 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1142 DELETE command denied to user 'crunch1'@'localhost' for table 'user_interests'' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/updateinterests.php(26): Database->execute()
+#2 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[17-Mar-2015 17:16:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE NOT userId = '2' AND interestId = '1'' at line 2' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/updateinterests.php(33): Database->execute()
+#2 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[17-Mar-2015 17:16:47 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE NOT userId = '2' AND WHERE NOT interestId = '1'' at line 2' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/updateinterests.php(33): Database->execute()
+#2 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[17-Mar-2015 17:36:13 UTC] PHP Notice:  Array to string conversion in /home/crunchie/public_html/content/database.php on line 50
+[17-Mar-2015 17:36:13 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Array'' at line 2' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/updateinterests.php(30): Database->execute()
+#2 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[17-Mar-2015 17:36:48 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/crunchie/public_html/functions/updateinterests.php on line 29
+[17-Mar-2015 17:37:08 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/crunchie/public_html/functions/updateinterests.php on line 29
+[17-Mar-2015 17:37:55 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/crunchie/public_html/functions/updateinterests.php on line 32
+[17-Mar-2015 17:49:43 UTC] PHP Parse error:  syntax error, unexpected '$interestSet' (T_VARIABLE) in /home/crunchie/public_html/functions/updateinterests.php on line 22
+[17-Mar-2015 17:50:18 UTC] PHP Parse error:  syntax error, unexpected '$interestSet' (T_VARIABLE) in /home/crunchie/public_html/functions/updateinterests.php on line 22

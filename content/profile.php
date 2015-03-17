@@ -15,7 +15,7 @@ if (!isset($_SESSION['uid'])) {
     header('location: login.php');
 } else {
     $db = new Database();
-    $pf = new profileFunctions($db);
+    $pf = new profileFunctions($db, $_SESSION['uid']);
 
     $interests = new interests($db);
 }
@@ -87,15 +87,16 @@ if (!isset($_SESSION['uid'])) {
 <div class="left row medium-12 columns">
 
 
-    <form action="../functions/updateInterests.php" method="post" name="interestsForm"
-          id="interestsForm">
+    <form action="../functions/updateinterests.php" method="post" name="interestsForm"
+          id="interestsForm" class="interestList">
 
         <?php
+        $interestList = $interests->getInterestsWithFlags($_SESSION['uid']);
+		
         $result        = '';
         $currDepth     = 0;
-        $end = count($list) - 1;
+        $end = count($interestList) - 1;
 
-        $interestList = $interests->getInterestsWithFlags(1);
 
         foreach ($interestList as $index => $currNode) {
 
@@ -105,14 +106,19 @@ if (!isset($_SESSION['uid'])) {
                 echo '</ul>';
             }
 
-            if($currNode['isUserInterest'])
-            {
-                echo '<input type="checkbox" checked>';
-            }elseif($interestList[$index + 1]['depth'] > $currNode['depth']){
-                echo '<input type="checkbox">';
-            }
+            echo '<p>';
 
-            echo $currNode['interest'] . '</br>';
+                if ($currNode['isUserInterest']) {
+                    echo '<input type="checkbox" class="formCheckbox" name="interests[]" value="' . $currNode['interestId'] . '"checked>';
+                } elseif($currNode['isUserInterest'] == false && $currNode['isParent'] == 0){
+                    echo '<input type="checkbox" class="formCheckbox" name="interests[]" value="' . $currNode['interestId'] . '">';
+                }
+
+            if($currNode['isParent'] == 1) {
+                echo ' ' . '<strong>' . $currNode['interest'] . '</strong>' . '</p>';
+            }else{
+                echo ' ' . $currNode['interest'] . '</p>';
+            }
 
             $currDepth = $currNode['depth'];
 
@@ -120,7 +126,7 @@ if (!isset($_SESSION['uid'])) {
                 echo '</ul>';
             }
         }
-
+	
 
         ?>
 

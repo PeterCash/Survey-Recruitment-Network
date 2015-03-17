@@ -1,0 +1,4 @@
+AuthName "Main"
+AuthUserFile "/home/crunchie/.htpasswds/public_html/passwd"
+AuthType Basic
+require valid-user

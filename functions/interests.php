@@ -10,7 +10,6 @@ class interests
 {
 
     private $db;
-    private $fullTree = array();
 
     public function __construct($database)
     {

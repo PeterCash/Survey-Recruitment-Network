@@ -1,0 +1,150 @@
+[17-Mar-2015 16:16:43 UTC] PHP Notice:  Undefined index: uid in /home/crunchie/public_html/content/index.php on line 86
+[17-Mar-2015 16:16:43 UTC] PHP Notice:  Undefined index: uid in /home/crunchie/public_html/content/index.php on line 127
+[17-Mar-2015 16:24:14 UTC] PHP Fatal error:  Call to a member function getAge() on a non-object in /home/crunchie/public_html/content/profile.php on line 78
+[17-Mar-2015 16:26:16 UTC] PHP Warning:  Missing argument 2 for profileFunctions::__construct(), called in /home/crunchie/public_html/content/profile.php on line 18 and defined in /home/crunchie/public_html/functions/user.php on line 16
+[17-Mar-2015 16:26:16 UTC] PHP Notice:  Undefined variable: UserID in /home/crunchie/public_html/functions/user.php on line 19
+[17-Mar-2015 16:26:16 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:30:37 UTC] PHP Warning:  Missing argument 2 for profileFunctions::__construct(), called in /home/crunchie/public_html/content/profile.php on line 18 and defined in /home/crunchie/public_html/functions/user.php on line 16
+[17-Mar-2015 16:30:37 UTC] PHP Notice:  Undefined variable: UserID in /home/crunchie/public_html/functions/user.php on line 19
+[17-Mar-2015 16:30:37 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:30:48 UTC] PHP Warning:  Missing argument 2 for profileFunctions::__construct(), called in /home/crunchie/public_html/content/newsurvey.php on line 16 and defined in /home/crunchie/public_html/functions/user.php on line 16
+[17-Mar-2015 16:30:48 UTC] PHP Notice:  Undefined variable: UserID in /home/crunchie/public_html/functions/user.php on line 19
+[17-Mar-2015 16:30:48 UTC] PHP Notice:  Undefined property: profileFunctions::$userId in /home/crunchie/public_html/functions/user.php on line 32
+[17-Mar-2015 16:30:48 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:41
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(41): PDO->prepare('SELECT * FROM i...')
+#1 /home/crunchie/public_html/functions/surveyCreatorFunction.php(46): Database->query('SELECT * FROM i...')
+#2 /home/crunchie/public_html/content/newsurvey.php(174): surveyCreatorFunctions->getChildren2(0)
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 41
+[17-Mar-2015 16:31:33 UTC] PHP Warning:  Missing argument 2 for profileFunctions::__construct(), called in /home/crunchie/public_html/content/profile.php on line 18 and defined in /home/crunchie/public_html/functions/user.php on line 16
+[17-Mar-2015 16:31:33 UTC] PHP Notice:  Undefined variable: UserID in /home/crunchie/public_html/functions/user.php on line 19
+[17-Mar-2015 16:31:33 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:32:38 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:32:41 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:33:16 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:34:32 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:34:33 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:34:43 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/crunchie/public_html/content/profile.php on line 18
+[17-Mar-2015 16:36:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:38:18 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:41:40 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:42:40 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:42:52 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(80): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:43:23 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(82): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:46:41 UTC] PHP Notice:  Undefined variable: pf in /home/crunchie/public_html/content/profile.php on line 80
+[17-Mar-2015 16:46:41 UTC] PHP Fatal error:  Call to a member function getAge() on a non-object in /home/crunchie/public_html/content/profile.php on line 80
+[17-Mar-2015 16:46:52 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/crunchie/public_html/content/profile.php on line 80
+[17-Mar-2015 16:47:03 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/crunchie/public_html/content/profile.php on line 80
+[17-Mar-2015 16:47:40 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/crunchie/public_html/content/profile.php on line 80
+[17-Mar-2015 16:48:32 UTC] PHP Notice:  Undefined variable: pf in /home/crunchie/public_html/content/profile.php on line 80
+[17-Mar-2015 16:48:32 UTC] PHP Fatal error:  Call to a member function getAge() on a non-object in /home/crunchie/public_html/content/profile.php on line 80
+[17-Mar-2015 16:48:44 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(82): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:49:31 UTC] PHP Fatal error:  Undefined class constant 'FETCH_ALL' in /home/crunchie/public_html/content/database.php on line 60
+[17-Mar-2015 16:49:55 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(82): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88
+[17-Mar-2015 16:50:34 UTC] PHP Fatal error:  Undefined class constant 'fetchAll' in /home/crunchie/public_html/content/database.php on line 60
+[17-Mar-2015 16:52:17 UTC] PHP Fatal error:  Undefined class constant 'fetchAll' in /home/crunchie/public_html/content/database.php on line 60
+[17-Mar-2015 16:52:18 UTC] PHP Fatal error:  Undefined class constant 'fetchAll' in /home/crunchie/public_html/content/database.php on line 60
+[17-Mar-2015 16:52:37 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/crunchie/public_html/content/database.php:88
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(88): PDO->beginTransaction()
+#1 /home/crunchie/public_html/functions/user.php(51): Database->beginTransaction()
+#2 /home/crunchie/public_html/content/profile.php(82): profileFunctions->getDateOfBirth()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 88

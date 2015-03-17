@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 //http://culttt.com/2012/10/01/roll-your-own-pdo-php-class/
 class Database
@@ -16,10 +18,10 @@ class Database
 
     public function __construct()
     {
-        $this->host = 'sql3.freesqldatabase.com';
-        $this->database = 'sql368720';
-        $this->username = 'sql368720';
-        $this->password = 'kU6*xT5*';
+        $this->host = 'localhost';
+        $this->database = 'SRN';
+        $this->username = 'crunch1';
+        $this->password = '7fgXgJnfaBIpEIPb';
 
         $this->paramCount = 1;
 
@@ -27,7 +29,8 @@ class Database
             $this->DB = new PDO("mysql:host=$this->host;dbname=$this->database", $this->username, $this->password);
 
             $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->DB->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            //$this->DB->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+			
         } // Catch any errors
         catch (PDOException $e) {
             $this->error = $e->getMessage();

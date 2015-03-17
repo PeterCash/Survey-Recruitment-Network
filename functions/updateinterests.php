@@ -10,6 +10,7 @@ session_start();
 $uid = $_SESSION['uid'];
 $db = new Database();
 
+var_dump($_POST['interests']);
 
 if(!is_null($_POST['interests'])){
     $SelectedInterests=$_POST['interests'];
@@ -17,18 +18,24 @@ if(!is_null($_POST['interests'])){
 
 
 
+$interestSet = array(1,2,3);
+$interestSet = implode(','$interestSet);
+
+
 if(!is_null($SelectedInterests)){
     $db->beginTransaction();
     $ResetInterests = $db->query("DELETE FROM user_interests
-      WHERE userId=?");
+      WHERE userId=? AND interestId NOT IN ?");
     $db->addParameter($uid);
+	$db->addParameter($interestSet);
+
     $db->execute();
     $db->endTransaction();
 
     $db->beginTransaction();
     foreach($SelectedInterests as $box) {
-
-        $db->query("INSERT INTO user_interests(userId,interestId)
+		echo $box. '/';
+        $db->query("INSERT IGNORE INTO user_interests(userId,interestId)
             VALUES (?,?)");
         $db->addParameter($uid);
         $db->addParameter($box);
@@ -41,6 +48,6 @@ if(!is_null($SelectedInterests)){
     }
     $db->endTransaction();
 
-    header("Location: ../content/profile.php");
+   // header("Location: ../content/profile.php");
 
 }

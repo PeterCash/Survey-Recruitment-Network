@@ -55,3 +55,7 @@ Main stylesheet
     padding-left: 6px;
     padding-right: 6px;
 }
+
+.formCheckbox {
+    margin-right: 10px;
+}
