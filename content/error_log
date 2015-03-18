@@ -148,3 +148,107 @@ Stack trace:
 #2 /home/crunchie/public_html/content/profile.php(82): profileFunctions->getDateOfBirth()
 #3 {main}
   thrown in /home/crunchie/public_html/content/database.php on line 88
+[18-Mar-2015 13:51:30 UTC] PHP Warning:  Missing argument 2 for profileFunctions::__construct(), called in /home/crunchie/public_html/content/newsurvey.php on line 16 and defined in /home/crunchie/public_html/functions/user.php on line 16
+[18-Mar-2015 13:51:30 UTC] PHP Notice:  Undefined variable: UserID in /home/crunchie/public_html/functions/user.php on line 19
+[18-Mar-2015 13:51:30 UTC] PHP Notice:  Undefined property: profileFunctions::$userId in /home/crunchie/public_html/functions/user.php on line 32
+[18-Mar-2015 13:53:55 UTC] PHP Notice:  Undefined property: profileFunctions::$userId in /home/crunchie/public_html/functions/user.php on line 32
+[18-Mar-2015 14:08:27 UTC] PHP Warning:  Missing argument 1 for interests::__construct(), called in /home/crunchie/public_html/content/newsurvey.php on line 175 and defined in /home/crunchie/public_html/functions/interests.php on line 14
+[18-Mar-2015 14:08:27 UTC] PHP Notice:  Undefined variable: database in /home/crunchie/public_html/functions/interests.php on line 16
+[18-Mar-2015 14:08:27 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/crunchie/public_html/functions/interests.php on line 45
+[18-Mar-2015 14:08:43 UTC] PHP Warning:  Missing argument 1 for interests::__construct(), called in /home/crunchie/public_html/content/newsurvey.php on line 175 and defined in /home/crunchie/public_html/functions/interests.php on line 14
+[18-Mar-2015 14:08:43 UTC] PHP Notice:  Undefined variable: database in /home/crunchie/public_html/functions/interests.php on line 16
+[18-Mar-2015 14:08:43 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/crunchie/public_html/functions/interests.php on line 45
+[18-Mar-2015 14:10:13 UTC] PHP Notice:  Undefined variable: iistinterests in /home/crunchie/public_html/content/newsurvey.php on line 177
+[18-Mar-2015 14:10:13 UTC] PHP Fatal error:  Call to a member function getFullTree() on a non-object in /home/crunchie/public_html/content/newsurvey.php on line 177
+[18-Mar-2015 14:12:48 UTC] PHP Notice:  Undefined variable: iistinterests in /home/crunchie/public_html/content/newsurvey.php on line 180
+[18-Mar-2015 14:12:48 UTC] PHP Fatal error:  Call to a member function getFullTree() on a non-object in /home/crunchie/public_html/content/newsurvey.php on line 180
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:14:43 UTC] PHP Notice:  Undefined index: isParent in /home/crunchie/public_html/content/newsurvey.php on line 201
+[18-Mar-2015 14:17:15 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/interests.php(50): Database->execute()
+#2 /home/crunchie/public_html/content/newsurvey.php(180): interests->getFullTree()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[18-Mar-2015 14:17:52 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/interests.php(50): Database->execute()
+#2 /home/crunchie/public_html/content/newsurvey.php(180): interests->getFullTree()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[18-Mar-2015 14:17:57 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/interests.php(50): Database->execute()
+#2 /home/crunchie/public_html/content/newsurvey.php(180): interests->getFullTree()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[18-Mar-2015 14:18:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/interests.php(50): Database->execute()
+#2 /home/crunchie/public_html/content/newsurvey.php(180): interests->getFullTree()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[18-Mar-2015 14:20:03 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /home/crunchie/public_html/content/database.php:56
+Stack trace:
+#0 /home/crunchie/public_html/content/database.php(56): PDOStatement->execute()
+#1 /home/crunchie/public_html/functions/interests.php(50): Database->execute()
+#2 /home/crunchie/public_html/content/viewinterests.php(95): interests->getFullTree()
+#3 {main}
+  thrown in /home/crunchie/public_html/content/database.php on line 56
+[18-Mar-2015 14:52:18 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/crunchie/public_html/content/profile.php on line 107
+[18-Mar-2015 14:59:04 UTC] PHP Notice:  Use of undefined constant index - assumed 'index' in /home/crunchie/public_html/content/profile.php on line 103
+[18-Mar-2015 14:59:04 UTC] PHP Notice:  Use of undefined constant index - assumed 'index' in /home/crunchie/public_html/content/profile.php on line 103
+[18-Mar-2015 14:59:04 UTC] PHP Notice:  Use of undefined constant index - assumed 'index' in /home/crunchie/public_html/content/profile.php on line 103
+[18-Mar-2015 14:59:04 UTC] PHP Notice:  Use of undefined constant index - assumed 'index' in /home/crunchie/public_html/content/profile.php on line 103

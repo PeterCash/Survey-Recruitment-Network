@@ -63,7 +63,7 @@ $db = new Database;
 
 
 $ints = new interests($db);
-$list = $ints->getFullTree();
+/*$list = $ints->getFullTree();
 $depth = 0;
 
 
@@ -90,8 +90,9 @@ foreach ($list as $index => $currNode) {
 
 $sibs = $ints->getInterestsWithFlags(2);
 
-var_dump($sibs);
+var_dump($sibs);*/
 
+var_dump($ints->getFullTree());
 
 //var_dump($list);
 ?>

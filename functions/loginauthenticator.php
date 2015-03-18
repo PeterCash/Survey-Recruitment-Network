@@ -18,7 +18,6 @@ $db->query("SELECT * FROM users
                     WHERE email=?");
 $db->addParameter($username);
 
-var_dump($db->resultSet());
 
 
 
@@ -28,7 +27,7 @@ if ($db->hasResults()) {
     if (checkPassword($password, $hash) == true) {
         $_SESSION['email'] = $db->single()['email'];
         $_SESSION['uid'] = $db->single()['userId'];
-        ader("Location: ../content/profile.php");
+        echo "Your logged in. Navigate to http://www.slampunk.co.uk/index.php";
     }
 } else {
     

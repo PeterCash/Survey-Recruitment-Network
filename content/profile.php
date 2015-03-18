@@ -102,9 +102,14 @@ if (!isset($_SESSION['uid'])) {
 
             if ($currNode['depth'] > $currDepth || $index == 0) {
                 echo '<ul>';
-            }elseif ($currNode['depth'] < $currDepth) {
+            } elseif ($currNode['depth'] < $currDepth) {
                 echo '</ul>';
+            } elseif($currNode['isParent'] == 1){
+                echo '</ul>';
+                echo '<ul>';
             }
+
+
 
             echo '<p>';
 

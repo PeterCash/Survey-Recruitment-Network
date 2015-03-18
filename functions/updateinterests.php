@@ -19,13 +19,12 @@ if(!is_null($_POST['interests'])){
 
 
 $interestSet = array(1,2,3);
-$interestSet = implode(','$interestSet);
 
 
 if(!is_null($SelectedInterests)){
     $db->beginTransaction();
     $ResetInterests = $db->query("DELETE FROM user_interests
-      WHERE userId=? AND interestId NOT IN ?");
+      WHERE userId=?");
     $db->addParameter($uid);
 	$db->addParameter($interestSet);
 

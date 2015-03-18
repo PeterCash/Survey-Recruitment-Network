@@ -29,7 +29,7 @@ class profileFunctions
             INNER JOIN users
             ON user_profiles.userId = users.userId
             WHERE user_profiles.userId=?");
-        $this->db->addParameter($this->userId);
+        $this->db->addParameter($this->UserID);
         $this->db->execute();
 
 

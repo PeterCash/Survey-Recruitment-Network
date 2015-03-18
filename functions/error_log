@@ -51,3 +51,20 @@ Stack trace:
 [17-Mar-2015 17:37:55 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/crunchie/public_html/functions/updateinterests.php on line 32
 [17-Mar-2015 17:49:43 UTC] PHP Parse error:  syntax error, unexpected '$interestSet' (T_VARIABLE) in /home/crunchie/public_html/functions/updateinterests.php on line 22
 [17-Mar-2015 17:50:18 UTC] PHP Parse error:  syntax error, unexpected '$interestSet' (T_VARIABLE) in /home/crunchie/public_html/functions/updateinterests.php on line 22
+[18-Mar-2015 12:48:59 UTC] PHP Fatal error:  Call to undefined function ader() in /home/crunchie/public_html/functions/loginauthenticator.php on line 31
+[18-Mar-2015 13:09:15 UTC] PHP Fatal error:  Call to undefined function ader() in /home/crunchie/public_html/functions/loginauthenticator.php on line 31
+[18-Mar-2015 13:26:43 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:27:19 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:27:31 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:27:39 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:27:53 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:28:04 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:28:17 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:29:33 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:29:35 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:29:44 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:30:19 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:30:30 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:30:36 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 11
+[18-Mar-2015 13:31:27 UTC] PHP Fatal error:  Class 'Database' not found in /home/crunchie/public_html/functions/loginauthenticator.php on line 13
+[18-Mar-2015 13:35:57 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/crunchie/public_html/functions/loginauthenticator.php on line 31

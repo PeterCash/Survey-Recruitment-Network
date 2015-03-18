@@ -42,7 +42,10 @@ class interests
      */
     public function getFullTree()
     {
-        $this->db->query("SELECT * FROM interests ORDER BY lineage,length(lineage)");
+        $this->db->query("SELECT DISTINCT a.interestId,a.interest,a.lineage,a.depth, b.interestId IS NOT NULL AS isParent
+                          FROM interests a
+                          LEFT JOIN interests b ON a.interestId = b.parent
+                          ORDER BY a.lineage,length(a.lineage)");
         $this->db->execute();
 
 

@@ -8,12 +8,16 @@
 include '../content/database.php';
 include '../functions/surveyCreatorFunction.php';
 include '../functions/user.php';
+include '../functions/interests.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 if (!isset($_SESSION['uid'])) {
     header('location: login.php');
 } else {
     $db = new database();
-    $pf = new profileFunctions($db);
+    $pf = new profileFunctions($db,$_SESSION['uid']);
     $scf = new surveyCreatorFunctions($db);
 }
 
@@ -171,7 +175,42 @@ $user = $pf->getUser();
         <div class="left row">
             <div class="medium-10 columns">
                 <?php
-                $scf->getChildren2(0);
+               $listinterests = new interests($db);
+
+                $list = $listinterests->getFullTree();
+
+
+                $result        = '';
+                $currDepth     = 0;
+                $end = count($list) - 1;
+
+
+                foreach ($list as $index => $currNode) {
+
+                    if ($currNode['depth'] > $currDepth || $index == 0) {
+                        echo '<ul>';
+                    }elseif ($currNode['depth'] < $currDepth) {
+                        echo '</ul>';
+                    }
+
+                    echo '<p>';
+
+
+                    echo '<input type="checkbox" class="formCheckbox" name="interests[]" value="' . $currNode['interestId'] . '">';
+
+
+                    if($currNode['isParent'] == 1) {
+                        echo ' ' . '<strong>' . $currNode['interest'] . '</strong>' . '</p>';
+                    }else{
+                        echo ' ' . $currNode['interest'] . '</p>';
+                    }
+
+                    $currDepth = $currNode['depth'];
+
+                    if ($index == $end) {
+                        echo '</ul>';
+                    }
+                }
                 ?>
 
             </div>
